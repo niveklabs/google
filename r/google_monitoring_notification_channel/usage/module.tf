@@ -1,0 +1,17 @@
+module "google_monitoring_notification_channel" {
+  source = "./google/r/google_monitoring_notification_channel"
+
+  description  = null
+  display_name = null
+  enabled      = null
+  labels       = {}
+  project      = null
+  type         = null
+  user_labels  = {}
+
+  timeouts = [{
+    create = null
+    delete = null
+    update = null
+  }]
+}
