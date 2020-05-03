@@ -228,6 +228,13 @@ variable "maintenance_policy" {
           start_time = string
         }
       ))
+      recurring_window = list(object(
+        {
+          end_time   = string
+          recurrence = string
+          start_time = string
+        }
+      ))
     }
   ))
   default = []

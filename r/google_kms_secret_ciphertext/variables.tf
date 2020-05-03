@@ -1,3 +1,9 @@
+variable "additional_authenticated_data" {
+  description = "(optional) - The additional authenticated data used for integrity checks during encryption and decryption."
+  type        = string
+  default     = null
+}
+
 variable "crypto_key" {
   description = "(required) - The full name of the CryptoKey that will be used to encrypt the provided plaintext.\nFormat: ''projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}/cryptoKeys/{{cryptoKey}}''"
   type        = string

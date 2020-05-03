@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.14.0"
+    google = ">= 3.15.0"
   }
 }
 
@@ -10,6 +10,7 @@ resource "google_compute_region_backend_service" "this" {
   health_checks                   = var.health_checks
   load_balancing_scheme           = var.load_balancing_scheme
   name                            = var.name
+  network                         = var.network
   project                         = var.project
   protocol                        = var.protocol
   region                          = var.region

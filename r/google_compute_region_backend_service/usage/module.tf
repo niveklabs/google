@@ -6,6 +6,7 @@ module "google_compute_region_backend_service" {
   health_checks                   = []
   load_balancing_scheme           = null
   name                            = null
+  network                         = null
   project                         = null
   protocol                        = null
   region                          = null

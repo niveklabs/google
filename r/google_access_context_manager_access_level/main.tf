@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.14.0"
+    google = ">= 3.15.0"
   }
 }
 
@@ -21,6 +21,7 @@ resource "google_access_context_manager_access_level" "this" {
           ip_subnetworks         = conditions.value["ip_subnetworks"]
           members                = conditions.value["members"]
           negate                 = conditions.value["negate"]
+          regions                = conditions.value["regions"]
           required_access_levels = conditions.value["required_access_levels"]
 
           dynamic "device_policy" {

@@ -44,6 +44,7 @@ variable "basic" {
           ip_subnetworks         = list(string)
           members                = list(string)
           negate                 = bool
+          regions                = list(string)
           required_access_levels = list(string)
         }
       ))

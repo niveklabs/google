@@ -72,6 +72,11 @@ module "google_container_cluster" {
       duration   = null
       start_time = null
     }]
+    recurring_window = [{
+      end_time   = null
+      recurrence = null
+      start_time = null
+    }]
   }]
 
   master_auth = [{

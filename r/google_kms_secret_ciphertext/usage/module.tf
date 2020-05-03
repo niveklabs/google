@@ -1,8 +1,9 @@
 module "google_kms_secret_ciphertext" {
   source = "./modules/google/r/google_kms_secret_ciphertext"
 
-  crypto_key = null
-  plaintext  = null
+  additional_authenticated_data = null
+  crypto_key                    = null
+  plaintext                     = null
 
   timeouts = [{
     create = null

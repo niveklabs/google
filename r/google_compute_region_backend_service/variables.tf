@@ -26,6 +26,12 @@ variable "name" {
   type        = string
 }
 
+variable "network" {
+  description = "(optional) - The URL of the network to which this backend service belongs.\nThis field can only be specified when the load balancing scheme is set to INTERNAL."
+  type        = string
+  default     = null
+}
+
 variable "project" {
   description = "(optional)"
   type        = string

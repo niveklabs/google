@@ -1,5 +1,5 @@
 provider "google" {
-  version = "3.14.0"
+  version = "3.15.0"
 
   access_context_manager_custom_endpoint   = null
   access_token                             = null

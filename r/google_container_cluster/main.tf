@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.14.0"
+    google = ">= 3.15.0"
   }
 }
 
@@ -117,6 +117,15 @@ resource "google_container_cluster" "this" {
         for_each = maintenance_policy.value.daily_maintenance_window
         content {
           start_time = daily_maintenance_window.value["start_time"]
+        }
+      }
+
+      dynamic "recurring_window" {
+        for_each = maintenance_policy.value.recurring_window
+        content {
+          end_time   = recurring_window.value["end_time"]
+          recurrence = recurring_window.value["recurrence"]
+          start_time = recurring_window.value["start_time"]
         }
       }
 

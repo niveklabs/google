@@ -23,6 +23,7 @@ module "google_access_context_manager_access_level" {
       ip_subnetworks         = []
       members                = []
       negate                 = null
+      regions                = []
       required_access_levels = []
     }]
   }]
