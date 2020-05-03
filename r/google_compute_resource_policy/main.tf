@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.18.0"
+    google = ">= 3.19.0"
   }
 }
 
@@ -8,6 +8,15 @@ resource "google_compute_resource_policy" "this" {
   name    = var.name
   project = var.project
   region  = var.region
+
+  dynamic "group_placement_policy" {
+    for_each = var.group_placement_policy
+    content {
+      availability_domain_count = group_placement_policy.value["availability_domain_count"]
+      collocation               = group_placement_policy.value["collocation"]
+      vm_count                  = group_placement_policy.value["vm_count"]
+    }
+  }
 
   dynamic "snapshot_schedule_policy" {
     for_each = var.snapshot_schedule_policy

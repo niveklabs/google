@@ -108,6 +108,11 @@ output "network_interface" {
   value       = data.google_compute_instance.this.network_interface
 }
 
+output "resource_policies" {
+  description = "returns a list of string"
+  value       = data.google_compute_instance.this.resource_policies
+}
+
 output "scheduling" {
   description = "returns a list of object"
   value       = data.google_compute_instance.this.scheduling

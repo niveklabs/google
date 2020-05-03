@@ -19,6 +19,7 @@ module "google_compute_instance" {
   min_cpu_platform        = null
   name                    = null
   project                 = null
+  resource_policies       = []
   tags                    = []
   zone                    = null
 

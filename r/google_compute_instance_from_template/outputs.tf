@@ -103,6 +103,11 @@ output "project" {
   value       = google_compute_instance_from_template.this.project
 }
 
+output "resource_policies" {
+  description = "returns a list of string"
+  value       = google_compute_instance_from_template.this.resource_policies
+}
+
 output "scratch_disk" {
   description = "returns a list of object"
   value       = google_compute_instance_from_template.this.scratch_disk

@@ -91,6 +91,12 @@ variable "project" {
   default     = null
 }
 
+variable "resource_policies" {
+  description = "(optional)"
+  type        = list(string)
+  default     = null
+}
+
 variable "tags" {
   description = "(optional)"
   type        = set(string)

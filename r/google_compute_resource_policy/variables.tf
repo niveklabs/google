@@ -15,6 +15,18 @@ variable "region" {
   default     = null
 }
 
+variable "group_placement_policy" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      availability_domain_count = number
+      collocation               = string
+      vm_count                  = number
+    }
+  ))
+  default = []
+}
+
 variable "snapshot_schedule_policy" {
   description = "nested mode: NestingList, min items: 0, max items: 1"
   type = set(object(

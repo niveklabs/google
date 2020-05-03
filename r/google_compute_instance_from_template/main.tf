@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.18.0"
+    google = ">= 3.19.0"
   }
 }
 
@@ -21,6 +21,7 @@ resource "google_compute_instance_from_template" "this" {
   min_cpu_platform          = var.min_cpu_platform
   name                      = var.name
   project                   = var.project
+  resource_policies         = var.resource_policies
   scratch_disk              = var.scratch_disk
   service_account           = var.service_account
   source_instance_template  = var.source_instance_template

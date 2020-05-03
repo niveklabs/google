@@ -107,6 +107,12 @@ variable "project" {
   default     = null
 }
 
+variable "resource_policies" {
+  description = "(optional)"
+  type        = list(string)
+  default     = null
+}
+
 variable "scratch_disk" {
   description = "(optional)"
   type = list(object(

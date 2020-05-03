@@ -5,6 +5,12 @@ module "google_compute_resource_policy" {
   project = null
   region  = null
 
+  group_placement_policy = [{
+    availability_domain_count = null
+    collocation               = null
+    vm_count                  = null
+  }]
+
   snapshot_schedule_policy = [{
     retention_policy = [{
       max_retention_days    = null

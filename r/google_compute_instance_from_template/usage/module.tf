@@ -27,6 +27,7 @@ module "google_compute_instance_from_template" {
   min_cpu_platform        = null
   name                    = null
   project                 = null
+  resource_policies       = []
   scratch_disk = [{
     interface = null
   }]
