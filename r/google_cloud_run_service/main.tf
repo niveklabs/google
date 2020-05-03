@@ -1,13 +1,14 @@
 terraform {
   required_providers {
-    google = ">= 3.15.0"
+    google = ">= 3.16.0"
   }
 }
 
 resource "google_cloud_run_service" "this" {
-  location = var.location
-  name     = var.name
-  project  = var.project
+  autogenerate_revision_name = var.autogenerate_revision_name
+  location                   = var.location
+  name                       = var.name
+  project                    = var.project
 
   dynamic "metadata" {
     for_each = var.metadata

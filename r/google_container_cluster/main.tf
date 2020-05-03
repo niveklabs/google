@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.15.0"
+    google = ">= 3.16.0"
   }
 }
 
@@ -307,6 +307,22 @@ resource "google_container_cluster" "this" {
       enable_private_endpoint = private_cluster_config.value["enable_private_endpoint"]
       enable_private_nodes    = private_cluster_config.value["enable_private_nodes"]
       master_ipv4_cidr_block  = private_cluster_config.value["master_ipv4_cidr_block"]
+    }
+  }
+
+  dynamic "resource_usage_export_config" {
+    for_each = var.resource_usage_export_config
+    content {
+      enable_network_egress_metering       = resource_usage_export_config.value["enable_network_egress_metering"]
+      enable_resource_consumption_metering = resource_usage_export_config.value["enable_resource_consumption_metering"]
+
+      dynamic "bigquery_destination" {
+        for_each = resource_usage_export_config.value.bigquery_destination
+        content {
+          dataset_id = bigquery_destination.value["dataset_id"]
+        }
+      }
+
     }
   }
 

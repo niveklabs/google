@@ -27,5 +27,6 @@ module "google_compute_reservation" {
   timeouts = [{
     create = null
     delete = null
+    update = null
   }]
 }

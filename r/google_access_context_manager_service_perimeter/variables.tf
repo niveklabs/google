@@ -31,7 +31,13 @@ variable "status" {
     {
       access_levels       = list(string)
       resources           = list(string)
-      restricted_services = list(string)
+      restricted_services = set(string)
+      vpc_accessible_services = list(object(
+        {
+          allowed_services   = set(string)
+          enable_restriction = bool
+        }
+      ))
     }
   ))
   default = []

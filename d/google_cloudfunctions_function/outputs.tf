@@ -33,6 +33,11 @@ output "id" {
   value       = data.google_cloudfunctions_function.this.id
 }
 
+output "ingress_settings" {
+  description = "returns a string"
+  value       = data.google_cloudfunctions_function.this.ingress_settings
+}
+
 output "labels" {
   description = "returns a map of string"
   value       = data.google_cloudfunctions_function.this.labels
@@ -81,6 +86,11 @@ output "trigger_http" {
 output "vpc_connector" {
   description = "returns a string"
   value       = data.google_cloudfunctions_function.this.vpc_connector
+}
+
+output "vpc_connector_egress_settings" {
+  description = "returns a string"
+  value       = data.google_cloudfunctions_function.this.vpc_connector_egress_settings
 }
 
 output "this" {

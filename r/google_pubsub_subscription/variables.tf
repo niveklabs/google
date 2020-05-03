@@ -38,6 +38,17 @@ variable "topic" {
   type        = string
 }
 
+variable "dead_letter_policy" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      dead_letter_topic     = string
+      max_delivery_attempts = number
+    }
+  ))
+  default = []
+}
+
 variable "expiration_policy" {
   description = "nested mode: NestingList, min items: 0, max items: 1"
   type = set(object(

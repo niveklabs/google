@@ -11,6 +11,10 @@ module "google_access_context_manager_service_perimeter" {
     access_levels       = []
     resources           = []
     restricted_services = []
+    vpc_accessible_services = [{
+      allowed_services   = []
+      enable_restriction = null
+    }]
   }]
 
   timeouts = [{

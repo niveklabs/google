@@ -1,23 +1,25 @@
 module "google_cloudfunctions_function" {
   source = "./modules/google/r/google_cloudfunctions_function"
 
-  available_memory_mb   = null
-  description           = null
-  entry_point           = null
-  environment_variables = {}
-  https_trigger_url     = null
-  labels                = {}
-  max_instances         = null
-  name                  = null
-  project               = null
-  region                = null
-  runtime               = null
-  service_account_email = null
-  source_archive_bucket = null
-  source_archive_object = null
-  timeout               = null
-  trigger_http          = null
-  vpc_connector         = null
+  available_memory_mb           = null
+  description                   = null
+  entry_point                   = null
+  environment_variables         = {}
+  https_trigger_url             = null
+  ingress_settings              = null
+  labels                        = {}
+  max_instances                 = null
+  name                          = null
+  project                       = null
+  region                        = null
+  runtime                       = null
+  service_account_email         = null
+  source_archive_bucket         = null
+  source_archive_object         = null
+  timeout                       = null
+  trigger_http                  = null
+  vpc_connector                 = null
+  vpc_connector_egress_settings = null
 
   event_trigger = [{
     event_type = null

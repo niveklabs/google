@@ -1,9 +1,10 @@
 module "google_cloud_run_service" {
   source = "./modules/google/r/google_cloud_run_service"
 
-  location = null
-  name     = null
-  project  = null
+  autogenerate_revision_name = null
+  location                   = null
+  name                       = null
+  project                    = null
 
   metadata = [{
     annotations      = {}

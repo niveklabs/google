@@ -23,6 +23,11 @@ output "service_account_email" {
   value       = google_cloudfunctions_function.this.service_account_email
 }
 
+output "vpc_connector_egress_settings" {
+  description = "returns a string"
+  value       = google_cloudfunctions_function.this.vpc_connector_egress_settings
+}
+
 output "this" {
   value = google_cloudfunctions_function.this
 }

@@ -178,6 +178,11 @@ output "resource_labels" {
   value       = data.google_container_cluster.this.resource_labels
 }
 
+output "resource_usage_export_config" {
+  description = "returns a list of object"
+  value       = data.google_container_cluster.this.resource_usage_export_config
+}
+
 output "services_ipv4_cidr" {
   description = "returns a string"
   value       = data.google_container_cluster.this.services_ipv4_cidr

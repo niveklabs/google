@@ -9,6 +9,11 @@ module "google_pubsub_subscription" {
   retain_acked_messages      = null
   topic                      = null
 
+  dead_letter_policy = [{
+    dead_letter_topic     = null
+    max_delivery_attempts = null
+  }]
+
   expiration_policy = [{
     ttl = null
   }]

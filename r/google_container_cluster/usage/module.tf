@@ -204,6 +204,14 @@ module "google_container_cluster" {
     public_endpoint         = null
   }]
 
+  resource_usage_export_config = [{
+    bigquery_destination = [{
+      dataset_id = null
+    }]
+    enable_network_egress_metering       = null
+    enable_resource_consumption_metering = null
+  }]
+
   timeouts = [{
     create = null
     delete = null

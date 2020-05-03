@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.15.0"
+    google = ">= 3.16.0"
   }
 }
 
@@ -17,6 +17,15 @@ resource "google_access_context_manager_service_perimeter" "this" {
       access_levels       = status.value["access_levels"]
       resources           = status.value["resources"]
       restricted_services = status.value["restricted_services"]
+
+      dynamic "vpc_accessible_services" {
+        for_each = status.value.vpc_accessible_services
+        content {
+          allowed_services   = vpc_accessible_services.value["allowed_services"]
+          enable_restriction = vpc_accessible_services.value["enable_restriction"]
+        }
+      }
+
     }
   }
 

@@ -60,6 +60,7 @@ variable "timeouts" {
     {
       create = string
       delete = string
+      update = string
     }
   ))
   default = []

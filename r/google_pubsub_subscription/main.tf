@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.15.0"
+    google = ">= 3.16.0"
   }
 }
 
@@ -12,6 +12,14 @@ resource "google_pubsub_subscription" "this" {
   project                    = var.project
   retain_acked_messages      = var.retain_acked_messages
   topic                      = var.topic
+
+  dynamic "dead_letter_policy" {
+    for_each = var.dead_letter_policy
+    content {
+      dead_letter_topic     = dead_letter_policy.value["dead_letter_topic"]
+      max_delivery_attempts = dead_letter_policy.value["max_delivery_attempts"]
+    }
+  }
 
   dynamic "expiration_policy" {
     for_each = var.expiration_policy

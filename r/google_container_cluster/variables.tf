@@ -439,6 +439,22 @@ variable "private_cluster_config" {
   default = []
 }
 
+variable "resource_usage_export_config" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      bigquery_destination = list(object(
+        {
+          dataset_id = string
+        }
+      ))
+      enable_network_egress_metering       = bool
+      enable_resource_consumption_metering = bool
+    }
+  ))
+  default = []
+}
+
 variable "timeouts" {
   description = "nested mode: NestingSingle, min items: 0, max items: 0"
   type = set(object(

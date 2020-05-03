@@ -28,6 +28,12 @@ variable "https_trigger_url" {
   default     = null
 }
 
+variable "ingress_settings" {
+  description = "(optional)"
+  type        = string
+  default     = null
+}
+
 variable "labels" {
   description = "(optional)"
   type        = map(string)
@@ -93,6 +99,12 @@ variable "trigger_http" {
 }
 
 variable "vpc_connector" {
+  description = "(optional)"
+  type        = string
+  default     = null
+}
+
+variable "vpc_connector_egress_settings" {
   description = "(optional)"
   type        = string
   default     = null

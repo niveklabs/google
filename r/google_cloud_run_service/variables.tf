@@ -1,3 +1,9 @@
+variable "autogenerate_revision_name" {
+  description = "(optional)"
+  type        = bool
+  default     = null
+}
+
 variable "location" {
   description = "(required) - The location of the cloud run instance. eg us-central1"
   type        = string
