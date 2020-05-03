@@ -1,5 +1,5 @@
 module "google_app_engine_domain_mapping" {
-  source = "./google/r/google_app_engine_domain_mapping"
+  source = "./modules/google/r/google_app_engine_domain_mapping"
 
   domain_name       = null
   override_strategy = null

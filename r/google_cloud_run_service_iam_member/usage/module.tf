@@ -1,5 +1,5 @@
 module "google_cloud_run_service_iam_member" {
-  source = "./google/r/google_cloud_run_service_iam_member"
+  source = "./modules/google/r/google_cloud_run_service_iam_member"
 
   location = null
   member   = null

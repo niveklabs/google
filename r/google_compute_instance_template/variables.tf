@@ -123,8 +123,9 @@ variable "network_interface" {
     {
       access_config = list(object(
         {
-          nat_ip       = string
-          network_tier = string
+          nat_ip                 = string
+          network_tier           = string
+          public_ptr_domain_name = string
         }
       ))
       alias_ip_range = list(object(
@@ -133,6 +134,7 @@ variable "network_interface" {
           subnetwork_range_name = string
         }
       ))
+      name               = string
       network            = string
       network_ip         = string
       subnetwork         = string

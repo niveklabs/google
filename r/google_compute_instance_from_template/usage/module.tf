@@ -1,5 +1,5 @@
 module "google_compute_instance_from_template" {
-  source = "./google/r/google_compute_instance_from_template"
+  source = "./modules/google/r/google_compute_instance_from_template"
 
   allow_stopping_for_update = null
   attached_disk = [{

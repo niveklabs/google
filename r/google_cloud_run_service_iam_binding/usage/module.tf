@@ -1,5 +1,5 @@
 module "google_cloud_run_service_iam_binding" {
-  source = "./google/r/google_cloud_run_service_iam_binding"
+  source = "./modules/google/r/google_cloud_run_service_iam_binding"
 
   location = null
   members  = []

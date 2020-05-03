@@ -1,5 +1,5 @@
 module "google_spanner_instance" {
-  source = "./google/r/google_spanner_instance"
+  source = "./modules/google/r/google_spanner_instance"
 
   config       = null
   display_name = null

@@ -1,5 +1,5 @@
 module "google_container_node_pool" {
-  source = "./google/r/google_container_node_pool"
+  source = "./modules/google/r/google_container_node_pool"
 
   cluster            = null
   initial_node_count = null

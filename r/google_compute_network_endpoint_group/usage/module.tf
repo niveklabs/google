@@ -1,5 +1,5 @@
 module "google_compute_network_endpoint_group" {
-  source = "./google/r/google_compute_network_endpoint_group"
+  source = "./modules/google/r/google_compute_network_endpoint_group"
 
   default_port          = null
   description           = null

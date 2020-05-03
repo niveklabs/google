@@ -1,5 +1,5 @@
 module "google_service_account_iam_binding" {
-  source = "./google/r/google_service_account_iam_binding"
+  source = "./modules/google/r/google_service_account_iam_binding"
 
   members            = []
   role               = null

@@ -1,5 +1,5 @@
 module "google_compute_region_health_check" {
-  source = "./google/r/google_compute_region_health_check"
+  source = "./modules/google/r/google_compute_region_health_check"
 
   check_interval_sec  = null
   description         = null

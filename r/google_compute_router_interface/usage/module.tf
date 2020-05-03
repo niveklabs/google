@@ -1,5 +1,5 @@
 module "google_compute_router_interface" {
-  source = "./google/r/google_compute_router_interface"
+  source = "./modules/google/r/google_compute_router_interface"
 
   interconnect_attachment = null
   ip_range                = null

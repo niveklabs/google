@@ -1,5 +1,5 @@
 module "google_app_engine_service_split_traffic" {
-  source = "./google/r/google_app_engine_service_split_traffic"
+  source = "./modules/google/r/google_app_engine_service_split_traffic"
 
   migrate_traffic = null
   project         = null

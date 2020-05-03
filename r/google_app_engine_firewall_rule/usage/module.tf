@@ -1,5 +1,5 @@
 module "google_app_engine_firewall_rule" {
-  source = "./google/r/google_app_engine_firewall_rule"
+  source = "./modules/google/r/google_app_engine_firewall_rule"
 
   action       = null
   description  = null

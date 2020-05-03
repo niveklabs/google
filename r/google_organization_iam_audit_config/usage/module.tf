@@ -1,5 +1,5 @@
 module "google_organization_iam_audit_config" {
-  source = "./google/r/google_organization_iam_audit_config"
+  source = "./modules/google/r/google_organization_iam_audit_config"
 
   org_id  = null
   service = null

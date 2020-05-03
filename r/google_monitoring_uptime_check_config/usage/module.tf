@@ -1,5 +1,5 @@
 module "google_monitoring_uptime_check_config" {
-  source = "./google/r/google_monitoring_uptime_check_config"
+  source = "./modules/google/r/google_monitoring_uptime_check_config"
 
   display_name     = null
   is_internal      = null

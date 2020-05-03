@@ -1,5 +1,5 @@
 module "google_filestore_instance" {
-  source = "./google/r/google_filestore_instance"
+  source = "./modules/google/r/google_filestore_instance"
 
   description = null
   labels      = {}

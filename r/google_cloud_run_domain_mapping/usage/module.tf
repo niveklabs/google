@@ -1,5 +1,5 @@
 module "google_cloud_run_domain_mapping" {
-  source = "./google/r/google_cloud_run_domain_mapping"
+  source = "./modules/google/r/google_cloud_run_domain_mapping"
 
   location = null
   name     = null

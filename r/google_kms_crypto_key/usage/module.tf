@@ -1,5 +1,5 @@
 module "google_kms_crypto_key" {
-  source = "./google/r/google_kms_crypto_key"
+  source = "./modules/google/r/google_kms_crypto_key"
 
   key_ring        = null
   labels          = {}

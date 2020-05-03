@@ -1,5 +1,5 @@
 module "google_kms_key_ring" {
-  source = "./google/r/google_kms_key_ring"
+  source = "./modules/google/r/google_kms_key_ring"
 
   location = null
   name     = null

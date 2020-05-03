@@ -1,3 +1,9 @@
+variable "drain_nat_ips" {
+  description = "(optional) - A list of URLs of the IP resources to be drained. These IPs must be\nvalid static external IPs that have been assigned to the NAT."
+  type        = set(string)
+  default     = null
+}
+
 variable "icmp_idle_timeout_sec" {
   description = "(optional) - Timeout (in seconds) for ICMP connections. Defaults to 30s if not set."
   type        = number

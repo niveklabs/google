@@ -1,5 +1,5 @@
 module "google_datastore_index" {
-  source = "./google/r/google_datastore_index"
+  source = "./modules/google/r/google_datastore_index"
 
   ancestor = null
   kind     = null

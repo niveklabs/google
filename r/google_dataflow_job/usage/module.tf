@@ -1,5 +1,5 @@
 module "google_dataflow_job" {
-  source = "./google/r/google_dataflow_job"
+  source = "./modules/google/r/google_dataflow_job"
 
   ip_configuration      = null
   labels                = {}

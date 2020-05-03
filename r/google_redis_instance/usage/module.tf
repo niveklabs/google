@@ -1,5 +1,5 @@
 module "google_redis_instance" {
-  source = "./google/r/google_redis_instance"
+  source = "./modules/google/r/google_redis_instance"
 
   alternative_location_id = null
   authorized_network      = null

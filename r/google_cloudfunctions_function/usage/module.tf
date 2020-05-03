@@ -1,5 +1,5 @@
 module "google_cloudfunctions_function" {
-  source = "./google/r/google_cloudfunctions_function"
+  source = "./modules/google/r/google_cloudfunctions_function"
 
   available_memory_mb   = null
   description           = null

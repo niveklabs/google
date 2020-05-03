@@ -1,5 +1,5 @@
 module "google_compute_target_instance" {
-  source = "./google/r/google_compute_target_instance"
+  source = "./modules/google/r/google_compute_target_instance"
 
   description = null
   instance    = null

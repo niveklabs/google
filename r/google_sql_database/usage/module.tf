@@ -1,5 +1,5 @@
 module "google_sql_database" {
-  source = "./google/r/google_sql_database"
+  source = "./modules/google/r/google_sql_database"
 
   charset   = null
   collation = null

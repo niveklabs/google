@@ -1,5 +1,5 @@
 module "google_compute_instance" {
-  source = "./google/r/google_compute_instance"
+  source = "./modules/google/r/google_compute_instance"
 
   allow_stopping_for_update = null
   can_ip_forward            = null

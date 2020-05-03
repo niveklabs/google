@@ -1,5 +1,5 @@
 module "google_storage_hmac_key" {
-  source = "./google/r/google_storage_hmac_key"
+  source = "./modules/google/r/google_storage_hmac_key"
 
   project               = null
   service_account_email = null

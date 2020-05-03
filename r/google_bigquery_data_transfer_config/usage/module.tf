@@ -1,5 +1,5 @@
 module "google_bigquery_data_transfer_config" {
-  source = "./google/r/google_bigquery_data_transfer_config"
+  source = "./modules/google/r/google_bigquery_data_transfer_config"
 
   data_refresh_window_days = null
   data_source_id           = null

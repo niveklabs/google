@@ -1,5 +1,5 @@
 module "google_container_analysis_note" {
-  source = "./google/r/google_container_analysis_note"
+  source = "./modules/google/r/google_container_analysis_note"
 
   name    = null
   project = null

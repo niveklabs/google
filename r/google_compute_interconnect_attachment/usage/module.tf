@@ -1,5 +1,5 @@
 module "google_compute_interconnect_attachment" {
-  source = "./google/r/google_compute_interconnect_attachment"
+  source = "./modules/google/r/google_compute_interconnect_attachment"
 
   admin_enabled            = null
   bandwidth                = null

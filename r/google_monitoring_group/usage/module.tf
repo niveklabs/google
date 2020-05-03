@@ -1,5 +1,5 @@
 module "google_monitoring_group" {
-  source = "./google/r/google_monitoring_group"
+  source = "./modules/google/r/google_monitoring_group"
 
   display_name = null
   filter       = null

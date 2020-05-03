@@ -1,5 +1,5 @@
 module "google_logging_organization_sink" {
-  source = "./google/r/google_logging_organization_sink"
+  source = "./modules/google/r/google_logging_organization_sink"
 
   destination      = null
   filter           = null

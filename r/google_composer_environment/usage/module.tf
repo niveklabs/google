@@ -1,5 +1,5 @@
 module "google_composer_environment" {
-  source = "./google/r/google_composer_environment"
+  source = "./modules/google/r/google_composer_environment"
 
   labels  = {}
   name    = null

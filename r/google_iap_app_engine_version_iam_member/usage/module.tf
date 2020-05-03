@@ -1,5 +1,5 @@
 module "google_iap_app_engine_version_iam_member" {
-  source = "./google/r/google_iap_app_engine_version_iam_member"
+  source = "./modules/google/r/google_iap_app_engine_version_iam_member"
 
   app_id     = null
   member     = null

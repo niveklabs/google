@@ -1,5 +1,5 @@
 module "google_compute_region_autoscaler" {
-  source = "./google/r/google_compute_region_autoscaler"
+  source = "./modules/google/r/google_compute_region_autoscaler"
 
   description = null
   name        = null

@@ -1,5 +1,5 @@
 module "google_monitoring_notification_channel" {
-  source = "./google/r/google_monitoring_notification_channel"
+  source = "./modules/google/r/google_monitoring_notification_channel"
 
   description  = null
   display_name = null

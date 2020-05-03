@@ -1,5 +1,5 @@
 module "google_app_engine_application_url_dispatch_rules" {
-  source = "./google/r/google_app_engine_application_url_dispatch_rules"
+  source = "./modules/google/r/google_app_engine_application_url_dispatch_rules"
 
   project = null
 

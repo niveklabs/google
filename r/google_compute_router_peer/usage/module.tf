@@ -1,5 +1,5 @@
 module "google_compute_router_peer" {
-  source = "./google/r/google_compute_router_peer"
+  source = "./modules/google/r/google_compute_router_peer"
 
   advertise_mode            = null
   advertised_groups         = []

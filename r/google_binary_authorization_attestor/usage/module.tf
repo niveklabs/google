@@ -1,5 +1,5 @@
 module "google_binary_authorization_attestor" {
-  source = "./google/r/google_binary_authorization_attestor"
+  source = "./modules/google/r/google_binary_authorization_attestor"
 
   description = null
   name        = null

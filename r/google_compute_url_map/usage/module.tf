@@ -1,5 +1,5 @@
 module "google_compute_url_map" {
-  source = "./google/r/google_compute_url_map"
+  source = "./modules/google/r/google_compute_url_map"
 
   default_service = null
   description     = null

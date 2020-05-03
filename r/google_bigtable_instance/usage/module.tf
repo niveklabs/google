@@ -1,5 +1,5 @@
 module "google_bigtable_instance" {
-  source = "./google/r/google_bigtable_instance"
+  source = "./modules/google/r/google_bigtable_instance"
 
   display_name  = null
   instance_type = null

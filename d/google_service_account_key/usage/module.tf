@@ -1,5 +1,5 @@
 module "google_service_account_key" {
-  source = "./google/d/google_service_account_key"
+  source = "./modules/google/d/google_service_account_key"
 
   name            = null
   project         = null

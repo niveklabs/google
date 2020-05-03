@@ -1,5 +1,5 @@
 module "google_compute_ssl_policy" {
-  source = "./google/r/google_compute_ssl_policy"
+  source = "./modules/google/r/google_compute_ssl_policy"
 
   custom_features = []
   description     = null

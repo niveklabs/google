@@ -1,7 +1,3 @@
-# google Provider
-
-[embedmd]:# (google.tf)
-```tf
 provider "google" {
   version = "3.12.0"
 
@@ -73,4 +69,3 @@ provider "google" {
     send_after      = null
   }
 }
-```

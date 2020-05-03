@@ -1,5 +1,5 @@
 module "google_cloud_scheduler_job" {
-  source = "./google/r/google_cloud_scheduler_job"
+  source = "./modules/google/r/google_cloud_scheduler_job"
 
   attempt_deadline = null
   description      = null

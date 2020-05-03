@@ -1,5 +1,5 @@
 module "google_compute_vpn_gateway" {
-  source = "./google/r/google_compute_vpn_gateway"
+  source = "./modules/google/r/google_compute_vpn_gateway"
 
   description = null
   name        = null

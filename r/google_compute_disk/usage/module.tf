@@ -1,5 +1,5 @@
 module "google_compute_disk" {
-  source = "./google/r/google_compute_disk"
+  source = "./modules/google/r/google_compute_disk"
 
   description               = null
   image                     = null

@@ -1,5 +1,5 @@
 module "google_endpoints_service" {
-  source = "./google/r/google_endpoints_service"
+  source = "./modules/google/r/google_endpoints_service"
 
   grpc_config          = null
   openapi_config       = null

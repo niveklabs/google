@@ -1,5 +1,5 @@
 module "google_compute_resource_policy" {
-  source = "./google/r/google_compute_resource_policy"
+  source = "./modules/google/r/google_compute_resource_policy"
 
   name    = null
   project = null

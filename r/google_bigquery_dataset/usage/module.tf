@@ -1,5 +1,5 @@
 module "google_bigquery_dataset" {
-  source = "./google/r/google_bigquery_dataset"
+  source = "./modules/google/r/google_bigquery_dataset"
 
   dataset_id                      = null
   default_partition_expiration_ms = null

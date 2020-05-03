@@ -1,5 +1,5 @@
 module "google_storage_notification" {
-  source = "./google/r/google_storage_notification"
+  source = "./modules/google/r/google_storage_notification"
 
   bucket             = null
   custom_attributes  = {}

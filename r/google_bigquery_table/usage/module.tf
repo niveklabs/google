@@ -1,5 +1,5 @@
 module "google_bigquery_table" {
-  source = "./google/r/google_bigquery_table"
+  source = "./modules/google/r/google_bigquery_table"
 
   clustering      = []
   dataset_id      = null

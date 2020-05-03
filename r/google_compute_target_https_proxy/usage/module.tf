@@ -1,5 +1,5 @@
 module "google_compute_target_https_proxy" {
-  source = "./google/r/google_compute_target_https_proxy"
+  source = "./modules/google/r/google_compute_target_https_proxy"
 
   description      = null
   name             = null

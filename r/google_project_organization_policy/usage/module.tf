@@ -1,5 +1,5 @@
 module "google_project_organization_policy" {
-  source = "./google/r/google_project_organization_policy"
+  source = "./modules/google/r/google_project_organization_policy"
 
   constraint = null
   project    = null

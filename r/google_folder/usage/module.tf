@@ -1,5 +1,5 @@
 module "google_folder" {
-  source = "./google/r/google_folder"
+  source = "./modules/google/r/google_folder"
 
   display_name = null
   parent       = null

@@ -1,5 +1,5 @@
 module "google_dataproc_cluster" {
-  source = "./google/r/google_dataproc_cluster"
+  source = "./modules/google/r/google_dataproc_cluster"
 
   labels  = {}
   name    = null

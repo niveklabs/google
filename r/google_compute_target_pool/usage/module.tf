@@ -1,5 +1,5 @@
 module "google_compute_target_pool" {
-  source = "./google/r/google_compute_target_pool"
+  source = "./modules/google/r/google_compute_target_pool"
 
   backup_pool      = null
   description      = null

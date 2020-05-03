@@ -1,5 +1,5 @@
 module "google_identity_platform_inbound_saml_config" {
-  source = "./google/r/google_identity_platform_inbound_saml_config"
+  source = "./modules/google/r/google_identity_platform_inbound_saml_config"
 
   display_name = null
   enabled      = null

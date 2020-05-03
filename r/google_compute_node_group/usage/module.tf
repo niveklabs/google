@@ -1,5 +1,5 @@
 module "google_compute_node_group" {
-  source = "./google/r/google_compute_node_group"
+  source = "./modules/google/r/google_compute_node_group"
 
   description   = null
   name          = null

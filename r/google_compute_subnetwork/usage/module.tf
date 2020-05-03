@@ -1,5 +1,5 @@
 module "google_compute_subnetwork" {
-  source = "./google/r/google_compute_subnetwork"
+  source = "./modules/google/r/google_compute_subnetwork"
 
   description              = null
   enable_flow_logs         = null

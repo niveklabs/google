@@ -1,5 +1,5 @@
 module "google_compute_security_policy" {
-  source = "./google/r/google_compute_security_policy"
+  source = "./modules/google/r/google_compute_security_policy"
 
   description = null
   name        = null

@@ -1,5 +1,5 @@
 module "google_compute_forwarding_rule" {
-  source = "./google/r/google_compute_forwarding_rule"
+  source = "./modules/google/r/google_compute_forwarding_rule"
 
   all_ports             = null
   backend_service       = null

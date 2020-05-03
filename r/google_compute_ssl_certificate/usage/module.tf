@@ -1,5 +1,5 @@
 module "google_compute_ssl_certificate" {
-  source = "./google/r/google_compute_ssl_certificate"
+  source = "./modules/google/r/google_compute_ssl_certificate"
 
   certificate = null
   description = null

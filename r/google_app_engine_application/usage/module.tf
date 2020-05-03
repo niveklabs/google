@@ -1,5 +1,5 @@
 module "google_app_engine_application" {
-  source = "./google/r/google_app_engine_application"
+  source = "./modules/google/r/google_app_engine_application"
 
   auth_domain    = null
   location_id    = null

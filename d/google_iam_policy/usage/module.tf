@@ -1,5 +1,5 @@
 module "google_iam_policy" {
-  source = "./google/d/google_iam_policy"
+  source = "./modules/google/d/google_iam_policy"
 
 
   audit_config = [{

@@ -1,5 +1,5 @@
 module "google_compute_network_endpoint" {
-  source = "./google/r/google_compute_network_endpoint"
+  source = "./modules/google/r/google_compute_network_endpoint"
 
   instance               = null
   ip_address             = null

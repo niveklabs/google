@@ -1,5 +1,5 @@
 module "google_compute_global_address" {
-  source = "./google/r/google_compute_global_address"
+  source = "./modules/google/r/google_compute_global_address"
 
   address       = null
   address_type  = null

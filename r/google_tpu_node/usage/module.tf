@@ -1,5 +1,5 @@
 module "google_tpu_node" {
-  source = "./google/r/google_tpu_node"
+  source = "./modules/google/r/google_tpu_node"
 
   accelerator_type   = null
   cidr_block         = null

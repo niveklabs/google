@@ -1,5 +1,5 @@
 module "google_firestore_index" {
-  source = "./google/r/google_firestore_index"
+  source = "./modules/google/r/google_firestore_index"
 
   collection  = null
   database    = null

@@ -1,5 +1,5 @@
 module "google_ml_engine_model" {
-  source = "./google/r/google_ml_engine_model"
+  source = "./modules/google/r/google_ml_engine_model"
 
   description                       = null
   labels                            = {}

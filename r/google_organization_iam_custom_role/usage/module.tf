@@ -1,5 +1,5 @@
 module "google_organization_iam_custom_role" {
-  source = "./google/r/google_organization_iam_custom_role"
+  source = "./modules/google/r/google_organization_iam_custom_role"
 
   description = null
   org_id      = null

@@ -1,6 +1,7 @@
 module "google_compute_router_nat" {
-  source = "./google/r/google_compute_router_nat"
+  source = "./modules/google/r/google_compute_router_nat"
 
+  drain_nat_ips                      = []
   icmp_idle_timeout_sec              = null
   min_ports_per_vm                   = null
   name                               = null

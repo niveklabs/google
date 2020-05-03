@@ -1,5 +1,5 @@
 module "google_compute_instance_template" {
-  source = "./google/r/google_compute_instance_template"
+  source = "./modules/google/r/google_compute_instance_template"
 
   can_ip_forward          = null
   description             = null
@@ -41,13 +41,15 @@ module "google_compute_instance_template" {
 
   network_interface = [{
     access_config = [{
-      nat_ip       = null
-      network_tier = null
+      nat_ip                 = null
+      network_tier           = null
+      public_ptr_domain_name = null
     }]
     alias_ip_range = [{
       ip_cidr_range         = null
       subnetwork_range_name = null
     }]
+    name               = null
     network            = null
     network_ip         = null
     subnetwork         = null

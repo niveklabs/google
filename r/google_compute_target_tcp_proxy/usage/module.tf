@@ -1,5 +1,5 @@
 module "google_compute_target_tcp_proxy" {
-  source = "./google/r/google_compute_target_tcp_proxy"
+  source = "./modules/google/r/google_compute_target_tcp_proxy"
 
   backend_service = null
   description     = null

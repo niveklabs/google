@@ -1,5 +1,5 @@
 module "google_compute_backend_bucket" {
-  source = "./google/r/google_compute_backend_bucket"
+  source = "./modules/google/r/google_compute_backend_bucket"
 
   bucket_name = null
   description = null

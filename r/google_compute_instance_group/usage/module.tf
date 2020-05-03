@@ -1,5 +1,5 @@
 module "google_compute_instance_group" {
-  source = "./google/r/google_compute_instance_group"
+  source = "./modules/google/r/google_compute_instance_group"
 
   description = null
   instances   = []

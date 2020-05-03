@@ -1,5 +1,5 @@
 module "google_compute_global_forwarding_rule" {
-  source = "./google/r/google_compute_global_forwarding_rule"
+  source = "./modules/google/r/google_compute_global_forwarding_rule"
 
   description           = null
   ip_address            = null

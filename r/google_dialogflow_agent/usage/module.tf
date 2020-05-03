@@ -1,5 +1,5 @@
 module "google_dialogflow_agent" {
-  source = "./google/r/google_dialogflow_agent"
+  source = "./modules/google/r/google_dialogflow_agent"
 
   api_version              = null
   avatar_uri               = null

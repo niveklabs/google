@@ -1,5 +1,5 @@
 module "google_logging_metric" {
-  source = "./google/r/google_logging_metric"
+  source = "./modules/google/r/google_logging_metric"
 
   description      = null
   filter           = null

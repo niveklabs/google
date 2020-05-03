@@ -1,5 +1,5 @@
 module "google_compute_region_backend_service" {
-  source = "./google/r/google_compute_region_backend_service"
+  source = "./modules/google/r/google_compute_region_backend_service"
 
   connection_draining_timeout_sec = null
   description                     = null

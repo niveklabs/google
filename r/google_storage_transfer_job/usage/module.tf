@@ -1,5 +1,5 @@
 module "google_storage_transfer_job" {
-  source = "./google/r/google_storage_transfer_job"
+  source = "./modules/google/r/google_storage_transfer_job"
 
   description = null
   project     = null

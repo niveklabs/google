@@ -1,5 +1,5 @@
 module "google_cloud_run_service" {
-  source = "./google/r/google_cloud_run_service"
+  source = "./modules/google/r/google_cloud_run_service"
 
   location = null
   name     = null

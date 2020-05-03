@@ -1,5 +1,5 @@
 module "google_identity_platform_tenant_default_supported_idp_config" {
-  source = "./google/r/google_identity_platform_tenant_default_supported_idp_config"
+  source = "./modules/google/r/google_identity_platform_tenant_default_supported_idp_config"
 
   client_id     = null
   client_secret = null

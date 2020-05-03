@@ -1,5 +1,5 @@
 module "google_spanner_database" {
-  source = "./google/r/google_spanner_database"
+  source = "./modules/google/r/google_spanner_database"
 
   ddl      = []
   instance = null

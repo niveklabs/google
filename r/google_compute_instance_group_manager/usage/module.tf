@@ -1,5 +1,5 @@
 module "google_compute_instance_group_manager" {
-  source = "./google/r/google_compute_instance_group_manager"
+  source = "./modules/google/r/google_compute_instance_group_manager"
 
   base_instance_name = null
   description        = null

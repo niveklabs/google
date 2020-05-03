@@ -1,5 +1,5 @@
 module "google_storage_bucket" {
-  source = "./google/r/google_storage_bucket"
+  source = "./modules/google/r/google_storage_bucket"
 
   bucket_policy_only       = null
   default_event_based_hold = null

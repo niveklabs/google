@@ -1,5 +1,5 @@
 module "google_compute_backend_service" {
-  source = "./google/r/google_compute_backend_service"
+  source = "./modules/google/r/google_compute_backend_service"
 
   affinity_cookie_ttl_sec         = null
   connection_draining_timeout_sec = null

@@ -1,5 +1,5 @@
 module "google_cloud_tasks_queue" {
-  source = "./google/r/google_cloud_tasks_queue"
+  source = "./modules/google/r/google_cloud_tasks_queue"
 
   location = null
   name     = null

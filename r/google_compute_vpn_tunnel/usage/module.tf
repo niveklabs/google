@@ -1,5 +1,5 @@
 module "google_compute_vpn_tunnel" {
-  source = "./google/r/google_compute_vpn_tunnel"
+  source = "./modules/google/r/google_compute_vpn_tunnel"
 
   description             = null
   ike_version             = null

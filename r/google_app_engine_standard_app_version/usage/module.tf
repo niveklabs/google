@@ -1,5 +1,5 @@
 module "google_app_engine_standard_app_version" {
-  source = "./google/r/google_app_engine_standard_app_version"
+  source = "./modules/google/r/google_app_engine_standard_app_version"
 
   delete_service_on_destroy = null
   env_variables             = {}

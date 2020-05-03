@@ -1,5 +1,5 @@
 module "google_cloudiot_registry" {
-  source = "./google/r/google_cloudiot_registry"
+  source = "./modules/google/r/google_cloudiot_registry"
 
   event_notification_config = {}
   http_config               = {}

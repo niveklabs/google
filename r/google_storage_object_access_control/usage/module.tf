@@ -1,5 +1,5 @@
 module "google_storage_object_access_control" {
-  source = "./google/r/google_storage_object_access_control"
+  source = "./modules/google/r/google_storage_object_access_control"
 
   bucket = null
   entity = null

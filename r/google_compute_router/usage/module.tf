@@ -1,5 +1,5 @@
 module "google_compute_router" {
-  source = "./google/r/google_compute_router"
+  source = "./modules/google/r/google_compute_router"
 
   description = null
   name        = null

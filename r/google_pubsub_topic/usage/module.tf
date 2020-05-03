@@ -1,5 +1,5 @@
 module "google_pubsub_topic" {
-  source = "./google/r/google_pubsub_topic"
+  source = "./modules/google/r/google_pubsub_topic"
 
   kms_key_name = null
   labels       = {}

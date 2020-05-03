@@ -1,5 +1,5 @@
 module "google_binary_authorization_policy" {
-  source = "./google/r/google_binary_authorization_policy"
+  source = "./modules/google/r/google_binary_authorization_policy"
 
   description                   = null
   global_policy_evaluation_mode = null

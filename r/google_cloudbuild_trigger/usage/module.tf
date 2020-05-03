@@ -1,5 +1,5 @@
 module "google_cloudbuild_trigger" {
-  source = "./google/r/google_cloudbuild_trigger"
+  source = "./modules/google/r/google_cloudbuild_trigger"
 
   description    = null
   disabled       = null

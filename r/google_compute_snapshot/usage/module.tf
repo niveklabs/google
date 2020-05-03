@@ -1,5 +1,5 @@
 module "google_compute_snapshot" {
-  source = "./google/r/google_compute_snapshot"
+  source = "./modules/google/r/google_compute_snapshot"
 
   description = null
   labels      = {}

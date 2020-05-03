@@ -1,5 +1,5 @@
 module "google_compute_node_template" {
-  source = "./google/r/google_compute_node_template"
+  source = "./modules/google/r/google_compute_node_template"
 
   description          = null
   name                 = null

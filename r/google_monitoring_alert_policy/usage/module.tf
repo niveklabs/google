@@ -1,5 +1,5 @@
 module "google_monitoring_alert_policy" {
-  source = "./google/r/google_monitoring_alert_policy"
+  source = "./modules/google/r/google_monitoring_alert_policy"
 
   combiner              = null
   display_name          = null

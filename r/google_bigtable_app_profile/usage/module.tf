@@ -1,5 +1,5 @@
 module "google_bigtable_app_profile" {
-  source = "./google/r/google_bigtable_app_profile"
+  source = "./modules/google/r/google_bigtable_app_profile"
 
   app_profile_id                = null
   description                   = null

@@ -1,10 +1,11 @@
 terraform {
   required_providers {
-    google = ">= 3.11.0"
+    google = ">= 3.12.0"
   }
 }
 
 resource "google_compute_router_nat" "this" {
+  drain_nat_ips                      = var.drain_nat_ips
   icmp_idle_timeout_sec              = var.icmp_idle_timeout_sec
   min_ports_per_vm                   = var.min_ports_per_vm
   name                               = var.name

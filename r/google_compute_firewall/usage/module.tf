@@ -1,5 +1,5 @@
 module "google_compute_firewall" {
-  source = "./google/r/google_compute_firewall"
+  source = "./modules/google/r/google_compute_firewall"
 
   description             = null
   destination_ranges      = []

@@ -1,5 +1,5 @@
 module "google_compute_route" {
-  source = "./google/r/google_compute_route"
+  source = "./modules/google/r/google_compute_route"
 
   description            = null
   dest_range             = null

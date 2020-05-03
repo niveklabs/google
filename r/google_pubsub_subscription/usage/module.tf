@@ -1,5 +1,5 @@
 module "google_pubsub_subscription" {
-  source = "./google/r/google_pubsub_subscription"
+  source = "./modules/google/r/google_pubsub_subscription"
 
   ack_deadline_seconds       = null
   labels                     = {}

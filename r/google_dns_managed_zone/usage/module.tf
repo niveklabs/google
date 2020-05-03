@@ -1,5 +1,5 @@
 module "google_dns_managed_zone" {
-  source = "./google/r/google_dns_managed_zone"
+  source = "./modules/google/r/google_dns_managed_zone"
 
   description = null
   dns_name    = null

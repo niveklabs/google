@@ -1,5 +1,5 @@
 module "google_sql_database_instance" {
-  source = "./google/r/google_sql_database_instance"
+  source = "./modules/google/r/google_sql_database_instance"
 
   database_version     = null
   master_instance_name = null

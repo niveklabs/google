@@ -1,5 +1,5 @@
 module "google_deployment_manager_deployment" {
-  source = "./google/r/google_deployment_manager_deployment"
+  source = "./modules/google/r/google_deployment_manager_deployment"
 
   create_policy = null
   delete_policy = null

@@ -1,5 +1,5 @@
 module "google_compute_project_metadata_item" {
-  source = "./google/r/google_compute_project_metadata_item"
+  source = "./modules/google/r/google_compute_project_metadata_item"
 
   key     = null
   project = null

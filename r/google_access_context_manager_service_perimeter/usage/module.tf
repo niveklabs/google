@@ -1,5 +1,5 @@
 module "google_access_context_manager_service_perimeter" {
-  source = "./google/r/google_access_context_manager_service_perimeter"
+  source = "./modules/google/r/google_access_context_manager_service_perimeter"
 
   description    = null
   name           = null

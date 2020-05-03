@@ -1,5 +1,5 @@
 module "google_folder_organization_policy" {
-  source = "./google/r/google_folder_organization_policy"
+  source = "./modules/google/r/google_folder_organization_policy"
 
   constraint = null
   folder     = null

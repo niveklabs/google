@@ -1,5 +1,5 @@
 module "google_compute_region_disk" {
-  source = "./google/r/google_compute_region_disk"
+  source = "./modules/google/r/google_compute_region_disk"
 
   description               = null
   labels                    = {}

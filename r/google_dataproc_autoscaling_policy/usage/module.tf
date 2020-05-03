@@ -1,5 +1,5 @@
 module "google_dataproc_autoscaling_policy" {
-  source = "./google/r/google_dataproc_autoscaling_policy"
+  source = "./modules/google/r/google_dataproc_autoscaling_policy"
 
   location  = null
   policy_id = null

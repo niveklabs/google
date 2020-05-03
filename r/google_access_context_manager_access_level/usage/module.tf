@@ -1,5 +1,5 @@
 module "google_access_context_manager_access_level" {
-  source = "./google/r/google_access_context_manager_access_level"
+  source = "./modules/google/r/google_access_context_manager_access_level"
 
   description = null
   name        = null

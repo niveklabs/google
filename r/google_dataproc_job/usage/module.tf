@@ -1,5 +1,5 @@
 module "google_dataproc_job" {
-  source = "./google/r/google_dataproc_job"
+  source = "./modules/google/r/google_dataproc_job"
 
   force_delete = null
   labels       = {}

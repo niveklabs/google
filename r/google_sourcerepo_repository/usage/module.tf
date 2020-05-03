@@ -1,5 +1,5 @@
 module "google_sourcerepo_repository" {
-  source = "./google/r/google_sourcerepo_repository"
+  source = "./modules/google/r/google_sourcerepo_repository"
 
   name    = null
   project = null

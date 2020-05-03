@@ -1,5 +1,5 @@
 module "google_compute_reservation" {
-  source = "./google/r/google_compute_reservation"
+  source = "./modules/google/r/google_compute_reservation"
 
   description                   = null
   name                          = null

@@ -1,5 +1,5 @@
 module "google_iap_web_backend_service_iam_binding" {
-  source = "./google/r/google_iap_web_backend_service_iam_binding"
+  source = "./modules/google/r/google_iap_web_backend_service_iam_binding"
 
   members             = []
   project             = null

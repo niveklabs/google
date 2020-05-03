@@ -1,5 +1,5 @@
 module "google_service_account_key" {
-  source = "./google/r/google_service_account_key"
+  source = "./modules/google/r/google_service_account_key"
 
   key_algorithm      = null
   pgp_key            = null

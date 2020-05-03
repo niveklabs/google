@@ -1,5 +1,5 @@
 module "google_container_cluster" {
-  source = "./google/r/google_container_cluster"
+  source = "./modules/google/r/google_container_cluster"
 
   additional_zones            = []
   cluster_ipv4_cidr           = null

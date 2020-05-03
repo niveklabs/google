@@ -1,5 +1,5 @@
 module "google_project" {
-  source = "./google/r/google_project"
+  source = "./modules/google/r/google_project"
 
   auto_create_network = null
   billing_account     = null
