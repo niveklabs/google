@@ -62,4 +62,9 @@ module "google_container_node_pool" {
     delete = null
     update = null
   }]
+
+  upgrade_settings = [{
+    max_surge       = null
+    max_unavailable = null
+  }]
 }

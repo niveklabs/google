@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.13.0"
+    google = ">= 3.14.0"
   }
 }
 
@@ -82,6 +82,14 @@ resource "google_container_node_pool" "this" {
       create = timeouts.value["create"]
       delete = timeouts.value["delete"]
       update = timeouts.value["update"]
+    }
+  }
+
+  dynamic "upgrade_settings" {
+    for_each = var.upgrade_settings
+    content {
+      max_surge       = upgrade_settings.value["max_surge"]
+      max_unavailable = upgrade_settings.value["max_unavailable"]
     }
   }
 

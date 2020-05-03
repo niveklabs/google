@@ -1,12 +1,13 @@
 terraform {
   required_providers {
-    google = ">= 3.13.0"
+    google = ">= 3.14.0"
   }
 }
 
 resource "google_redis_instance" "this" {
   alternative_location_id = var.alternative_location_id
   authorized_network      = var.authorized_network
+  connect_mode            = var.connect_mode
   display_name            = var.display_name
   labels                  = var.labels
   location_id             = var.location_id

@@ -18,6 +18,11 @@ output "cpu_platform" {
   value       = google_compute_instance_from_template.this.cpu_platform
 }
 
+output "current_status" {
+  description = "returns a string"
+  value       = google_compute_instance_from_template.this.current_status
+}
+
 output "deletion_protection" {
   description = "returns a bool"
   value       = google_compute_instance_from_template.this.deletion_protection

@@ -1,11 +1,12 @@
 terraform {
   required_providers {
-    google = ">= 3.13.0"
+    google = ">= 3.14.0"
   }
 }
 
 resource "google_compute_forwarding_rule" "this" {
   all_ports             = var.all_ports
+  allow_global_access   = var.allow_global_access
   backend_service       = var.backend_service
   description           = var.description
   ip_address            = var.ip_address

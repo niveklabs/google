@@ -3,6 +3,11 @@ output "cpu_platform" {
   value       = google_compute_instance.this.cpu_platform
 }
 
+output "current_status" {
+  description = "returns a string"
+  value       = google_compute_instance.this.current_status
+}
+
 output "guest_accelerator" {
   description = "returns a list of object"
   value       = google_compute_instance.this.guest_accelerator

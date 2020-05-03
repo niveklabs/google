@@ -4,6 +4,12 @@ variable "all_ports" {
   default     = null
 }
 
+variable "allow_global_access" {
+  description = "(optional) - If true, clients can access ILB from all regions.\nOtherwise only allows from the local region the ILB is located at."
+  type        = bool
+  default     = null
+}
+
 variable "backend_service" {
   description = "(optional) - A BackendService to receive the matched traffic. This is used only\nfor INTERNAL load balancing."
   type        = string

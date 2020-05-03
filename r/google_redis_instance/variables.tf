@@ -10,6 +10,12 @@ variable "authorized_network" {
   default     = null
 }
 
+variable "connect_mode" {
+  description = "(optional) - The connection mode of the Redis instance. Can be either\n'DIRECT_PEERING' or 'PRIVATE_SERVICE_ACCESS'. The default\nconnect mode if not provided is 'DIRECT_PEERING'."
+  type        = string
+  default     = null
+}
+
 variable "display_name" {
   description = "(optional) - An arbitrary and optional user-provided name for the instance."
   type        = string

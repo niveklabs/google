@@ -2,6 +2,7 @@ module "google_compute_forwarding_rule" {
   source = "./modules/google/r/google_compute_forwarding_rule"
 
   all_ports             = null
+  allow_global_access   = null
   backend_service       = null
   description           = null
   ip_address            = null

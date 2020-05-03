@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.13.0"
+    google = ">= 3.14.0"
   }
 }
 
@@ -271,6 +271,14 @@ resource "google_container_cluster" "this" {
             }
           }
 
+        }
+      }
+
+      dynamic "upgrade_settings" {
+        for_each = node_pool.value.upgrade_settings
+        content {
+          max_surge       = upgrade_settings.value["max_surge"]
+          max_unavailable = upgrade_settings.value["max_unavailable"]
         }
       }
 

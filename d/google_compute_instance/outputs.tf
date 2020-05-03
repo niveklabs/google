@@ -23,6 +23,11 @@ output "cpu_platform" {
   value       = data.google_compute_instance.this.cpu_platform
 }
 
+output "current_status" {
+  description = "returns a string"
+  value       = data.google_compute_instance.this.current_status
+}
+
 output "deletion_protection" {
   description = "returns a bool"
   value       = data.google_compute_instance.this.deletion_protection

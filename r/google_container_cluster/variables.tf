@@ -395,7 +395,13 @@ variable "node_pool" {
         }
       ))
       node_count = number
-      version    = string
+      upgrade_settings = list(object(
+        {
+          max_surge       = number
+          max_unavailable = number
+        }
+      ))
+      version = string
     }
   ))
   default = []

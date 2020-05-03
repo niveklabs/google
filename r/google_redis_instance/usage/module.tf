@@ -3,6 +3,7 @@ module "google_redis_instance" {
 
   alternative_location_id = null
   authorized_network      = null
+  connect_mode            = null
   display_name            = null
   labels                  = {}
   location_id             = null

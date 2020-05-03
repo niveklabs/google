@@ -147,3 +147,14 @@ variable "timeouts" {
   default = []
 }
 
+variable "upgrade_settings" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      max_surge       = number
+      max_unavailable = number
+    }
+  ))
+  default = []
+}
+

@@ -179,7 +179,11 @@ module "google_container_cluster" {
       }]
     }]
     node_count = null
-    version    = null
+    upgrade_settings = [{
+      max_surge       = null
+      max_unavailable = null
+    }]
+    version = null
   }]
 
   pod_security_policy_config = [{
