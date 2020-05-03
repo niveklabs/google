@@ -5,7 +5,7 @@ variable "display_name" {
 }
 
 variable "labels" {
-  description = "(optional) - Configuration fields that define the channel and its behavior. The\npermissible and required labels are specified in the\nNotificationChannelDescriptor corresponding to the type field.\n\n**Note**: Some NotificationChannelDescriptor labels are\nsensitive and the API will return an partially-obfuscated value.\nFor example, for '\"type\": \"slack\"' channels, an 'auth_token'\nlabel with value \"SECRET\" will be obfuscated as \"**CRET\". In order\nto avoid a diff, Terraform will use the state value if it appears\nthat the obfuscated value matches the state value in\nlength/unobfuscated characters. However, Terraform will not detect a\ndiff if the obfuscated portion of the value was changed outside of\nTerraform."
+  description = "(optional) - Configuration fields that define the channel and its behavior. The\npermissible and required labels are specified in the\nNotificationChannelDescriptor corresponding to the type field.\n\nLabels with sensitive data are obfuscated by the API and therefore Terraform cannot\ndetermine if there are upstream changes to these fields. They can also be configured via\nthe sensitive_labels block, but cannot be configured in both places."
   type        = map(string)
   default     = null
 }

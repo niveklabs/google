@@ -9,6 +9,12 @@ module "google_monitoring_notification_channel" {
   type         = null
   user_labels  = {}
 
+  sensitive_labels = [{
+    auth_token  = null
+    password    = null
+    service_key = null
+  }]
+
   timeouts = [{
     create = null
     delete = null

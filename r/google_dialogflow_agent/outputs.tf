@@ -23,11 +23,6 @@ output "project" {
   value       = google_dialogflow_agent.this.project
 }
 
-output "tier" {
-  description = "returns a string"
-  value       = google_dialogflow_agent.this.tier
-}
-
 output "this" {
   value = google_dialogflow_agent.this
 }

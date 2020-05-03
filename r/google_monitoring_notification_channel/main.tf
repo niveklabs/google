@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.12.0"
+    google = ">= 3.13.0"
   }
 }
 
@@ -12,6 +12,15 @@ resource "google_monitoring_notification_channel" "this" {
   project      = var.project
   type         = var.type
   user_labels  = var.user_labels
+
+  dynamic "sensitive_labels" {
+    for_each = var.sensitive_labels
+    content {
+      auth_token  = sensitive_labels.value["auth_token"]
+      password    = sensitive_labels.value["password"]
+      service_key = sensitive_labels.value["service_key"]
+    }
+  }
 
   dynamic "timeouts" {
     for_each = var.timeouts

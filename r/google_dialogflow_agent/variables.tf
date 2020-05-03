@@ -57,7 +57,7 @@ variable "supported_language_codes" {
 }
 
 variable "tier" {
-  description = "(optional) - The agent tier. If not specified, TIER_STANDARD is assumed.\n* TIER_STANDARD: Standard tier.\n* TIER_ENTERPRISE: Enterprise tier (Essentials).\n* TIER_ENTERPRISE_PLUS: Enterprise tier (Plus).\nNOTE: This field seems to have eventual consistency in the API. Updating this field to a new value, or even \ncreating a new agent with a tier that is different from a previous agent in the same project will take some\ntime to propagate. The provider will wait for the API to show consistency, which can lead to longer apply times."
+  description = "(optional) - The agent tier. If not specified, TIER_STANDARD is assumed.\n* TIER_STANDARD: Standard tier.\n* TIER_ENTERPRISE: Enterprise tier (Essentials).\n* TIER_ENTERPRISE_PLUS: Enterprise tier (Plus).\nNOTE: Due to consistency issues, the provider will not read this field from the API. Drift is possible between \nthe Terraform state and Dialogflow if the agent tier is changed outside of Terraform."
   type        = string
   default     = null
 }
