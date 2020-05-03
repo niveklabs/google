@@ -21,7 +21,7 @@ variable "network" {
 }
 
 variable "network_endpoint_type" {
-  description = "(optional) - Type of network endpoints in this network endpoint group. Currently\nthe only supported value is GCE_VM_IP_PORT."
+  description = "(optional) - Type of network endpoints in this network endpoint group. The only supported value is GCE_VM_IP_PORT"
   type        = string
   default     = null
 }

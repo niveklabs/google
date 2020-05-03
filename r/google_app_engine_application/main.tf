@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.17.0"
+    google = ">= 3.18.0"
   }
 }
 
@@ -20,6 +20,7 @@ resource "google_app_engine_application" "this" {
   dynamic "iap" {
     for_each = var.iap
     content {
+      enabled              = iap.value["enabled"]
       oauth2_client_id     = iap.value["oauth2_client_id"]
       oauth2_client_secret = iap.value["oauth2_client_secret"]
     }

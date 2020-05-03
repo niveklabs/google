@@ -8,6 +8,11 @@ output "id" {
   value       = google_organization_iam_custom_role.this.id
 }
 
+output "name" {
+  description = "returns a string"
+  value       = google_organization_iam_custom_role.this.name
+}
+
 output "this" {
   value = google_organization_iam_custom_role.this
 }

@@ -11,6 +11,7 @@ module "google_app_engine_application" {
   }]
 
   iap = [{
+    enabled                     = null
     oauth2_client_id            = null
     oauth2_client_secret        = null
     oauth2_client_secret_sha256 = null

@@ -5,8 +5,9 @@ variable "description" {
 }
 
 variable "display_name" {
-  description = "(required) - An optional human-readable name for this notification channel. It is recommended that you specify a non-empty and unique name in order to make it easier to identify the channels in your project, though this is not enforced. The display name is limited to 512 Unicode characters."
+  description = "(optional) - An optional human-readable name for this notification channel. It is recommended that you specify a non-empty and unique name in order to make it easier to identify the channels in your project, though this is not enforced. The display name is limited to 512 Unicode characters."
   type        = string
+  default     = null
 }
 
 variable "enabled" {

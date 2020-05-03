@@ -35,6 +35,7 @@ variable "iap" {
   description = "nested mode: NestingList, min items: 0, max items: 1"
   type = set(object(
     {
+      enabled                     = bool
       oauth2_client_id            = string
       oauth2_client_secret        = string
       oauth2_client_secret_sha256 = string
