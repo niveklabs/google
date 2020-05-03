@@ -1,5 +1,5 @@
 provider "google" {
-  version = "3.16.0"
+  version = "3.17.0"
 
   access_context_manager_custom_endpoint   = null
   access_token                             = null
@@ -40,6 +40,7 @@ provider "google" {
   logging_custom_endpoint                  = null
   ml_engine_custom_endpoint                = null
   monitoring_custom_endpoint               = null
+  os_login_custom_endpoint                 = null
   project                                  = null
   pubsub_custom_endpoint                   = null
   redis_custom_endpoint                    = null

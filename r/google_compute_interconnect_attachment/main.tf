@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.16.0"
+    google = ">= 3.17.0"
   }
 }
 
@@ -23,6 +23,7 @@ resource "google_compute_interconnect_attachment" "this" {
     content {
       create = timeouts.value["create"]
       delete = timeouts.value["delete"]
+      update = timeouts.value["update"]
     }
   }
 

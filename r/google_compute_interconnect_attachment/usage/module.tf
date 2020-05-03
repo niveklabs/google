@@ -17,5 +17,6 @@ module "google_compute_interconnect_attachment" {
   timeouts = [{
     create = null
     delete = null
+    update = null
   }]
 }

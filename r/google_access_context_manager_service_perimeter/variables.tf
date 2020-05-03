@@ -25,6 +25,30 @@ variable "title" {
   type        = string
 }
 
+variable "use_explicit_dry_run_spec" {
+  description = "(optional) - Use explicit dry run spec flag. Ordinarily, a dry-run spec implicitly exists\nfor all Service Perimeters, and that spec is identical to the status for those\nService Perimeters. When this flag is set, it inhibits the generation of the\nimplicit spec, thereby allowing the user to explicitly provide a\nconfiguration (\"spec\") to use in a dry-run version of the Service Perimeter.\nThis allows the user to test changes to the enforced config (\"status\") without\nactually enforcing them. This testing is done through analyzing the differences\nbetween currently enforced and suggested restrictions. useExplicitDryRunSpec must\nbet set to True if any of the fields in the spec are set to non-default values."
+  type        = bool
+  default     = null
+}
+
+variable "spec" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      access_levels       = list(string)
+      resources           = list(string)
+      restricted_services = list(string)
+      vpc_accessible_services = list(object(
+        {
+          allowed_services   = list(string)
+          enable_restriction = bool
+        }
+      ))
+    }
+  ))
+  default = []
+}
+
 variable "status" {
   description = "nested mode: NestingList, min items: 0, max items: 1"
   type = set(object(
