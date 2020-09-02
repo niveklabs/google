@@ -1,5 +1,5 @@
 provider "google" {
-  version = "3.30.0"
+  version = "3.31.0"
 
   # access_context_manager_custom_endpoint - (optional) is a type of string
   access_context_manager_custom_endpoint = null

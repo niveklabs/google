@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.30.0"
+    google = ">= 3.31.0"
   }
 }
 
@@ -29,6 +29,7 @@ resource "google_bigquery_table" "this" {
       compression           = external_data_configuration.value["compression"]
       ignore_unknown_values = external_data_configuration.value["ignore_unknown_values"]
       max_bad_records       = external_data_configuration.value["max_bad_records"]
+      schema                = external_data_configuration.value["schema"]
       source_format         = external_data_configuration.value["source_format"]
       source_uris           = external_data_configuration.value["source_uris"]
 

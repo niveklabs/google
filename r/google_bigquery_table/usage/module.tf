@@ -45,6 +45,7 @@ module "google_bigquery_table" {
     }]
     ignore_unknown_values = null
     max_bad_records       = null
+    schema                = null
     source_format         = null
     source_uris           = []
   }]

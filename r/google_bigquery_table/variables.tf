@@ -40,7 +40,7 @@ variable "project" {
 }
 
 variable "schema" {
-  description = "(optional) - A JSON schema for the table. Schema is required for CSV and JSON formats and is disallowed for Google Cloud Bigtable, Cloud Datastore backups, and Avro formats when using external tables."
+  description = "(optional) - A JSON schema for the table."
   type        = string
   default     = null
 }
@@ -90,6 +90,7 @@ variable "external_data_configuration" {
       ))
       ignore_unknown_values = bool
       max_bad_records       = number
+      schema                = string
       source_format         = string
       source_uris           = list(string)
     }
