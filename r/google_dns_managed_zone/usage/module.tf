@@ -26,6 +26,19 @@ module "google_dns_managed_zone" {
     state         = null
   }]
 
+  forwarding_config = [{
+    target_name_servers = [{
+      forwarding_path = null
+      ipv4_address    = null
+    }]
+  }]
+
+  peering_config = [{
+    target_network = [{
+      network_url = null
+    }]
+  }]
+
   private_visibility_config = [{
     networks = [{
       network_url = null

@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.23.0"
+    google = ">= 3.24.0"
   }
 }
 
@@ -137,6 +137,38 @@ resource "google_app_engine_flexible_app_version" "this" {
     for_each = var.entrypoint
     content {
       shell = entrypoint.value["shell"]
+    }
+  }
+
+  dynamic "handlers" {
+    for_each = var.handlers
+    content {
+      auth_fail_action            = handlers.value["auth_fail_action"]
+      login                       = handlers.value["login"]
+      redirect_http_response_code = handlers.value["redirect_http_response_code"]
+      security_level              = handlers.value["security_level"]
+      url_regex                   = handlers.value["url_regex"]
+
+      dynamic "script" {
+        for_each = handlers.value.script
+        content {
+          script_path = script.value["script_path"]
+        }
+      }
+
+      dynamic "static_files" {
+        for_each = handlers.value.static_files
+        content {
+          application_readable  = static_files.value["application_readable"]
+          expiration            = static_files.value["expiration"]
+          http_headers          = static_files.value["http_headers"]
+          mime_type             = static_files.value["mime_type"]
+          path                  = static_files.value["path"]
+          require_matching_file = static_files.value["require_matching_file"]
+          upload_path_regex     = static_files.value["upload_path_regex"]
+        }
+      }
+
     }
   }
 

@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.23.0"
+    google = ">= 3.24.0"
   }
 }
 
@@ -26,6 +26,35 @@ resource "google_dns_managed_zone" "this" {
           key_length = default_key_specs.value["key_length"]
           key_type   = default_key_specs.value["key_type"]
           kind       = default_key_specs.value["kind"]
+        }
+      }
+
+    }
+  }
+
+  dynamic "forwarding_config" {
+    for_each = var.forwarding_config
+    content {
+
+      dynamic "target_name_servers" {
+        for_each = forwarding_config.value.target_name_servers
+        content {
+          forwarding_path = target_name_servers.value["forwarding_path"]
+          ipv4_address    = target_name_servers.value["ipv4_address"]
+        }
+      }
+
+    }
+  }
+
+  dynamic "peering_config" {
+    for_each = var.peering_config
+    content {
+
+      dynamic "target_network" {
+        for_each = peering_config.value.target_network
+        content {
+          network_url = target_network.value["network_url"]
         }
       }
 

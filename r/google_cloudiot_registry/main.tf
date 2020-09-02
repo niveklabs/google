@@ -1,11 +1,10 @@
 terraform {
   required_providers {
-    google = ">= 3.23.0"
+    google = ">= 3.24.0"
   }
 }
 
 resource "google_cloudiot_registry" "this" {
-  event_notification_config = var.event_notification_config
   http_config               = var.http_config
   log_level                 = var.log_level
   mqtt_config               = var.mqtt_config
@@ -26,6 +25,15 @@ resource "google_cloudiot_registry" "this" {
     content {
       pubsub_topic_name = event_notification_configs.value["pubsub_topic_name"]
       subfolder_matches = event_notification_configs.value["subfolder_matches"]
+    }
+  }
+
+  dynamic "timeouts" {
+    for_each = var.timeouts
+    content {
+      create = timeouts.value["create"]
+      delete = timeouts.value["delete"]
+      update = timeouts.value["update"]
     }
   }
 

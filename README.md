@@ -3,7 +3,7 @@
 [embedmd]:# (google.tf)
 ```tf
 provider "google" {
-  version = "3.23.0"
+  version = "3.24.0"
 
   # access_context_manager_custom_endpoint - (optional) is a type of string
   access_context_manager_custom_endpoint = null
@@ -47,6 +47,8 @@ provider "google" {
   container_custom_endpoint = null
   # credentials - (optional) is a type of string
   credentials = null
+  # data_catalog_custom_endpoint - (optional) is a type of string
+  data_catalog_custom_endpoint = null
   # dataflow_custom_endpoint - (optional) is a type of string
   dataflow_custom_endpoint = null
   # dataproc_beta_custom_endpoint - (optional) is a type of string
@@ -107,6 +109,8 @@ provider "google" {
   runtimeconfig_custom_endpoint = null
   # scopes - (optional) is a type of list of string
   scopes = []
+  # secret_manager_custom_endpoint - (optional) is a type of string
+  secret_manager_custom_endpoint = null
   # security_center_custom_endpoint - (optional) is a type of string
   security_center_custom_endpoint = null
   # service_management_custom_endpoint - (optional) is a type of string

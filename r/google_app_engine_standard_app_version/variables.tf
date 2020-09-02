@@ -34,7 +34,7 @@ variable "runtime" {
 }
 
 variable "runtime_api_version" {
-  description = "(optional) - The version of the API in the given runtime environment. \nPlease see the app.yaml reference for valid values at https://cloud.google.com/appengine/docs/standard//config/appref"
+  description = "(optional) - The version of the API in the given runtime environment.\nPlease see the app.yaml reference for valid values at https://cloud.google.com/appengine/docs/standard//config/appref"
   type        = string
   default     = null
 }

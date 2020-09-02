@@ -1,8 +1,3 @@
-output "event_notification_config" {
-  description = "returns a map of string"
-  value       = google_cloudiot_registry.this.event_notification_config
-}
-
 output "http_config" {
   description = "returns a map of string"
   value       = google_cloudiot_registry.this.http_config

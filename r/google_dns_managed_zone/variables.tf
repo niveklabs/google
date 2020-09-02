@@ -52,6 +52,35 @@ variable "dnssec_config" {
   default = []
 }
 
+variable "forwarding_config" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      target_name_servers = set(object(
+        {
+          forwarding_path = string
+          ipv4_address    = string
+        }
+      ))
+    }
+  ))
+  default = []
+}
+
+variable "peering_config" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      target_network = list(object(
+        {
+          network_url = string
+        }
+      ))
+    }
+  ))
+  default = []
+}
+
 variable "private_visibility_config" {
   description = "nested mode: NestingList, min items: 0, max items: 1"
   type = set(object(

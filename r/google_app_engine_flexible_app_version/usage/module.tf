@@ -103,6 +103,26 @@ module "google_app_engine_flexible_app_version" {
     shell = null
   }]
 
+  handlers = [{
+    auth_fail_action            = null
+    login                       = null
+    redirect_http_response_code = null
+    script = [{
+      script_path = null
+    }]
+    security_level = null
+    static_files = [{
+      application_readable  = null
+      expiration            = null
+      http_headers          = {}
+      mime_type             = null
+      path                  = null
+      require_matching_file = null
+      upload_path_regex     = null
+    }]
+    url_regex = null
+  }]
+
   liveness_check = [{
     check_interval    = null
     failure_threshold = null

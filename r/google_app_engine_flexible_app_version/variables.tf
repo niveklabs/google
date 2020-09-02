@@ -58,7 +58,7 @@ variable "runtime" {
 }
 
 variable "runtime_api_version" {
-  description = "(optional) - The version of the API in the given runtime environment. \nPlease see the app.yaml reference for valid values at https://cloud.google.com/appengine/docs/standard//config/appref"
+  description = "(optional) - The version of the API in the given runtime environment.\nPlease see the app.yaml reference for valid values at https://cloud.google.com/appengine/docs/standard//config/appref"
   type        = string
   default     = null
 }
@@ -203,6 +203,36 @@ variable "entrypoint" {
   type = set(object(
     {
       shell = string
+    }
+  ))
+  default = []
+}
+
+variable "handlers" {
+  description = "nested mode: NestingList, min items: 0, max items: 0"
+  type = set(object(
+    {
+      auth_fail_action            = string
+      login                       = string
+      redirect_http_response_code = string
+      script = list(object(
+        {
+          script_path = string
+        }
+      ))
+      security_level = string
+      static_files = list(object(
+        {
+          application_readable  = bool
+          expiration            = string
+          http_headers          = map(string)
+          mime_type             = string
+          path                  = string
+          require_matching_file = bool
+          upload_path_regex     = string
+        }
+      ))
+      url_regex = string
     }
   ))
   default = []
