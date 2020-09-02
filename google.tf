@@ -1,5 +1,5 @@
 provider "google" {
-  version = "3.34.0"
+  version = "3.35.0"
 
   # access_context_manager_custom_endpoint - (optional) is a type of string
   access_context_manager_custom_endpoint = null
@@ -69,6 +69,8 @@ provider "google" {
   filestore_custom_endpoint = null
   # firestore_custom_endpoint - (optional) is a type of string
   firestore_custom_endpoint = null
+  # game_services_custom_endpoint - (optional) is a type of string
+  game_services_custom_endpoint = null
   # healthcare_custom_endpoint - (optional) is a type of string
   healthcare_custom_endpoint = null
   # iam_credentials_custom_endpoint - (optional) is a type of string

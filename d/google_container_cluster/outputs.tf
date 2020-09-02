@@ -178,6 +178,11 @@ output "private_cluster_config" {
   value       = data.google_container_cluster.this.private_cluster_config
 }
 
+output "release_channel" {
+  description = "returns a list of object"
+  value       = data.google_container_cluster.this.release_channel
+}
+
 output "remove_default_node_pool" {
   description = "returns a bool"
   value       = data.google_container_cluster.this.remove_default_node_pool

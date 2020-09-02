@@ -11,7 +11,7 @@ variable "env_variables" {
 }
 
 variable "inbound_services" {
-  description = "(optional) - Before an application can receive email or XMPP messages, the application must be configured to enable the service."
+  description = "(optional) - A list of the types of messages that this application is able to receive. Possible values: [\"INBOUND_SERVICE_MAIL\", \"INBOUND_SERVICE_MAIL_BOUNCE\", \"INBOUND_SERVICE_XMPP_ERROR\", \"INBOUND_SERVICE_XMPP_MESSAGE\", \"INBOUND_SERVICE_XMPP_SUBSCRIBE\", \"INBOUND_SERVICE_XMPP_PRESENCE\", \"INBOUND_SERVICE_CHANNEL_PRESENCE\", \"INBOUND_SERVICE_WARMUP\"]"
   type        = set(string)
   default     = null
 }

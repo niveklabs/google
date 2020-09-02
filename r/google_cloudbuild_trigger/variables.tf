@@ -46,11 +46,48 @@ variable "substitutions" {
   default     = null
 }
 
+variable "tags" {
+  description = "(optional) - Tags for annotation of a BuildTrigger"
+  type        = list(string)
+  default     = null
+}
+
 variable "build" {
   description = "nested mode: NestingList, min items: 0, max items: 1"
   type = set(object(
     {
-      images = list(string)
+      images      = list(string)
+      logs_bucket = string
+      queue_ttl   = string
+      secret = list(object(
+        {
+          kms_key_name = string
+          secret_env   = map(string)
+        }
+      ))
+      source = list(object(
+        {
+          repo_source = list(object(
+            {
+              branch_name   = string
+              commit_sha    = string
+              dir           = string
+              invert_regex  = bool
+              project_id    = string
+              repo_name     = string
+              substitutions = map(string)
+              tag_name      = string
+            }
+          ))
+          storage_source = list(object(
+            {
+              bucket     = string
+              generation = string
+              object     = string
+            }
+          ))
+        }
+      ))
       step = list(object(
         {
           args       = list(string)
@@ -71,8 +108,9 @@ variable "build" {
           wait_for = list(string)
         }
       ))
-      tags    = list(string)
-      timeout = string
+      substitutions = map(string)
+      tags          = list(string)
+      timeout       = string
     }
   ))
   default = []

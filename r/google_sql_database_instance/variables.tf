@@ -63,10 +63,11 @@ variable "settings" {
       availability_type           = string
       backup_configuration = list(object(
         {
-          binary_log_enabled = bool
-          enabled            = bool
-          location           = string
-          start_time         = string
+          binary_log_enabled             = bool
+          enabled                        = bool
+          location                       = string
+          point_in_time_recovery_enabled = bool
+          start_time                     = string
         }
       ))
       crash_safe_replication = bool

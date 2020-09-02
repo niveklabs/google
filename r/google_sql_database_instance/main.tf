@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.34.0"
+    google = ">= 3.35.0"
   }
 }
 
@@ -47,10 +47,11 @@ resource "google_sql_database_instance" "this" {
       dynamic "backup_configuration" {
         for_each = settings.value.backup_configuration
         content {
-          binary_log_enabled = backup_configuration.value["binary_log_enabled"]
-          enabled            = backup_configuration.value["enabled"]
-          location           = backup_configuration.value["location"]
-          start_time         = backup_configuration.value["start_time"]
+          binary_log_enabled             = backup_configuration.value["binary_log_enabled"]
+          enabled                        = backup_configuration.value["enabled"]
+          location                       = backup_configuration.value["location"]
+          point_in_time_recovery_enabled = backup_configuration.value["point_in_time_recovery_enabled"]
+          start_time                     = backup_configuration.value["start_time"]
         }
       }
 

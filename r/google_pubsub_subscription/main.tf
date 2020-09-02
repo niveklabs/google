@@ -1,11 +1,12 @@
 terraform {
   required_providers {
-    google = ">= 3.34.0"
+    google = ">= 3.35.0"
   }
 }
 
 resource "google_pubsub_subscription" "this" {
   ack_deadline_seconds       = var.ack_deadline_seconds
+  filter                     = var.filter
   labels                     = var.labels
   message_retention_duration = var.message_retention_duration
   name                       = var.name

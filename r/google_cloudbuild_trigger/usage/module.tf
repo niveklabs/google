@@ -17,9 +17,34 @@ module "google_cloudbuild_trigger" {
   project = null
   # substitutions - (optional) is a type of map of string
   substitutions = {}
+  # tags - (optional) is a type of list of string
+  tags = []
 
   build = [{
-    images = []
+    images      = []
+    logs_bucket = null
+    queue_ttl   = null
+    secret = [{
+      kms_key_name = null
+      secret_env   = {}
+    }]
+    source = [{
+      repo_source = [{
+        branch_name   = null
+        commit_sha    = null
+        dir           = null
+        invert_regex  = null
+        project_id    = null
+        repo_name     = null
+        substitutions = {}
+        tag_name      = null
+      }]
+      storage_source = [{
+        bucket     = null
+        generation = null
+        object     = null
+      }]
+    }]
     step = [{
       args       = []
       dir        = null
@@ -36,8 +61,9 @@ module "google_cloudbuild_trigger" {
       }]
       wait_for = []
     }]
-    tags    = []
-    timeout = null
+    substitutions = {}
+    tags          = []
+    timeout       = null
   }]
 
   timeouts = [{

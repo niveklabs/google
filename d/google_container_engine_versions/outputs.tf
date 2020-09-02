@@ -23,6 +23,11 @@ output "region" {
   value       = data.google_container_engine_versions.this.region
 }
 
+output "release_channel_default_version" {
+  description = "returns a map of string"
+  value       = data.google_container_engine_versions.this.release_channel_default_version
+}
+
 output "valid_master_versions" {
   description = "returns a list of string"
   value       = data.google_container_engine_versions.this.valid_master_versions

@@ -462,6 +462,16 @@ variable "private_cluster_config" {
   default = []
 }
 
+variable "release_channel" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      channel = string
+    }
+  ))
+  default = []
+}
+
 variable "resource_usage_export_config" {
   description = "nested mode: NestingList, min items: 0, max items: 1"
   type = set(object(

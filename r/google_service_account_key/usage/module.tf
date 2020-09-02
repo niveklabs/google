@@ -7,6 +7,8 @@ module "google_service_account_key" {
   pgp_key = null
   # private_key_type - (optional) is a type of string
   private_key_type = null
+  # public_key_data - (optional) is a type of string
+  public_key_data = null
   # public_key_type - (optional) is a type of string
   public_key_type = null
   # service_account_id - (required) is a type of string

@@ -79,7 +79,7 @@ module "google_os_config_patch_deployment" {
     }]
     reboot_config = null
     windows_update = [{
-      classifications   = null
+      classifications   = []
       excludes          = []
       exclusive_patches = []
     }]

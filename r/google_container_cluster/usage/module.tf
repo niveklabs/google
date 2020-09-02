@@ -239,6 +239,10 @@ module "google_container_cluster" {
     public_endpoint         = null
   }]
 
+  release_channel = [{
+    channel = null
+  }]
+
   resource_usage_export_config = [{
     bigquery_destination = [{
       dataset_id = null

@@ -131,7 +131,7 @@ variable "patch_config" {
       reboot_config = string
       windows_update = list(object(
         {
-          classifications   = string
+          classifications   = list(string)
           excludes          = list(string)
           exclusive_patches = list(string)
         }

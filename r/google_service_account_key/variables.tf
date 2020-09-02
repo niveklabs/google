@@ -16,6 +16,12 @@ variable "private_key_type" {
   default     = null
 }
 
+variable "public_key_data" {
+  description = "(optional) - A field that allows clients to upload their own public key. If set, use this public key data to create a service account key for given service account. Please note, the expected format for this field is a base64 encoded X509_PEM."
+  type        = string
+  default     = null
+}
+
 variable "public_key_type" {
   description = "(optional)"
   type        = string

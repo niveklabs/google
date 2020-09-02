@@ -1,18 +1,20 @@
 terraform {
   required_providers {
-    google = ">= 3.34.0"
+    google = ">= 3.35.0"
   }
 }
 
 resource "google_compute_image" "this" {
-  description  = var.description
-  disk_size_gb = var.disk_size_gb
-  family       = var.family
-  labels       = var.labels
-  licenses     = var.licenses
-  name         = var.name
-  project      = var.project
-  source_disk  = var.source_disk
+  description     = var.description
+  disk_size_gb    = var.disk_size_gb
+  family          = var.family
+  labels          = var.labels
+  licenses        = var.licenses
+  name            = var.name
+  project         = var.project
+  source_disk     = var.source_disk
+  source_image    = var.source_image
+  source_snapshot = var.source_snapshot
 
   dynamic "guest_os_features" {
     for_each = var.guest_os_features

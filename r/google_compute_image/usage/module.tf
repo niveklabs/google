@@ -17,6 +17,10 @@ module "google_compute_image" {
   project = null
   # source_disk - (optional) is a type of string
   source_disk = null
+  # source_image - (optional) is a type of string
+  source_image = null
+  # source_snapshot - (optional) is a type of string
+  source_snapshot = null
 
   guest_os_features = [{
     type = null

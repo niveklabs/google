@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.34.0"
+    google = ">= 3.35.0"
   }
 }
 
@@ -13,13 +13,55 @@ resource "google_cloudbuild_trigger" "this" {
   name           = var.name
   project        = var.project
   substitutions  = var.substitutions
+  tags           = var.tags
 
   dynamic "build" {
     for_each = var.build
     content {
-      images  = build.value["images"]
-      tags    = build.value["tags"]
-      timeout = build.value["timeout"]
+      images        = build.value["images"]
+      logs_bucket   = build.value["logs_bucket"]
+      queue_ttl     = build.value["queue_ttl"]
+      substitutions = build.value["substitutions"]
+      tags          = build.value["tags"]
+      timeout       = build.value["timeout"]
+
+      dynamic "secret" {
+        for_each = build.value.secret
+        content {
+          kms_key_name = secret.value["kms_key_name"]
+          secret_env   = secret.value["secret_env"]
+        }
+      }
+
+      dynamic "source" {
+        for_each = build.value.source
+        content {
+
+          dynamic "repo_source" {
+            for_each = source.value.repo_source
+            content {
+              branch_name   = repo_source.value["branch_name"]
+              commit_sha    = repo_source.value["commit_sha"]
+              dir           = repo_source.value["dir"]
+              invert_regex  = repo_source.value["invert_regex"]
+              project_id    = repo_source.value["project_id"]
+              repo_name     = repo_source.value["repo_name"]
+              substitutions = repo_source.value["substitutions"]
+              tag_name      = repo_source.value["tag_name"]
+            }
+          }
+
+          dynamic "storage_source" {
+            for_each = source.value.storage_source
+            content {
+              bucket     = storage_source.value["bucket"]
+              generation = storage_source.value["generation"]
+              object     = storage_source.value["object"]
+            }
+          }
+
+        }
+      }
 
       dynamic "step" {
         for_each = build.value.step

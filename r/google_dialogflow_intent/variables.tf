@@ -5,7 +5,7 @@ variable "action" {
 }
 
 variable "default_response_platforms" {
-  description = "(optional) - The list of platforms for which the first responses will be copied from the messages in PLATFORM_UNSPECIFIED\n(i.e. default platform)."
+  description = "(optional) - The list of platforms for which the first responses will be copied from the messages in PLATFORM_UNSPECIFIED\n(i.e. default platform). Possible values: [\"FACEBOOK\", \"SLACK\", \"TELEGRAM\", \"KIK\", \"SKYPE\", \"LINE\", \"VIBER\", \"ACTIONS_ON_GOOGLE\", \"GOOGLE_HANGOUTS\"]"
   type        = list(string)
   default     = null
 }

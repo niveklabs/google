@@ -4,6 +4,12 @@ variable "ack_deadline_seconds" {
   default     = null
 }
 
+variable "filter" {
+  description = "(optional) - The subscription only delivers the messages that match the filter. \nPub/Sub automatically acknowledges the messages that don't match the filter. You can filter messages\nby their attributes. The maximum length of a filter is 256 bytes. After creating the subscription, \nyou can't modify the filter."
+  type        = string
+  default     = null
+}
+
 variable "labels" {
   description = "(optional) - A set of key/value label pairs to assign to this Subscription."
   type        = map(string)

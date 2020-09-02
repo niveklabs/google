@@ -45,6 +45,18 @@ variable "source_disk" {
   default     = null
 }
 
+variable "source_image" {
+  description = "(optional) - URL of the source image used to create this image. In order to create an image, you must provide the full or partial\nURL of one of the following:\n\nThe selfLink URL\nThis property\nThe rawDisk.source URL\nThe sourceDisk URL"
+  type        = string
+  default     = null
+}
+
+variable "source_snapshot" {
+  description = "(optional) - URL of the source snapshot used to create this image.\n\nIn order to create an image, you must provide the full or partial URL of one of the following:\n\nThe selfLink URL\nThis property\nThe sourceImage URL\nThe rawDisk.source URL\nThe sourceDisk URL"
+  type        = string
+  default     = null
+}
+
 variable "guest_os_features" {
   description = "nested mode: NestingSet, min items: 0, max items: 0"
   type = set(object(

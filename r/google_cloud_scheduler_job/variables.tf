@@ -22,7 +22,7 @@ variable "project" {
 }
 
 variable "region" {
-  description = "(optional) - Region where the scheduler job resides"
+  description = "(optional) - Region where the scheduler job resides. If it is not provided, Terraform will use the provider default."
   type        = string
   default     = null
 }

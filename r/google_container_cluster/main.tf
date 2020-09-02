@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.34.0"
+    google = ">= 3.35.0"
   }
 }
 
@@ -324,6 +324,13 @@ resource "google_container_cluster" "this" {
       enable_private_endpoint = private_cluster_config.value["enable_private_endpoint"]
       enable_private_nodes    = private_cluster_config.value["enable_private_nodes"]
       master_ipv4_cidr_block  = private_cluster_config.value["master_ipv4_cidr_block"]
+    }
+  }
+
+  dynamic "release_channel" {
+    for_each = var.release_channel
+    content {
+      channel = release_channel.value["channel"]
     }
   }
 

@@ -33,10 +33,11 @@ module "google_sql_database_instance" {
     authorized_gae_applications = []
     availability_type           = null
     backup_configuration = [{
-      binary_log_enabled = null
-      enabled            = null
-      location           = null
-      start_time         = null
+      binary_log_enabled             = null
+      enabled                        = null
+      location                       = null
+      point_in_time_recovery_enabled = null
+      start_time                     = null
     }]
     crash_safe_replication = null
     database_flags = [{
