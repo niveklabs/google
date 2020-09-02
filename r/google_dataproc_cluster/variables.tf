@@ -1,22 +1,22 @@
 variable "labels" {
-  description = "(optional)"
+  description = "(optional) - The list of labels (key/value pairs) to be applied to instances in the cluster. GCP generates some itself including goog-dataproc-cluster-name which is the name of the cluster."
   type        = map(string)
   default     = null
 }
 
 variable "name" {
-  description = "(required)"
+  description = "(required) - The name of the cluster, unique within the project and zone."
   type        = string
 }
 
 variable "project" {
-  description = "(optional)"
+  description = "(optional) - The ID of the project in which the cluster will exist. If it is not provided, the provider project is used."
   type        = string
   default     = null
 }
 
 variable "region" {
-  description = "(optional)"
+  description = "(optional) - The region in which the cluster and associated nodes will be created in. Defaults to global."
   type        = string
   default     = null
 }

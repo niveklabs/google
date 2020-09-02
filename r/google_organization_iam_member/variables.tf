@@ -4,7 +4,7 @@ variable "member" {
 }
 
 variable "org_id" {
-  description = "(required)"
+  description = "(required) - The numeric ID of the organization in which you want to manage the audit logging config."
   type        = string
 }
 

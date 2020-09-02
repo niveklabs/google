@@ -1,10 +1,10 @@
 variable "org_id" {
-  description = "(required)"
+  description = "(required) - The numeric ID of the organization in which you want to manage the audit logging config."
   type        = string
 }
 
 variable "service" {
-  description = "(required)"
+  description = "(required) - Service which will be enabled for audit logging. The special value allServices covers all services."
   type        = string
 }
 

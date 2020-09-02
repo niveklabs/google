@@ -1,41 +1,41 @@
 variable "allow_stopping_for_update" {
-  description = "(optional)"
+  description = "(optional) - If true, allows Terraform to stop the instance to update its properties. If you try to update a property that requires stopping the instance without setting this field, the update will fail."
   type        = bool
   default     = null
 }
 
 variable "can_ip_forward" {
-  description = "(optional)"
+  description = "(optional) - Whether sending and receiving of packets with non-matching source or destination IPs is allowed."
   type        = bool
   default     = null
 }
 
 variable "deletion_protection" {
-  description = "(optional)"
+  description = "(optional) - Whether deletion protection is enabled on this instance."
   type        = bool
   default     = null
 }
 
 variable "description" {
-  description = "(optional)"
+  description = "(optional) - A brief description of the resource."
   type        = string
   default     = null
 }
 
 variable "desired_status" {
-  description = "(optional)"
+  description = "(optional) - Desired status of the instance. Either \"RUNNING\" or \"TERMINATED\"."
   type        = string
   default     = null
 }
 
 variable "enable_display" {
-  description = "(optional)"
+  description = "(optional) - Whether the instance has virtual displays enabled."
   type        = bool
   default     = null
 }
 
 variable "guest_accelerator" {
-  description = "(optional)"
+  description = "(optional) - List of the type and count of accelerator cards attached to the instance."
   type = list(object(
     {
       count = number
@@ -46,65 +46,65 @@ variable "guest_accelerator" {
 }
 
 variable "hostname" {
-  description = "(optional)"
+  description = "(optional) - A custom hostname for the instance. Must be a fully qualified DNS name and RFC-1035-valid. Valid format is a series of labels 1-63 characters long matching the regular expression [a-z]([-a-z0-9]*[a-z0-9]), concatenated with periods. The entire hostname must not exceed 253 characters. Changing this forces a new resource to be created."
   type        = string
   default     = null
 }
 
 variable "labels" {
-  description = "(optional)"
+  description = "(optional) - A set of key/value label pairs assigned to the instance."
   type        = map(string)
   default     = null
 }
 
 variable "machine_type" {
-  description = "(required)"
+  description = "(required) - The machine type to create."
   type        = string
 }
 
 variable "metadata" {
-  description = "(optional)"
+  description = "(optional) - Metadata key/value pairs made available within the instance."
   type        = map(string)
   default     = null
 }
 
 variable "metadata_startup_script" {
-  description = "(optional)"
+  description = "(optional) - Metadata startup scripts made available within the instance."
   type        = string
   default     = null
 }
 
 variable "min_cpu_platform" {
-  description = "(optional)"
+  description = "(optional) - The minimum CPU platform specified for the VM instance."
   type        = string
   default     = null
 }
 
 variable "name" {
-  description = "(required)"
+  description = "(required) - The name of the instance. One of name or self_link must be provided."
   type        = string
 }
 
 variable "project" {
-  description = "(optional)"
+  description = "(optional) - The ID of the project in which the resource belongs. If self_link is provided, this value is ignored. If neither self_link nor project are provided, the provider project is used."
   type        = string
   default     = null
 }
 
 variable "resource_policies" {
-  description = "(optional)"
+  description = "(optional) - A list of short names or self_links of resource policies to attach to the instance. Modifying this list will cause the instance to recreate. Currently a max of 1 resource policy is supported."
   type        = list(string)
   default     = null
 }
 
 variable "tags" {
-  description = "(optional)"
+  description = "(optional) - The list of tags attached to the instance."
   type        = set(string)
   default     = null
 }
 
 variable "zone" {
-  description = "(optional)"
+  description = "(optional) - The zone of the instance. If self_link is provided, this value is ignored. If neither self_link nor zone are provided, the provider zone is used."
   type        = string
   default     = null
 }

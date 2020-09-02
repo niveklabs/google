@@ -1,15 +1,15 @@
 variable "constraint" {
-  description = "(required)"
+  description = "(required) - The name of the Constraint the Policy is configuring, for example, serviceuser.services."
   type        = string
 }
 
 variable "project" {
-  description = "(required)"
+  description = "(required) - The project ID."
   type        = string
 }
 
 variable "version" {
-  description = "(optional)"
+  description = "(optional) - Version of the Policy. Default version is 0."
   type        = number
   default     = null
 }

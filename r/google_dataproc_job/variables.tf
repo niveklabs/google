@@ -1,5 +1,5 @@
 variable "force_delete" {
-  description = "(optional)"
+  description = "(optional) - By default, you can only delete inactive jobs within Dataproc. Setting this to true, and calling destroy, will ensure that the job is first cancelled before issuing the delete."
   type        = bool
   default     = null
 }
@@ -11,13 +11,13 @@ variable "labels" {
 }
 
 variable "project" {
-  description = "(optional)"
+  description = "(optional) - The project in which the cluster can be found and jobs subsequently run against. If it is not provided, the provider project is used."
   type        = string
   default     = null
 }
 
 variable "region" {
-  description = "(optional)"
+  description = "(optional) - The Cloud Dataproc region. This essentially determines which clusters are available for this job to be submitted to. If not specified, defaults to global."
   type        = string
   default     = null
 }

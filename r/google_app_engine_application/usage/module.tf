@@ -3,6 +3,8 @@ module "google_app_engine_application" {
 
   # auth_domain - (optional) is a type of string
   auth_domain = null
+  # database_type - (optional) is a type of string
+  database_type = null
   # location_id - (required) is a type of string
   location_id = null
   # project - (optional) is a type of string

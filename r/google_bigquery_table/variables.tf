@@ -1,52 +1,52 @@
 variable "clustering" {
-  description = "(optional)"
+  description = "(optional) - Specifies column names to use for data clustering. Up to four top-level columns are allowed, and should be specified in descending priority order."
   type        = list(string)
   default     = null
 }
 
 variable "dataset_id" {
-  description = "(required)"
+  description = "(required) - The dataset ID to create the table in. Changing this forces a new resource to be created."
   type        = string
 }
 
 variable "description" {
-  description = "(optional)"
+  description = "(optional) - The field description."
   type        = string
   default     = null
 }
 
 variable "expiration_time" {
-  description = "(optional)"
+  description = "(optional) - The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed."
   type        = number
   default     = null
 }
 
 variable "friendly_name" {
-  description = "(optional)"
+  description = "(optional) - A descriptive name for the table."
   type        = string
   default     = null
 }
 
 variable "labels" {
-  description = "(optional)"
+  description = "(optional) - A mapping of labels to assign to the resource."
   type        = map(string)
   default     = null
 }
 
 variable "project" {
-  description = "(optional)"
+  description = "(optional) - The ID of the project in which the resource belongs."
   type        = string
   default     = null
 }
 
 variable "schema" {
-  description = "(optional)"
+  description = "(optional) - A JSON schema for the table. Schema is required for CSV and JSON formats and is disallowed for Google Cloud Bigtable, Cloud Datastore backups, and Avro formats when using external tables."
   type        = string
   default     = null
 }
 
 variable "table_id" {
-  description = "(required)"
+  description = "(required) - A unique ID for the resource. Changing this forces a new resource to be created."
   type        = string
 }
 

@@ -1,11 +1,12 @@
 terraform {
   required_providers {
-    google = ">= 3.27.0"
+    google = ">= 3.28.0"
   }
 }
 
 resource "google_app_engine_application" "this" {
   auth_domain    = var.auth_domain
+  database_type  = var.database_type
   location_id    = var.location_id
   project        = var.project
   serving_status = var.serving_status

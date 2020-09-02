@@ -1,44 +1,44 @@
 variable "base_instance_name" {
-  description = "(required)"
+  description = "(required) - The base instance name to use for instances in this group. The value must be a valid RFC1035 name. Supported characters are lowercase letters, numbers, and hyphens (-). Instances are named by appending a hyphen and a random four-character string to the base instance name."
   type        = string
 }
 
 variable "description" {
-  description = "(optional)"
+  description = "(optional) - An optional textual description of the instance group manager."
   type        = string
   default     = null
 }
 
 variable "distribution_policy_zones" {
-  description = "(optional)"
+  description = "(optional) - The distribution policy for this managed instance group. You can specify one or more values."
   type        = set(string)
   default     = null
 }
 
 variable "name" {
-  description = "(required)"
+  description = "(required) - The name of the instance group manager. Must be 1-63 characters long and comply with RFC1035. Supported characters include lowercase letters, numbers, and hyphens."
   type        = string
 }
 
 variable "project" {
-  description = "(optional)"
+  description = "(optional) - The ID of the project in which the resource belongs. If it is not provided, the provider project is used."
   type        = string
   default     = null
 }
 
 variable "region" {
-  description = "(required)"
+  description = "(required) - The region where the managed instance group resides."
   type        = string
 }
 
 variable "target_pools" {
-  description = "(optional)"
+  description = "(optional) - The full URL of all target pools to which new instances in the group are added. Updating the target pools attribute does not affect existing instances."
   type        = set(string)
   default     = null
 }
 
 variable "target_size" {
-  description = "(optional)"
+  description = "(optional) - The target number of running instances for this managed instance group. This value should always be explicitly set unless this resource is attached to an autoscaler, in which case it should never be set. Defaults to 0."
   type        = number
   default     = null
 }
@@ -50,7 +50,7 @@ variable "update_strategy" {
 }
 
 variable "wait_for_instances" {
-  description = "(optional)"
+  description = "(optional) - Whether to wait for all instances to be created/updated before returning. Note that if this is set to true and the operation does not succeed, Terraform will continue trying until it times out."
   type        = bool
   default     = null
 }

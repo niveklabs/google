@@ -13,6 +13,11 @@ output "code_bucket" {
   value       = google_app_engine_application.this.code_bucket
 }
 
+output "database_type" {
+  description = "returns a string"
+  value       = google_app_engine_application.this.database_type
+}
+
 output "default_bucket" {
   description = "returns a string"
   value       = google_app_engine_application.this.default_bucket

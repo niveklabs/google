@@ -5,7 +5,7 @@ variable "project" {
 }
 
 variable "service" {
-  description = "(required)"
+  description = "(required) - Service which will be enabled for audit logging. The special value allServices covers all services."
   type        = string
 }
 

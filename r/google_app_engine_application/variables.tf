@@ -1,22 +1,28 @@
 variable "auth_domain" {
+  description = "(optional) - The domain to authenticate users with when using App Engine's User API."
+  type        = string
+  default     = null
+}
+
+variable "database_type" {
   description = "(optional)"
   type        = string
   default     = null
 }
 
 variable "location_id" {
-  description = "(required)"
+  description = "(required) - The location to serve the app from."
   type        = string
 }
 
 variable "project" {
-  description = "(optional)"
+  description = "(optional) - The project ID to create the application under."
   type        = string
   default     = null
 }
 
 variable "serving_status" {
-  description = "(optional)"
+  description = "(optional) - The serving status of the app."
   type        = string
   default     = null
 }

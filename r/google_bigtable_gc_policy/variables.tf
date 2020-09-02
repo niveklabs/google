@@ -1,27 +1,27 @@
 variable "column_family" {
-  description = "(required)"
+  description = "(required) - The name of the column family."
   type        = string
 }
 
 variable "instance_name" {
-  description = "(required)"
+  description = "(required) - The name of the Bigtable instance."
   type        = string
 }
 
 variable "mode" {
-  description = "(optional)"
+  description = "(optional) - If multiple policies are set, you should choose between UNION OR INTERSECTION."
   type        = string
   default     = null
 }
 
 variable "project" {
-  description = "(optional)"
+  description = "(optional) - The ID of the project in which the resource belongs. If it is not provided, the provider project is used."
   type        = string
   default     = null
 }
 
 variable "table" {
-  description = "(required)"
+  description = "(required) - The name of the table."
   type        = string
 }
 
