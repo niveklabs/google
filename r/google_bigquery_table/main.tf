@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.24.0"
+    google = ">= 3.25.0"
   }
 }
 
@@ -49,6 +49,31 @@ resource "google_bigquery_table" "this" {
         content {
           range             = google_sheets_options.value["range"]
           skip_leading_rows = google_sheets_options.value["skip_leading_rows"]
+        }
+      }
+
+      dynamic "hive_partitioning_options" {
+        for_each = external_data_configuration.value.hive_partitioning_options
+        content {
+          mode              = hive_partitioning_options.value["mode"]
+          source_uri_prefix = hive_partitioning_options.value["source_uri_prefix"]
+        }
+      }
+
+    }
+  }
+
+  dynamic "range_partitioning" {
+    for_each = var.range_partitioning
+    content {
+      field = range_partitioning.value["field"]
+
+      dynamic "range" {
+        for_each = range_partitioning.value.range
+        content {
+          end      = range.value["end"]
+          interval = range.value["interval"]
+          start    = range.value["start"]
         }
       }
 

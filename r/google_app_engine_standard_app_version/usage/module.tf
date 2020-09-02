@@ -5,6 +5,8 @@ module "google_app_engine_standard_app_version" {
   delete_service_on_destroy = null
   # env_variables - (optional) is a type of map of string
   env_variables = {}
+  # inbound_services - (optional) is a type of set of string
+  inbound_services = []
   # instance_class - (optional) is a type of string
   instance_class = null
   # noop_on_destroy - (optional) is a type of bool

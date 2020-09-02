@@ -252,4 +252,8 @@ module "google_container_cluster" {
   vertical_pod_autoscaling = [{
     enabled = null
   }]
+
+  workload_identity_config = [{
+    identity_namespace = null
+  }]
 }

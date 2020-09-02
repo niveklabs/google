@@ -82,10 +82,33 @@ variable "external_data_configuration" {
           skip_leading_rows = number
         }
       ))
+      hive_partitioning_options = list(object(
+        {
+          mode              = string
+          source_uri_prefix = string
+        }
+      ))
       ignore_unknown_values = bool
       max_bad_records       = number
       source_format         = string
       source_uris           = list(string)
+    }
+  ))
+  default = []
+}
+
+variable "range_partitioning" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      field = string
+      range = list(object(
+        {
+          end      = number
+          interval = number
+          start    = number
+        }
+      ))
     }
   ))
   default = []

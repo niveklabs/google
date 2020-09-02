@@ -39,10 +39,23 @@ module "google_bigquery_table" {
       range             = null
       skip_leading_rows = null
     }]
+    hive_partitioning_options = [{
+      mode              = null
+      source_uri_prefix = null
+    }]
     ignore_unknown_values = null
     max_bad_records       = null
     source_format         = null
     source_uris           = []
+  }]
+
+  range_partitioning = [{
+    field = null
+    range = [{
+      end      = null
+      interval = null
+      start    = null
+    }]
   }]
 
   time_partitioning = [{

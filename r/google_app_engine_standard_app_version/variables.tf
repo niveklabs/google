@@ -10,6 +10,12 @@ variable "env_variables" {
   default     = null
 }
 
+variable "inbound_services" {
+  description = "(optional) - Before an application can receive email or XMPP messages, the application must be configured to enable the service."
+  type        = set(string)
+  default     = null
+}
+
 variable "instance_class" {
   description = "(optional) - Instance class that is used to run this version. Valid values are\nAutomaticScaling: F1, F2, F4, F4_1G\nBasicScaling or ManualScaling: B1, B2, B4, B4_1G, B8\nDefaults to F1 for AutomaticScaling and B2 for ManualScaling and BasicScaling. If no scaling is specified, AutomaticScaling is chosen."
   type        = string

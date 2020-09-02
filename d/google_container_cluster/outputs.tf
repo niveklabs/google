@@ -203,6 +203,11 @@ output "vertical_pod_autoscaling" {
   value       = data.google_container_cluster.this.vertical_pod_autoscaling
 }
 
+output "workload_identity_config" {
+  description = "returns a list of object"
+  value       = data.google_container_cluster.this.workload_identity_config
+}
+
 output "this" {
   value = google_container_cluster.this
 }

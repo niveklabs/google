@@ -490,3 +490,13 @@ variable "vertical_pod_autoscaling" {
   default = []
 }
 
+variable "workload_identity_config" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      identity_namespace = string
+    }
+  ))
+  default = []
+}
+

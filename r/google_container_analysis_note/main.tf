@@ -1,12 +1,16 @@
 terraform {
   required_providers {
-    google = ">= 3.24.0"
+    google = ">= 3.25.0"
   }
 }
 
 resource "google_container_analysis_note" "this" {
-  name    = var.name
-  project = var.project
+  expiration_time    = var.expiration_time
+  long_description   = var.long_description
+  name               = var.name
+  project            = var.project
+  related_note_names = var.related_note_names
+  short_description  = var.short_description
 
   dynamic "attestation_authority" {
     for_each = var.attestation_authority
@@ -19,6 +23,14 @@ resource "google_container_analysis_note" "this" {
         }
       }
 
+    }
+  }
+
+  dynamic "related_url" {
+    for_each = var.related_url
+    content {
+      label = related_url.value["label"]
+      url   = related_url.value["url"]
     }
   }
 

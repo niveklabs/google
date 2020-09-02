@@ -1,70 +1,70 @@
 variable "cluster" {
-  description = "(required)"
+  description = "(required) - The cluster to create the node pool for. Cluster must be present in location provided for zonal clusters."
   type        = string
 }
 
 variable "initial_node_count" {
-  description = "(optional)"
+  description = "(optional) - The initial number of nodes for the pool. In regional or multi-zonal clusters, this is the number of nodes per zone. Changing this will force recreation of the resource."
   type        = number
   default     = null
 }
 
 variable "location" {
-  description = "(optional)"
+  description = "(optional) - The location (region or zone) of the cluster."
   type        = string
   default     = null
 }
 
 variable "max_pods_per_node" {
-  description = "(optional)"
+  description = "(optional) - The maximum number of pods per node in this node pool. Note that this does not work on node pools which are \"route-based\" - that is, node pools belonging to clusters that do not have IP Aliasing enabled."
   type        = number
   default     = null
 }
 
 variable "name" {
-  description = "(optional)"
+  description = "(optional) - The name of the node pool. If left blank, Terraform will auto-generate a unique name."
   type        = string
   default     = null
 }
 
 variable "name_prefix" {
-  description = "(optional)"
+  description = "(optional) - Creates a unique name for the node pool beginning with the specified prefix. Conflicts with name."
   type        = string
   default     = null
 }
 
 variable "node_count" {
-  description = "(optional)"
+  description = "(optional) - The number of nodes per instance group. This field can be used to update the number of nodes per instance group but should not be used alongside autoscaling."
   type        = number
   default     = null
 }
 
 variable "node_locations" {
-  description = "(optional)"
+  description = "(optional) - The list of zones in which the node pool's nodes should be located. Nodes must be in the region of their regional cluster or in the same region as their cluster's zone for zonal clusters. If unspecified, the cluster-level node_locations will be used."
   type        = set(string)
   default     = null
 }
 
 variable "project" {
-  description = "(optional)"
+  description = "(optional) - The ID of the project in which to create the node pool. If blank, the provider-configured project will be used."
   type        = string
   default     = null
 }
 
 variable "region" {
-  description = "(optional)"
+  description = "(optional) - The region of the cluster"
   type        = string
   default     = null
 }
 
 variable "version" {
-  description = "(optional)"
+  description = "(optional) - The Kubernetes version for the nodes in this pool. Note that if this field and auto_upgrade are both specified, they will fight each other for what the node version should be, so setting both is highly discouraged. While a fuzzy version can be specified, it's recommended that you specify explicit versions as Terraform will see spurious diffs when fuzzy versions are used. See the google_container_engine_versions data source's version_prefix field to approximate fuzzy versions in a Terraform-compatible way."
   type        = string
   default     = null
 }
 
 variable "zone" {
-  description = "(optional)"
+  description = "(optional) - The zone of the cluster"
   type        = string
   default     = null
 }

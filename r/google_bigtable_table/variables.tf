@@ -1,21 +1,21 @@
 variable "instance_name" {
-  description = "(required)"
+  description = "(required) - The name of the Bigtable instance."
   type        = string
 }
 
 variable "name" {
-  description = "(required)"
+  description = "(required) - The name of the table."
   type        = string
 }
 
 variable "project" {
-  description = "(optional)"
+  description = "(optional) - The ID of the project in which the resource belongs. If it is not provided, the provider project is used."
   type        = string
   default     = null
 }
 
 variable "split_keys" {
-  description = "(optional)"
+  description = "(optional) - A list of predefined keys to split the table on. !> Warning: Modifying the split_keys of an existing table will cause Terraform to delete/recreate the entire google_bigtable_table resource."
   type        = list(string)
   default     = null
 }

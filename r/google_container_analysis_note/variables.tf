@@ -1,3 +1,15 @@
+variable "expiration_time" {
+  description = "(optional) - Time of expiration for this note. Leave empty if note does not expire."
+  type        = string
+  default     = null
+}
+
+variable "long_description" {
+  description = "(optional) - A detailed description of the note"
+  type        = string
+  default     = null
+}
+
 variable "name" {
   description = "(required) - The name of the note."
   type        = string
@@ -5,6 +17,18 @@ variable "name" {
 
 variable "project" {
   description = "(optional)"
+  type        = string
+  default     = null
+}
+
+variable "related_note_names" {
+  description = "(optional) - Names of other notes related to this note."
+  type        = set(string)
+  default     = null
+}
+
+variable "short_description" {
+  description = "(optional) - A one sentence description of the note."
   type        = string
   default     = null
 }
@@ -20,6 +44,17 @@ variable "attestation_authority" {
       ))
     }
   ))
+}
+
+variable "related_url" {
+  description = "nested mode: NestingSet, min items: 0, max items: 0"
+  type = set(object(
+    {
+      label = string
+      url   = string
+    }
+  ))
+  default = []
 }
 
 variable "timeouts" {

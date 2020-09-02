@@ -1,12 +1,13 @@
 terraform {
   required_providers {
-    google = ">= 3.24.0"
+    google = ">= 3.25.0"
   }
 }
 
 resource "google_app_engine_standard_app_version" "this" {
   delete_service_on_destroy = var.delete_service_on_destroy
   env_variables             = var.env_variables
+  inbound_services          = var.inbound_services
   instance_class            = var.instance_class
   noop_on_destroy           = var.noop_on_destroy
   project                   = var.project

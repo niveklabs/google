@@ -24,7 +24,7 @@ variable "env_variables" {
 
 variable "inbound_services" {
   description = "(optional) - Before an application can receive email or XMPP messages, the application must be configured to enable the service."
-  type        = list(string)
+  type        = set(string)
   default     = null
 }
 

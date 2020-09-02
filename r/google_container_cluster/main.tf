@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.24.0"
+    google = ">= 3.25.0"
   }
 }
 
@@ -349,6 +349,13 @@ resource "google_container_cluster" "this" {
     for_each = var.vertical_pod_autoscaling
     content {
       enabled = vertical_pod_autoscaling.value["enabled"]
+    }
+  }
+
+  dynamic "workload_identity_config" {
+    for_each = var.workload_identity_config
+    content {
+      identity_namespace = workload_identity_config.value["identity_namespace"]
     }
   }
 

@@ -9,7 +9,7 @@ module "google_app_engine_flexible_app_version" {
   delete_service_on_destroy = null
   # env_variables - (optional) is a type of map of string
   env_variables = {}
-  # inbound_services - (optional) is a type of list of string
+  # inbound_services - (optional) is a type of set of string
   inbound_services = []
   # instance_class - (optional) is a type of string
   instance_class = null
