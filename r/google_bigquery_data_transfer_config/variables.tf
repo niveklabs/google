@@ -31,6 +31,12 @@ variable "location" {
   default     = null
 }
 
+variable "notification_pubsub_topic" {
+  description = "(optional) - Pub/Sub topic where notifications will be sent after transfer runs\nassociated with this transfer config finish."
+  type        = string
+  default     = null
+}
+
 variable "params" {
   description = "(required) - These parameters are specific to each data source."
   type        = map(string)

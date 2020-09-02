@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.36.0"
+    google = ">= 3.37.0"
   }
 }
 
@@ -44,6 +44,14 @@ resource "google_pubsub_subscription" "this" {
         }
       }
 
+    }
+  }
+
+  dynamic "retry_policy" {
+    for_each = var.retry_policy
+    content {
+      maximum_backoff = retry_policy.value["maximum_backoff"]
+      minimum_backoff = retry_policy.value["minimum_backoff"]
     }
   }
 

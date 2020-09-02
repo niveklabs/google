@@ -88,6 +88,17 @@ variable "push_config" {
   default = []
 }
 
+variable "retry_policy" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      maximum_backoff = string
+      minimum_backoff = string
+    }
+  ))
+  default = []
+}
+
 variable "timeouts" {
   description = "nested mode: NestingSingle, min items: 0, max items: 0"
   type = set(object(

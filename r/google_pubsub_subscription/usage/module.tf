@@ -38,6 +38,11 @@ module "google_pubsub_subscription" {
     push_endpoint = null
   }]
 
+  retry_policy = [{
+    maximum_backoff = null
+    minimum_backoff = null
+  }]
+
   timeouts = [{
     create = null
     delete = null

@@ -13,6 +13,8 @@ module "google_bigquery_data_transfer_config" {
   display_name = null
   # location - (optional) is a type of string
   location = null
+  # notification_pubsub_topic - (optional) is a type of string
+  notification_pubsub_topic = null
   # params - (required) is a type of map of string
   params = {}
   # project - (optional) is a type of string

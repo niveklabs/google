@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.36.0"
+    google = ">= 3.37.0"
   }
 }
 
@@ -19,8 +19,10 @@ resource "google_compute_subnetwork" "this" {
     for_each = var.log_config
     content {
       aggregation_interval = log_config.value["aggregation_interval"]
+      filter_expr          = log_config.value["filter_expr"]
       flow_sampling        = log_config.value["flow_sampling"]
       metadata             = log_config.value["metadata"]
+      metadata_fields      = log_config.value["metadata_fields"]
     }
   }
 

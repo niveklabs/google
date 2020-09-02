@@ -59,8 +59,10 @@ variable "log_config" {
   type = set(object(
     {
       aggregation_interval = string
+      filter_expr          = string
       flow_sampling        = number
       metadata             = string
+      metadata_fields      = set(string)
     }
   ))
   default = []

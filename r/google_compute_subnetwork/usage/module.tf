@@ -25,8 +25,10 @@ module "google_compute_subnetwork" {
 
   log_config = [{
     aggregation_interval = null
+    filter_expr          = null
     flow_sampling        = null
     metadata             = null
+    metadata_fields      = []
   }]
 
   timeouts = [{

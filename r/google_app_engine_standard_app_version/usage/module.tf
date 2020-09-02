@@ -93,4 +93,8 @@ module "google_app_engine_standard_app_version" {
     delete = null
     update = null
   }]
+
+  vpc_access_connector = [{
+    name = null
+  }]
 }

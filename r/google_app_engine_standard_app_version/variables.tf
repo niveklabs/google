@@ -189,3 +189,13 @@ variable "timeouts" {
   default = []
 }
 
+variable "vpc_access_connector" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      name = string
+    }
+  ))
+  default = []
+}
+

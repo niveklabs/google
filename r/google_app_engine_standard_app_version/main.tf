@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.36.0"
+    google = ">= 3.37.0"
   }
 }
 
@@ -131,6 +131,13 @@ resource "google_app_engine_standard_app_version" "this" {
       create = timeouts.value["create"]
       delete = timeouts.value["delete"]
       update = timeouts.value["update"]
+    }
+  }
+
+  dynamic "vpc_access_connector" {
+    for_each = var.vpc_access_connector
+    content {
+      name = vpc_access_connector.value["name"]
     }
   }
 

@@ -1,5 +1,5 @@
 provider "google" {
-  version = "3.36.0"
+  version = "3.37.0"
 
   # access_approval_custom_endpoint - (optional) is a type of string
   access_approval_custom_endpoint = null
