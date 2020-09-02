@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.25.0"
+    google = ">= 3.26.0"
   }
 }
 
@@ -21,5 +21,13 @@ resource "google_dataflow_job" "this" {
   temp_gcs_location      = var.temp_gcs_location
   template_gcs_path      = var.template_gcs_path
   zone                   = var.zone
+
+  dynamic "timeouts" {
+    for_each = var.timeouts
+    content {
+      update = timeouts.value["update"]
+    }
+  }
+
 }
 

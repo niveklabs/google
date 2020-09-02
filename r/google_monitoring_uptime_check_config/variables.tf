@@ -37,6 +37,7 @@ variable "content_matchers" {
   type = set(object(
     {
       content = string
+      matcher = string
     }
   ))
   default = []

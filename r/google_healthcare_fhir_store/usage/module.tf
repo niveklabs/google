@@ -22,6 +22,17 @@ module "google_healthcare_fhir_store" {
     pubsub_topic = null
   }]
 
+  stream_configs = [{
+    bigquery_destination = [{
+      dataset_uri = null
+      schema_config = [{
+        recursive_structure_depth = null
+        schema_type               = null
+      }]
+    }]
+    resource_types = []
+  }]
+
   timeouts = [{
     create = null
     delete = null

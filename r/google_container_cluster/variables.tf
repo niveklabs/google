@@ -1,148 +1,148 @@
 variable "additional_zones" {
-  description = "(optional)"
+  description = "(optional) - Additional_zones has been removed in favor of node_locations."
   type        = set(string)
   default     = null
 }
 
 variable "cluster_ipv4_cidr" {
-  description = "(optional)"
+  description = "(optional) - The IP address range of the Kubernetes pods in this cluster in CIDR notation (e.g. 10.96.0.0/14). Leave blank to have one automatically chosen or specify a /14 block in 10.0.0.0/8. This field will only work for routes-based clusters, where ip_allocation_policy is not defined."
   type        = string
   default     = null
 }
 
 variable "default_max_pods_per_node" {
-  description = "(optional)"
+  description = "(optional) - The default maximum number of pods per node in this cluster. This doesn't work on \"routes-based\" clusters, clusters that don't have IP Aliasing enabled."
   type        = number
   default     = null
 }
 
 variable "description" {
-  description = "(optional)"
+  description = "(optional) -  Description of the cluster."
   type        = string
   default     = null
 }
 
 variable "enable_binary_authorization" {
-  description = "(optional)"
+  description = "(optional) - Enable Binary Authorization for this cluster. If enabled, all container images will be validated by Google Binary Authorization."
   type        = bool
   default     = null
 }
 
 variable "enable_intranode_visibility" {
-  description = "(optional)"
+  description = "(optional) - Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network."
   type        = bool
   default     = null
 }
 
 variable "enable_kubernetes_alpha" {
-  description = "(optional)"
+  description = "(optional) - Whether to enable Kubernetes Alpha features for this cluster. Note that when this option is enabled, the cluster cannot be upgraded and will be automatically deleted after 30 days."
   type        = bool
   default     = null
 }
 
 variable "enable_legacy_abac" {
-  description = "(optional)"
+  description = "(optional) - Whether the ABAC authorizer is enabled for this cluster. When enabled, identities in the system, including service accounts, nodes, and controllers, will have statically granted permissions beyond those provided by the RBAC configuration or IAM. Defaults to false."
   type        = bool
   default     = null
 }
 
 variable "enable_shielded_nodes" {
-  description = "(optional)"
+  description = "(optional) - Enable Shielded Nodes features on all nodes in this cluster. Defaults to false."
   type        = bool
   default     = null
 }
 
 variable "enable_tpu" {
-  description = "(optional)"
+  description = "(optional) - Whether to enable Cloud TPU resources in this cluster."
   type        = bool
   default     = null
 }
 
 variable "initial_node_count" {
-  description = "(optional)"
+  description = "(optional) - The number of nodes to create in this cluster's default node pool. In regional or multi-zonal clusters, this is the number of nodes per zone. Must be set if node_pool is not set. If you're using google_container_node_pool objects with no default node pool, you'll need to set this to a value of at least 1, alongside setting remove_default_node_pool to true."
   type        = number
   default     = null
 }
 
 variable "location" {
-  description = "(optional)"
+  description = "(optional) - The location (region or zone) in which the cluster master will be created, as well as the default node location. If you specify a zone (such as us-central1-a), the cluster will be a zonal cluster with a single cluster master. If you specify a region (such as us-west1), the cluster will be a regional cluster with multiple masters spread across zones in the region, and with default node locations in those zones as well."
   type        = string
   default     = null
 }
 
 variable "logging_service" {
-  description = "(optional)"
+  description = "(optional) - The logging service that the cluster should write logs to. Available options include logging.googleapis.com(Legacy Stackdriver), logging.googleapis.com/kubernetes(Stackdriver Kubernetes Engine Logging), and none. Defaults to logging.googleapis.com/kubernetes."
   type        = string
   default     = null
 }
 
 variable "min_master_version" {
-  description = "(optional)"
+  description = "(optional) - The minimum version of the master. GKE will auto-update the master to new versions, so this does not guarantee the current master version--use the read-only master_version field to obtain that. If unset, the cluster's version will be set by GKE to the version of the most recent official release (which is not necessarily the latest version)."
   type        = string
   default     = null
 }
 
 variable "monitoring_service" {
-  description = "(optional)"
+  description = "(optional) - The monitoring service that the cluster should write metrics to. Automatically send metrics from pods in the cluster to the Google Cloud Monitoring API. VM metrics will be collected by Google Compute Engine regardless of this setting Available options include monitoring.googleapis.com(Legacy Stackdriver), monitoring.googleapis.com/kubernetes(Stackdriver Kubernetes Engine Monitoring), and none. Defaults to monitoring.googleapis.com/kubernetes."
   type        = string
   default     = null
 }
 
 variable "name" {
-  description = "(required)"
+  description = "(required) - The name of the cluster, unique within the project and location."
   type        = string
 }
 
 variable "network" {
-  description = "(optional)"
+  description = "(optional) - The name or self_link of the Google Compute Engine network to which the cluster is connected. For Shared VPC, set this to the self link of the shared network."
   type        = string
   default     = null
 }
 
 variable "node_locations" {
-  description = "(optional)"
+  description = "(optional) - The list of zones in which the cluster's nodes are located. Nodes must be in the region of their regional cluster or in the same region as their cluster's zone for zonal clusters. If this is specified for a zonal cluster, omit the cluster's zone."
   type        = set(string)
   default     = null
 }
 
 variable "node_version" {
-  description = "(optional)"
+  description = "(optional) - The Kubernetes version on the nodes. Must either be unset or set to the same value as min_master_version on create. Defaults to the default version set by GKE which is not necessarily the latest version. This only affects nodes in the default node pool. While a fuzzy version can be specified, it's recommended that you specify explicit versions as Terraform will see spurious diffs when fuzzy versions are used. See the google_container_engine_versions data source's version_prefix field to approximate fuzzy versions in a Terraform-compatible way. To update nodes in other node pools, use the version attribute on the node pool."
   type        = string
   default     = null
 }
 
 variable "project" {
-  description = "(optional)"
+  description = "(optional) - The ID of the project in which the resource belongs. If it is not provided, the provider project is used."
   type        = string
   default     = null
 }
 
 variable "region" {
-  description = "(optional)"
+  description = "(optional) - The region in which the cluster master will be created. Zone and region have been removed in favor of location."
   type        = string
   default     = null
 }
 
 variable "remove_default_node_pool" {
-  description = "(optional)"
+  description = "(optional) - If true, deletes the default node pool upon cluster creation. If you're using google_container_node_pool resources with no default node pool, this should be set to true, alongside setting initial_node_count to at least 1."
   type        = bool
   default     = null
 }
 
 variable "resource_labels" {
-  description = "(optional)"
+  description = "(optional) - The GCE resource labels (a map of key/value pairs) to be applied to the cluster."
   type        = map(string)
   default     = null
 }
 
 variable "subnetwork" {
-  description = "(optional)"
+  description = "(optional) - The name or self_link of the Google Compute Engine subnetwork in which the cluster's instances are launched."
   type        = string
   default     = null
 }
 
 variable "zone" {
-  description = "(optional)"
+  description = "(optional) - The zone in which the cluster master will be created. Zone and region have been removed in favor of location."
   type        = string
   default     = null
 }

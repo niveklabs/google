@@ -21,6 +21,103 @@ variable "project" {
   default     = null
 }
 
+variable "default_route_action" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      cors_policy = list(object(
+        {
+          allow_credentials    = bool
+          allow_headers        = list(string)
+          allow_methods        = list(string)
+          allow_origin_regexes = list(string)
+          allow_origins        = list(string)
+          disabled             = bool
+          expose_headers       = list(string)
+          max_age              = number
+        }
+      ))
+      fault_injection_policy = list(object(
+        {
+          abort = list(object(
+            {
+              http_status = number
+              percentage  = number
+            }
+          ))
+          delay = list(object(
+            {
+              fixed_delay = list(object(
+                {
+                  nanos   = number
+                  seconds = string
+                }
+              ))
+              percentage = number
+            }
+          ))
+        }
+      ))
+      request_mirror_policy = list(object(
+        {
+          backend_service = string
+        }
+      ))
+      retry_policy = list(object(
+        {
+          num_retries = number
+          per_try_timeout = list(object(
+            {
+              nanos   = number
+              seconds = string
+            }
+          ))
+          retry_conditions = list(string)
+        }
+      ))
+      timeout = list(object(
+        {
+          nanos   = number
+          seconds = string
+        }
+      ))
+      url_rewrite = list(object(
+        {
+          host_rewrite        = string
+          path_prefix_rewrite = string
+        }
+      ))
+      weighted_backend_services = list(object(
+        {
+          backend_service = string
+          header_action = list(object(
+            {
+              request_headers_to_add = list(object(
+                {
+                  header_name  = string
+                  header_value = string
+                  replace      = bool
+                }
+              ))
+              request_headers_to_remove = list(string)
+              response_headers_to_add = list(object(
+                {
+                  header_name  = string
+                  header_value = string
+                  replace      = bool
+                }
+              ))
+              response_headers_to_remove = list(string)
+            }
+          ))
+          weight = number
+        }
+      ))
+    }
+  ))
+  default = []
+}
+
 variable "default_url_redirect" {
   description = "nested mode: NestingList, min items: 0, max items: 1"
   type = set(object(
@@ -77,6 +174,98 @@ variable "path_matcher" {
   description = "nested mode: NestingList, min items: 0, max items: 0"
   type = set(object(
     {
+      default_route_action = list(object(
+        {
+          cors_policy = list(object(
+            {
+              allow_credentials    = bool
+              allow_headers        = list(string)
+              allow_methods        = list(string)
+              allow_origin_regexes = list(string)
+              allow_origins        = list(string)
+              disabled             = bool
+              expose_headers       = list(string)
+              max_age              = number
+            }
+          ))
+          fault_injection_policy = list(object(
+            {
+              abort = list(object(
+                {
+                  http_status = number
+                  percentage  = number
+                }
+              ))
+              delay = list(object(
+                {
+                  fixed_delay = list(object(
+                    {
+                      nanos   = number
+                      seconds = string
+                    }
+                  ))
+                  percentage = number
+                }
+              ))
+            }
+          ))
+          request_mirror_policy = list(object(
+            {
+              backend_service = string
+            }
+          ))
+          retry_policy = list(object(
+            {
+              num_retries = number
+              per_try_timeout = list(object(
+                {
+                  nanos   = number
+                  seconds = string
+                }
+              ))
+              retry_conditions = list(string)
+            }
+          ))
+          timeout = list(object(
+            {
+              nanos   = number
+              seconds = string
+            }
+          ))
+          url_rewrite = list(object(
+            {
+              host_rewrite        = string
+              path_prefix_rewrite = string
+            }
+          ))
+          weighted_backend_services = list(object(
+            {
+              backend_service = string
+              header_action = list(object(
+                {
+                  request_headers_to_add = list(object(
+                    {
+                      header_name  = string
+                      header_value = string
+                      replace      = bool
+                    }
+                  ))
+                  request_headers_to_remove = list(string)
+                  response_headers_to_add = list(object(
+                    {
+                      header_name  = string
+                      header_value = string
+                      replace      = bool
+                    }
+                  ))
+                  response_headers_to_remove = list(string)
+                }
+              ))
+              weight = number
+            }
+          ))
+        }
+      ))
       default_service = string
       default_url_redirect = list(object(
         {

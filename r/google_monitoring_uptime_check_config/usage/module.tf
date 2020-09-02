@@ -16,6 +16,7 @@ module "google_monitoring_uptime_check_config" {
 
   content_matchers = [{
     content = null
+    matcher = null
   }]
 
   http_check = [{

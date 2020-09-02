@@ -38,7 +38,7 @@ variable "project" {
 }
 
 variable "region" {
-  description = "(optional) - URL of the GCP region for this subnetwork."
+  description = "(optional) - The GCP region for this subnetwork."
   type        = string
   default     = null
 }

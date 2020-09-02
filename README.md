@@ -3,7 +3,7 @@
 [embedmd]:# (google.tf)
 ```tf
 provider "google" {
-  version = "3.25.0"
+  version = "3.26.0"
 
   # access_context_manager_custom_endpoint - (optional) is a type of string
   access_context_manager_custom_endpoint = null
@@ -87,6 +87,8 @@ provider "google" {
   ml_engine_custom_endpoint = null
   # monitoring_custom_endpoint - (optional) is a type of string
   monitoring_custom_endpoint = null
+  # network_management_custom_endpoint - (optional) is a type of string
+  network_management_custom_endpoint = null
   # os_login_custom_endpoint - (optional) is a type of string
   os_login_custom_endpoint = null
   # project - (optional) is a type of string

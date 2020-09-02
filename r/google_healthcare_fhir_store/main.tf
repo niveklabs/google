@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.25.0"
+    google = ">= 3.26.0"
   }
 }
 
@@ -18,6 +18,30 @@ resource "google_healthcare_fhir_store" "this" {
     for_each = var.notification_config
     content {
       pubsub_topic = notification_config.value["pubsub_topic"]
+    }
+  }
+
+  dynamic "stream_configs" {
+    for_each = var.stream_configs
+    content {
+      resource_types = stream_configs.value["resource_types"]
+
+      dynamic "bigquery_destination" {
+        for_each = stream_configs.value.bigquery_destination
+        content {
+          dataset_uri = bigquery_destination.value["dataset_uri"]
+
+          dynamic "schema_config" {
+            for_each = bigquery_destination.value.schema_config
+            content {
+              recursive_structure_depth = schema_config.value["recursive_structure_depth"]
+              schema_type               = schema_config.value["schema_type"]
+            }
+          }
+
+        }
+      }
+
     }
   }
 

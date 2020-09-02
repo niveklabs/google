@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.25.0"
+    google = ">= 3.26.0"
   }
 }
 
@@ -16,6 +16,7 @@ resource "google_monitoring_uptime_check_config" "this" {
     for_each = var.content_matchers
     content {
       content = content_matchers.value["content"]
+      matcher = content_matchers.value["matcher"]
     }
   }
 

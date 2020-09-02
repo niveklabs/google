@@ -53,6 +53,27 @@ variable "notification_config" {
   default = []
 }
 
+variable "stream_configs" {
+  description = "nested mode: NestingList, min items: 0, max items: 0"
+  type = set(object(
+    {
+      bigquery_destination = list(object(
+        {
+          dataset_uri = string
+          schema_config = list(object(
+            {
+              recursive_structure_depth = number
+              schema_type               = string
+            }
+          ))
+        }
+      ))
+      resource_types = list(string)
+    }
+  ))
+  default = []
+}
+
 variable "timeouts" {
   description = "nested mode: NestingSingle, min items: 0, max items: 0"
   type = set(object(

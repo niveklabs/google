@@ -48,9 +48,19 @@ output "location" {
   value       = google_container_cluster.this.location
 }
 
+output "logging_service" {
+  description = "returns a string"
+  value       = google_container_cluster.this.logging_service
+}
+
 output "master_version" {
   description = "returns a string"
   value       = google_container_cluster.this.master_version
+}
+
+output "monitoring_service" {
+  description = "returns a string"
+  value       = google_container_cluster.this.monitoring_service
 }
 
 output "node_locations" {

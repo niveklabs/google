@@ -10,6 +10,69 @@ module "google_compute_url_map" {
   # project - (optional) is a type of string
   project = null
 
+  default_route_action = [{
+    cors_policy = [{
+      allow_credentials    = null
+      allow_headers        = []
+      allow_methods        = []
+      allow_origin_regexes = []
+      allow_origins        = []
+      disabled             = null
+      expose_headers       = []
+      max_age              = null
+    }]
+    fault_injection_policy = [{
+      abort = [{
+        http_status = null
+        percentage  = null
+      }]
+      delay = [{
+        fixed_delay = [{
+          nanos   = null
+          seconds = null
+        }]
+        percentage = null
+      }]
+    }]
+    request_mirror_policy = [{
+      backend_service = null
+    }]
+    retry_policy = [{
+      num_retries = null
+      per_try_timeout = [{
+        nanos   = null
+        seconds = null
+      }]
+      retry_conditions = []
+    }]
+    timeout = [{
+      nanos   = null
+      seconds = null
+    }]
+    url_rewrite = [{
+      host_rewrite        = null
+      path_prefix_rewrite = null
+    }]
+    weighted_backend_services = [{
+      backend_service = null
+      header_action = [{
+        request_headers_to_add = [{
+          header_name  = null
+          header_value = null
+          replace      = null
+        }]
+        request_headers_to_remove = []
+        response_headers_to_add = [{
+          header_name  = null
+          header_value = null
+          replace      = null
+        }]
+        response_headers_to_remove = []
+      }]
+      weight = null
+    }]
+  }]
+
   default_url_redirect = [{
     host_redirect          = null
     https_redirect         = null
@@ -41,6 +104,68 @@ module "google_compute_url_map" {
   }]
 
   path_matcher = [{
+    default_route_action = [{
+      cors_policy = [{
+        allow_credentials    = null
+        allow_headers        = []
+        allow_methods        = []
+        allow_origin_regexes = []
+        allow_origins        = []
+        disabled             = null
+        expose_headers       = []
+        max_age              = null
+      }]
+      fault_injection_policy = [{
+        abort = [{
+          http_status = null
+          percentage  = null
+        }]
+        delay = [{
+          fixed_delay = [{
+            nanos   = null
+            seconds = null
+          }]
+          percentage = null
+        }]
+      }]
+      request_mirror_policy = [{
+        backend_service = null
+      }]
+      retry_policy = [{
+        num_retries = null
+        per_try_timeout = [{
+          nanos   = null
+          seconds = null
+        }]
+        retry_conditions = []
+      }]
+      timeout = [{
+        nanos   = null
+        seconds = null
+      }]
+      url_rewrite = [{
+        host_rewrite        = null
+        path_prefix_rewrite = null
+      }]
+      weighted_backend_services = [{
+        backend_service = null
+        header_action = [{
+          request_headers_to_add = [{
+            header_name  = null
+            header_value = null
+            replace      = null
+          }]
+          request_headers_to_remove = []
+          response_headers_to_add = [{
+            header_name  = null
+            header_value = null
+            replace      = null
+          }]
+          response_headers_to_remove = []
+        }]
+        weight = null
+      }]
+    }]
     default_service = null
     default_url_redirect = [{
       host_redirect          = null

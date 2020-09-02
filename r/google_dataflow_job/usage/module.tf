@@ -33,4 +33,8 @@ module "google_dataflow_job" {
   template_gcs_path = null
   # zone - (optional) is a type of string
   zone = null
+
+  timeouts = [{
+    update = null
+  }]
 }
