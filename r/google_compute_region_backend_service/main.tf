@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.21.0"
+    google = ">= 3.22.0"
   }
 }
 
@@ -13,6 +13,7 @@ resource "google_compute_region_backend_service" "this" {
   locality_lb_policy              = var.locality_lb_policy
   name                            = var.name
   network                         = var.network
+  port_name                       = var.port_name
   project                         = var.project
   protocol                        = var.protocol
   region                          = var.region

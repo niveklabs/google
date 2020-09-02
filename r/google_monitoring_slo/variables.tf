@@ -39,7 +39,7 @@ variable "slo_id" {
 }
 
 variable "basic_sli" {
-  description = "nested mode: NestingList, min items: 1, max items: 1"
+  description = "nested mode: NestingList, min items: 0, max items: 1"
   type = set(object(
     {
       latency = list(object(
@@ -52,6 +52,34 @@ variable "basic_sli" {
       version  = set(string)
     }
   ))
+  default = []
+}
+
+variable "request_based_sli" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      distribution_cut = list(object(
+        {
+          distribution_filter = string
+          range = list(object(
+            {
+              max = number
+              min = number
+            }
+          ))
+        }
+      ))
+      good_total_ratio = list(object(
+        {
+          bad_service_filter   = string
+          good_service_filter  = string
+          total_service_filter = string
+        }
+      ))
+    }
+  ))
+  default = []
 }
 
 variable "timeouts" {

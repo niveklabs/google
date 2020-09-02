@@ -25,6 +25,21 @@ module "google_monitoring_slo" {
     version  = []
   }]
 
+  request_based_sli = [{
+    distribution_cut = [{
+      distribution_filter = null
+      range = [{
+        max = null
+        min = null
+      }]
+    }]
+    good_total_ratio = [{
+      bad_service_filter   = null
+      good_service_filter  = null
+      total_service_filter = null
+    }]
+  }]
+
   timeouts = [{
     create = null
     delete = null

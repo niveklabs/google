@@ -13,6 +13,11 @@ output "id" {
   value       = google_compute_region_backend_service.this.id
 }
 
+output "port_name" {
+  description = "returns a string"
+  value       = google_compute_region_backend_service.this.port_name
+}
+
 output "project" {
   description = "returns a string"
   value       = google_compute_region_backend_service.this.project

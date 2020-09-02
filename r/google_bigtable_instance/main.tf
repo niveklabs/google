@@ -1,14 +1,15 @@
 terraform {
   required_providers {
-    google = ">= 3.21.0"
+    google = ">= 3.22.0"
   }
 }
 
 resource "google_bigtable_instance" "this" {
-  display_name  = var.display_name
-  instance_type = var.instance_type
-  name          = var.name
-  project       = var.project
+  deletion_protection = var.deletion_protection
+  display_name        = var.display_name
+  instance_type       = var.instance_type
+  name                = var.name
+  project             = var.project
 
   dynamic "cluster" {
     for_each = var.cluster

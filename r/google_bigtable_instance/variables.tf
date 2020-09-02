@@ -1,3 +1,9 @@
+variable "deletion_protection" {
+  description = "(optional)"
+  type        = bool
+  default     = null
+}
+
 variable "display_name" {
   description = "(optional)"
   type        = string

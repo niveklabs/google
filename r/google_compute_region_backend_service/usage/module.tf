@@ -17,6 +17,8 @@ module "google_compute_region_backend_service" {
   name = null
   # network - (optional) is a type of string
   network = null
+  # port_name - (optional) is a type of string
+  port_name = null
   # project - (optional) is a type of string
   project = null
   # protocol - (optional) is a type of string

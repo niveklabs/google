@@ -44,6 +44,12 @@ variable "network" {
   default     = null
 }
 
+variable "port_name" {
+  description = "(optional) - A named port on a backend instance group representing the port for\ncommunication to the backend VMs in that group. Required when the\nloadBalancingScheme is EXTERNAL, INTERNAL_MANAGED, or INTERNAL_SELF_MANAGED\nand the backends are instance groups. The named port must be defined on each\nbackend instance group. This parameter has no meaning if the backends are NEGs. API sets a\ndefault of \"http\" if not given.\nMust be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing)."
+  type        = string
+  default     = null
+}
+
 variable "project" {
   description = "(optional)"
   type        = string
