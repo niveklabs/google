@@ -17,7 +17,7 @@ module "google_app_engine_standard_app_version" {
   runtime = null
   # runtime_api_version - (optional) is a type of string
   runtime_api_version = null
-  # service - (optional) is a type of string
+  # service - (required) is a type of string
   service = null
   # threadsafe - (optional) is a type of bool
   threadsafe = null

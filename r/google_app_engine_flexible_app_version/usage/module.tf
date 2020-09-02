@@ -27,7 +27,7 @@ module "google_app_engine_flexible_app_version" {
   runtime_channel = null
   # runtime_main_executable_path - (optional) is a type of string
   runtime_main_executable_path = null
-  # service - (optional) is a type of string
+  # service - (required) is a type of string
   service = null
   # serving_status - (optional) is a type of string
   serving_status = null

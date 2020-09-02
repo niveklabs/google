@@ -87,6 +87,11 @@ module "google_container_cluster" {
     }]
   }]
 
+  database_encryption = [{
+    key_name = null
+    state    = null
+  }]
+
   ip_allocation_policy = [{
     cluster_ipv4_cidr_block       = null
     cluster_secondary_range_name  = null

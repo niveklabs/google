@@ -5,7 +5,7 @@ variable "auto_create_routes" {
 }
 
 variable "export_custom_routes" {
-  description = "(optional)"
+  description = "(optional) - Whether to export the custom routes to the peer network. Defaults to false."
   type        = bool
   default     = null
 }
@@ -17,7 +17,7 @@ variable "export_subnet_routes_with_public_ip" {
 }
 
 variable "import_custom_routes" {
-  description = "(optional)"
+  description = "(optional) - Whether to export the custom routes from the peer network. Defaults to false."
   type        = bool
   default     = null
 }
@@ -29,17 +29,17 @@ variable "import_subnet_routes_with_public_ip" {
 }
 
 variable "name" {
-  description = "(required)"
+  description = "(required) - Name of the peering."
   type        = string
 }
 
 variable "network" {
-  description = "(required)"
+  description = "(required) - The primary network of the peering."
   type        = string
 }
 
 variable "peer_network" {
-  description = "(required)"
+  description = "(required) - The peer network in the peering. The peer network may belong to a different project."
   type        = string
 }
 

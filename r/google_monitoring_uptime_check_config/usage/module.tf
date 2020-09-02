@@ -24,12 +24,15 @@ module "google_monitoring_uptime_check_config" {
       password = null
       username = null
     }]
-    headers      = {}
-    mask_headers = null
-    path         = null
-    port         = null
-    use_ssl      = null
-    validate_ssl = null
+    body           = null
+    content_type   = null
+    headers        = {}
+    mask_headers   = null
+    path           = null
+    port           = null
+    request_method = null
+    use_ssl        = null
+    validate_ssl   = null
   }]
 
   internal_checkers = [{

@@ -1,5 +1,5 @@
 variable "project" {
-  description = "(required)"
+  description = "(required) - The ID of the project that will serve as a Shared VPC host project"
   type        = string
 }
 

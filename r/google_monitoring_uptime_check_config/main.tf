@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.28.0"
+    google = ">= 3.29.0"
   }
 }
 
@@ -23,12 +23,15 @@ resource "google_monitoring_uptime_check_config" "this" {
   dynamic "http_check" {
     for_each = var.http_check
     content {
-      headers      = http_check.value["headers"]
-      mask_headers = http_check.value["mask_headers"]
-      path         = http_check.value["path"]
-      port         = http_check.value["port"]
-      use_ssl      = http_check.value["use_ssl"]
-      validate_ssl = http_check.value["validate_ssl"]
+      body           = http_check.value["body"]
+      content_type   = http_check.value["content_type"]
+      headers        = http_check.value["headers"]
+      mask_headers   = http_check.value["mask_headers"]
+      path           = http_check.value["path"]
+      port           = http_check.value["port"]
+      request_method = http_check.value["request_method"]
+      use_ssl        = http_check.value["use_ssl"]
+      validate_ssl   = http_check.value["validate_ssl"]
 
       dynamic "auth_info" {
         for_each = http_check.value.auth_info

@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.28.0"
+    google = ">= 3.29.0"
   }
 }
 

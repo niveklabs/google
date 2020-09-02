@@ -53,12 +53,15 @@ variable "http_check" {
           username = string
         }
       ))
-      headers      = map(string)
-      mask_headers = bool
-      path         = string
-      port         = number
-      use_ssl      = bool
-      validate_ssl = bool
+      body           = string
+      content_type   = string
+      headers        = map(string)
+      mask_headers   = bool
+      path           = string
+      port           = number
+      request_method = string
+      use_ssl        = bool
+      validate_ssl   = bool
     }
   ))
   default = []

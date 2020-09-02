@@ -23,6 +23,11 @@ output "cluster_ipv4_cidr" {
   value       = data.google_container_cluster.this.cluster_ipv4_cidr
 }
 
+output "database_encryption" {
+  description = "returns a list of object"
+  value       = data.google_container_cluster.this.database_encryption
+}
+
 output "default_max_pods_per_node" {
   description = "returns a number"
   value       = data.google_container_cluster.this.default_max_pods_per_node

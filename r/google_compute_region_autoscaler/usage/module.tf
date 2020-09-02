@@ -27,6 +27,7 @@ module "google_compute_region_autoscaler" {
       type   = null
     }]
     min_replicas = null
+    mode         = null
   }]
 
   timeouts = [{

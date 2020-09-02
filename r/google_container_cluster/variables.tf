@@ -214,6 +214,17 @@ variable "cluster_autoscaling" {
   default = []
 }
 
+variable "database_encryption" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      key_name = string
+      state    = string
+    }
+  ))
+  default = []
+}
+
 variable "ip_allocation_policy" {
   description = "nested mode: NestingList, min items: 0, max items: 1"
   type = set(object(

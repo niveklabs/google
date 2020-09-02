@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.28.0"
+    google = ">= 3.29.0"
   }
 }
 
@@ -17,6 +17,7 @@ resource "google_compute_region_autoscaler" "this" {
       cooldown_period = autoscaling_policy.value["cooldown_period"]
       max_replicas    = autoscaling_policy.value["max_replicas"]
       min_replicas    = autoscaling_policy.value["min_replicas"]
+      mode            = autoscaling_policy.value["mode"]
 
       dynamic "cpu_utilization" {
         for_each = autoscaling_policy.value.cpu_utilization

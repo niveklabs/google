@@ -46,9 +46,8 @@ variable "runtime_api_version" {
 }
 
 variable "service" {
-  description = "(optional) - AppEngine service resource"
+  description = "(required) - AppEngine service resource"
   type        = string
-  default     = null
 }
 
 variable "threadsafe" {

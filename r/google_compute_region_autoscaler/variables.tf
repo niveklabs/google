@@ -50,6 +50,7 @@ variable "autoscaling_policy" {
         }
       ))
       min_replicas = number
+      mode         = string
     }
   ))
 }

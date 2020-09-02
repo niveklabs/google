@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.28.0"
+    google = ">= 3.29.0"
   }
 }
 
@@ -102,6 +102,14 @@ resource "google_container_cluster" "this" {
         }
       }
 
+    }
+  }
+
+  dynamic "database_encryption" {
+    for_each = var.database_encryption
+    content {
+      key_name = database_encryption.value["key_name"]
+      state    = database_encryption.value["state"]
     }
   }
 

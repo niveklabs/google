@@ -1,16 +1,16 @@
 variable "description" {
-  description = "(optional)"
+  description = "(optional) - An optional description of this security policy. Max size is 2048."
   type        = string
   default     = null
 }
 
 variable "name" {
-  description = "(required)"
+  description = "(required) - The name of the security policy."
   type        = string
 }
 
 variable "project" {
-  description = "(optional)"
+  description = "(optional) - The project in which the resource belongs. If it is not provided, the provider project is used."
   type        = string
   default     = null
 }

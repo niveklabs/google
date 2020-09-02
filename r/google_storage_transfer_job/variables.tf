@@ -1,16 +1,16 @@
 variable "description" {
-  description = "(required)"
+  description = "(required) - Unique description to identify the Transfer Job."
   type        = string
 }
 
 variable "project" {
-  description = "(optional)"
+  description = "(optional) - The project in which the resource belongs. If it is not provided, the provider project is used."
   type        = string
   default     = null
 }
 
 variable "status" {
-  description = "(optional)"
+  description = "(optional) - Status of the job. Default: ENABLED. NOTE: The effect of the new job status takes place during a subsequent job run. For example, if you change the job status from ENABLED to DISABLED, and an operation spawned by the transfer is running, the status change would not affect the current operation."
   type        = string
   default     = null
 }

@@ -1,10 +1,10 @@
 variable "host_project" {
-  description = "(required)"
+  description = "(required) - The ID of a host project to associate."
   type        = string
 }
 
 variable "service_project" {
-  description = "(required)"
+  description = "(required) - The ID of the project that will serve as a Shared VPC service project."
   type        = string
 }
 
