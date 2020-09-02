@@ -15,7 +15,7 @@ variable "object" {
 }
 
 variable "role" {
-  description = "(required) - The access permission for the entity."
+  description = "(required) - The access permission for the entity. Possible values: [\"OWNER\", \"READER\"]"
   type        = string
 }
 

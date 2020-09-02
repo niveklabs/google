@@ -1,15 +1,24 @@
 module "google_bigquery_table" {
   source = "./modules/google/r/google_bigquery_table"
 
-  clustering      = []
-  dataset_id      = null
-  description     = null
+  # clustering - (optional) is a type of list of string
+  clustering = []
+  # dataset_id - (required) is a type of string
+  dataset_id = null
+  # description - (optional) is a type of string
+  description = null
+  # expiration_time - (optional) is a type of number
   expiration_time = null
-  friendly_name   = null
-  labels          = {}
-  project         = null
-  schema          = null
-  table_id        = null
+  # friendly_name - (optional) is a type of string
+  friendly_name = null
+  # labels - (optional) is a type of map of string
+  labels = {}
+  # project - (optional) is a type of string
+  project = null
+  # schema - (optional) is a type of string
+  schema = null
+  # table_id - (required) is a type of string
+  table_id = null
 
   encryption_configuration = [{
     kms_key_name = null

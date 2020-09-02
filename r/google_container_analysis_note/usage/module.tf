@@ -1,7 +1,9 @@
 module "google_container_analysis_note" {
   source = "./modules/google/r/google_container_analysis_note"
 
-  name    = null
+  # name - (required) is a type of string
+  name = null
+  # project - (optional) is a type of string
   project = null
 
   attestation_authority = [{

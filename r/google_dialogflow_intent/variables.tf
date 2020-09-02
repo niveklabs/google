@@ -64,7 +64,7 @@ variable "reset_contexts" {
 }
 
 variable "webhook_state" {
-  description = "(optional) - Indicates whether webhooks are enabled for the intent.\n* WEBHOOK_STATE_ENABLED: Webhook is enabled in the agent and in the intent.\n* WEBHOOK_STATE_ENABLED_FOR_SLOT_FILLING: Webhook is enabled in the agent and in the intent. Also, each slot\nfilling prompt is forwarded to the webhook."
+  description = "(optional) - Indicates whether webhooks are enabled for the intent.\n* WEBHOOK_STATE_ENABLED: Webhook is enabled in the agent and in the intent.\n* WEBHOOK_STATE_ENABLED_FOR_SLOT_FILLING: Webhook is enabled in the agent and in the intent. Also, each slot\nfilling prompt is forwarded to the webhook. Possible values: [\"WEBHOOK_STATE_ENABLED\", \"WEBHOOK_STATE_ENABLED_FOR_SLOT_FILLING\"]"
   type        = string
   default     = null
 }

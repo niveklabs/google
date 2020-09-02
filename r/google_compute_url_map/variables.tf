@@ -21,6 +21,21 @@ variable "project" {
   default     = null
 }
 
+variable "default_url_redirect" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      host_redirect          = string
+      https_redirect         = bool
+      path_redirect          = string
+      prefix_redirect        = string
+      redirect_response_code = string
+      strip_query            = bool
+    }
+  ))
+  default = []
+}
+
 variable "header_action" {
   description = "nested mode: NestingList, min items: 0, max items: 1"
   type = set(object(
@@ -63,7 +78,17 @@ variable "path_matcher" {
   type = set(object(
     {
       default_service = string
-      description     = string
+      default_url_redirect = list(object(
+        {
+          host_redirect          = string
+          https_redirect         = bool
+          path_redirect          = string
+          prefix_redirect        = string
+          redirect_response_code = string
+          strip_query            = bool
+        }
+      ))
+      description = string
       header_action = list(object(
         {
           request_headers_to_add = list(object(

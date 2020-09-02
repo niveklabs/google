@@ -1,10 +1,14 @@
 module "google_access_context_manager_access_level" {
   source = "./modules/google/r/google_access_context_manager_access_level"
 
+  # description - (optional) is a type of string
   description = null
-  name        = null
-  parent      = null
-  title       = null
+  # name - (required) is a type of string
+  name = null
+  # parent - (required) is a type of string
+  parent = null
+  # title - (required) is a type of string
+  title = null
 
   basic = [{
     combining_function = null

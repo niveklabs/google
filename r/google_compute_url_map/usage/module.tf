@@ -1,10 +1,23 @@
 module "google_compute_url_map" {
   source = "./modules/google/r/google_compute_url_map"
 
+  # default_service - (optional) is a type of string
   default_service = null
-  description     = null
-  name            = null
-  project         = null
+  # description - (optional) is a type of string
+  description = null
+  # name - (required) is a type of string
+  name = null
+  # project - (optional) is a type of string
+  project = null
+
+  default_url_redirect = [{
+    host_redirect          = null
+    https_redirect         = null
+    path_redirect          = null
+    prefix_redirect        = null
+    redirect_response_code = null
+    strip_query            = null
+  }]
 
   header_action = [{
     request_headers_to_add = [{
@@ -29,7 +42,15 @@ module "google_compute_url_map" {
 
   path_matcher = [{
     default_service = null
-    description     = null
+    default_url_redirect = [{
+      host_redirect          = null
+      https_redirect         = null
+      path_redirect          = null
+      prefix_redirect        = null
+      redirect_response_code = null
+      strip_query            = null
+    }]
+    description = null
     header_action = [{
       request_headers_to_add = [{
         header_name  = null

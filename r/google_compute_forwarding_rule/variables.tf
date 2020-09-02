@@ -29,7 +29,7 @@ variable "ip_address" {
 }
 
 variable "ip_protocol" {
-  description = "(optional) - The IP protocol to which this rule applies. Valid options are TCP,\nUDP, ESP, AH, SCTP or ICMP.\n\nWhen the load balancing scheme is INTERNAL, only TCP and UDP are\nvalid."
+  description = "(optional) - The IP protocol to which this rule applies.\n\nWhen the load balancing scheme is INTERNAL, only TCP and UDP are\nvalid. Possible values: [\"TCP\", \"UDP\", \"ESP\", \"AH\", \"SCTP\", \"ICMP\"]"
   type        = string
   default     = null
 }
@@ -41,7 +41,7 @@ variable "ip_version" {
 }
 
 variable "load_balancing_scheme" {
-  description = "(optional) - This signifies what the ForwardingRule will be used for and can be\nEXTERNAL, INTERNAL, or INTERNAL_MANAGED. EXTERNAL is used for Classic\nCloud VPN gateways, protocol forwarding to VMs from an external IP address,\nand HTTP(S), SSL Proxy, TCP Proxy, and Network TCP/UDP load balancers.\nINTERNAL is used for protocol forwarding to VMs from an internal IP address,\nand internal TCP/UDP load balancers.\nINTERNAL_MANAGED is used for internal HTTP(S) load balancers."
+  description = "(optional) - This signifies what the ForwardingRule will be used for and can be\nEXTERNAL, INTERNAL, or INTERNAL_MANAGED. EXTERNAL is used for Classic\nCloud VPN gateways, protocol forwarding to VMs from an external IP address,\nand HTTP(S), SSL Proxy, TCP Proxy, and Network TCP/UDP load balancers.\nINTERNAL is used for protocol forwarding to VMs from an internal IP address,\nand internal TCP/UDP load balancers.\nINTERNAL_MANAGED is used for internal HTTP(S) load balancers. Default value: \"EXTERNAL\" Possible values: [\"EXTERNAL\", \"INTERNAL\", \"INTERNAL_MANAGED\"]"
   type        = string
   default     = null
 }
@@ -58,7 +58,7 @@ variable "network" {
 }
 
 variable "network_tier" {
-  description = "(optional) - The networking tier used for configuring this address. This field can\ntake the following values: PREMIUM or STANDARD. If this field is not\nspecified, it is assumed to be PREMIUM."
+  description = "(optional) - The networking tier used for configuring this address. If this field is not\nspecified, it is assumed to be PREMIUM. Possible values: [\"PREMIUM\", \"STANDARD\"]"
   type        = string
   default     = null
 }

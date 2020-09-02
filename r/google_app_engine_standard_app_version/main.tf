@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.19.0"
+    google = ">= 3.20.0"
   }
 }
 
@@ -15,6 +15,36 @@ resource "google_app_engine_standard_app_version" "this" {
   service                   = var.service
   threadsafe                = var.threadsafe
   version_id                = var.version_id
+
+  dynamic "automatic_scaling" {
+    for_each = var.automatic_scaling
+    content {
+      max_concurrent_requests = automatic_scaling.value["max_concurrent_requests"]
+      max_idle_instances      = automatic_scaling.value["max_idle_instances"]
+      max_pending_latency     = automatic_scaling.value["max_pending_latency"]
+      min_idle_instances      = automatic_scaling.value["min_idle_instances"]
+      min_pending_latency     = automatic_scaling.value["min_pending_latency"]
+
+      dynamic "standard_scheduler_settings" {
+        for_each = automatic_scaling.value.standard_scheduler_settings
+        content {
+          max_instances                 = standard_scheduler_settings.value["max_instances"]
+          min_instances                 = standard_scheduler_settings.value["min_instances"]
+          target_cpu_utilization        = standard_scheduler_settings.value["target_cpu_utilization"]
+          target_throughput_utilization = standard_scheduler_settings.value["target_throughput_utilization"]
+        }
+      }
+
+    }
+  }
+
+  dynamic "basic_scaling" {
+    for_each = var.basic_scaling
+    content {
+      idle_timeout  = basic_scaling.value["idle_timeout"]
+      max_instances = basic_scaling.value["max_instances"]
+    }
+  }
 
   dynamic "deployment" {
     for_each = var.deployment
@@ -84,6 +114,13 @@ resource "google_app_engine_standard_app_version" "this" {
     content {
       name    = libraries.value["name"]
       version = libraries.value["version"]
+    }
+  }
+
+  dynamic "manual_scaling" {
+    for_each = var.manual_scaling
+    content {
+      instances = manual_scaling.value["instances"]
     }
   }
 

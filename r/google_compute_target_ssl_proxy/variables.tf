@@ -21,7 +21,7 @@ variable "project" {
 }
 
 variable "proxy_header" {
-  description = "(optional) - Specifies the type of proxy header to append before sending data to\nthe backend, either NONE or PROXY_V1. The default is NONE."
+  description = "(optional) - Specifies the type of proxy header to append before sending data to\nthe backend. Default value: \"NONE\" Possible values: [\"NONE\", \"PROXY_V1\"]"
   type        = string
   default     = null
 }

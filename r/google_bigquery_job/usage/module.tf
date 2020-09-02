@@ -1,11 +1,16 @@
 module "google_bigquery_job" {
   source = "./modules/google/r/google_bigquery_job"
 
-  job_id         = null
+  # job_id - (required) is a type of string
+  job_id = null
+  # job_timeout_ms - (optional) is a type of string
   job_timeout_ms = null
-  labels         = {}
-  location       = null
-  project        = null
+  # labels - (optional) is a type of map of string
+  labels = {}
+  # location - (optional) is a type of string
+  location = null
+  # project - (optional) is a type of string
+  project = null
 
   copy = [{
     create_disposition = null

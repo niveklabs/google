@@ -48,6 +48,12 @@ variable "schedule" {
   default     = null
 }
 
+variable "service_account_name" {
+  description = "(optional) - Optional service account name. If this field is set, transfer config will\nbe created with this service account credentials. It requires that\nrequesting user calling this API has permissions to act as this service account."
+  type        = string
+  default     = null
+}
+
 variable "timeouts" {
   description = "nested mode: NestingSingle, min items: 0, max items: 0"
   type = set(object(

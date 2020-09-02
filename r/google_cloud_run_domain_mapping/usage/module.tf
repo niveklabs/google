@@ -1,9 +1,12 @@
 module "google_cloud_run_domain_mapping" {
   source = "./modules/google/r/google_cloud_run_domain_mapping"
 
+  # location - (required) is a type of string
   location = null
-  name     = null
-  project  = null
+  # name - (required) is a type of string
+  name = null
+  # project - (optional) is a type of string
+  project = null
 
   metadata = [{
     annotations      = {}

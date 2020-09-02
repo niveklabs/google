@@ -1,5 +1,5 @@
 variable "ancestor" {
-  description = "(optional) - Policy for including ancestors in the index.  Either 'ALL_ANCESTORS' or 'NONE',\nthe default is 'NONE'."
+  description = "(optional) - Policy for including ancestors in the index. Default value: \"NONE\" Possible values: [\"NONE\", \"ALL_ANCESTORS\"]"
   type        = string
   default     = null
 }

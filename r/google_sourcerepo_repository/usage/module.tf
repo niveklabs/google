@@ -1,7 +1,9 @@
 module "google_sourcerepo_repository" {
   source = "./modules/google/r/google_sourcerepo_repository"
 
-  name    = null
+  # name - (required) is a type of string
+  name = null
+  # project - (optional) is a type of string
   project = null
 
   pubsub_configs = [{

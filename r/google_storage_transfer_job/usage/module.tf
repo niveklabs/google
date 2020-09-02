@@ -1,9 +1,12 @@
 module "google_storage_transfer_job" {
   source = "./modules/google/r/google_storage_transfer_job"
 
+  # description - (required) is a type of string
   description = null
-  project     = null
-  status      = null
+  # project - (optional) is a type of string
+  project = null
+  # status - (optional) is a type of string
+  status = null
 
   schedule = [{
     schedule_end_date = [{

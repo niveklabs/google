@@ -11,7 +11,7 @@ variable "destination_ranges" {
 }
 
 variable "direction" {
-  description = "(optional) - Direction of traffic to which this firewall applies; default is\nINGRESS. Note: For INGRESS traffic, it is NOT supported to specify\ndestinationRanges; For EGRESS traffic, it is NOT supported to specify\nsourceRanges OR sourceTags."
+  description = "(optional) - Direction of traffic to which this firewall applies; default is\nINGRESS. Note: For INGRESS traffic, it is NOT supported to specify\ndestinationRanges; For EGRESS traffic, it is NOT supported to specify\nsourceRanges OR sourceTags. Possible values: [\"INGRESS\", \"EGRESS\"]"
   type        = string
   default     = null
 }

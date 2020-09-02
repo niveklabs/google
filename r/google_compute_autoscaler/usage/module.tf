@@ -1,11 +1,16 @@
 module "google_compute_autoscaler" {
   source = "./modules/google/r/google_compute_autoscaler"
 
+  # description - (optional) is a type of string
   description = null
-  name        = null
-  project     = null
-  target      = null
-  zone        = null
+  # name - (required) is a type of string
+  name = null
+  # project - (optional) is a type of string
+  project = null
+  # target - (required) is a type of string
+  target = null
+  # zone - (optional) is a type of string
+  zone = null
 
   autoscaling_policy = [{
     cooldown_period = null

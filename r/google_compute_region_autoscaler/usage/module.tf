@@ -1,11 +1,16 @@
 module "google_compute_region_autoscaler" {
   source = "./modules/google/r/google_compute_region_autoscaler"
 
+  # description - (optional) is a type of string
   description = null
-  name        = null
-  project     = null
-  region      = null
-  target      = null
+  # name - (required) is a type of string
+  name = null
+  # project - (optional) is a type of string
+  project = null
+  # region - (optional) is a type of string
+  region = null
+  # target - (required) is a type of string
+  target = null
 
   autoscaling_policy = [{
     cooldown_period = null

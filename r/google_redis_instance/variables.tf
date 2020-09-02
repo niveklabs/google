@@ -11,7 +11,7 @@ variable "authorized_network" {
 }
 
 variable "connect_mode" {
-  description = "(optional) - The connection mode of the Redis instance. Can be either\n'DIRECT_PEERING' or 'PRIVATE_SERVICE_ACCESS'. The default\nconnect mode if not provided is 'DIRECT_PEERING'."
+  description = "(optional) - The connection mode of the Redis instance. Default value: \"DIRECT_PEERING\" Possible values: [\"DIRECT_PEERING\", \"PRIVATE_SERVICE_ACCESS\"]"
   type        = string
   default     = null
 }
@@ -75,7 +75,7 @@ variable "reserved_ip_range" {
 }
 
 variable "tier" {
-  description = "(optional) - The service tier of the instance. Must be one of these values:\n\n- BASIC: standalone instance\n- STANDARD_HA: highly available primary/replica instances"
+  description = "(optional) - The service tier of the instance. Must be one of these values:\n\n- BASIC: standalone instance\n- STANDARD_HA: highly available primary/replica instances Default value: \"BASIC\" Possible values: [\"BASIC\", \"STANDARD_HA\"]"
   type        = string
   default     = null
 }

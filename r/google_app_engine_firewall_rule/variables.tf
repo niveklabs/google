@@ -1,5 +1,5 @@
 variable "action" {
-  description = "(required) - The action to take if this rule matches."
+  description = "(required) - The action to take if this rule matches. Possible values: [\"UNSPECIFIED_ACTION\", \"ALLOW\", \"DENY\"]"
   type        = string
 }
 

@@ -11,7 +11,7 @@ variable "description" {
 }
 
 variable "min_tls_version" {
-  description = "(optional) - The minimum version of SSL protocol that can be used by the clients\nto establish a connection with the load balancer. This can be one of\n'TLS_1_0', 'TLS_1_1', 'TLS_1_2'.\n Default is 'TLS_1_0'."
+  description = "(optional) - The minimum version of SSL protocol that can be used by the clients\nto establish a connection with the load balancer. Default value: \"TLS_1_0\" Possible values: [\"TLS_1_0\", \"TLS_1_1\", \"TLS_1_2\"]"
   type        = string
   default     = null
 }
@@ -22,7 +22,7 @@ variable "name" {
 }
 
 variable "profile" {
-  description = "(optional) - Profile specifies the set of SSL features that can be used by the\nload balancer when negotiating SSL with clients. This can be one of\n'COMPATIBLE', 'MODERN', 'RESTRICTED', or 'CUSTOM'. If using 'CUSTOM',\nthe set of SSL features to enable must be specified in the\n'customFeatures' field.\n\nSee the [official documentation](https://cloud.google.com/compute/docs/load-balancing/ssl-policies#profilefeaturesupport)\nfor information on what cipher suites each profile provides. If\n'CUSTOM' is used, the 'custom_features' attribute **must be set**.\nDefault is 'COMPATIBLE'."
+  description = "(optional) - Profile specifies the set of SSL features that can be used by the\nload balancer when negotiating SSL with clients. If using 'CUSTOM',\nthe set of SSL features to enable must be specified in the\n'customFeatures' field.\n\nSee the [official documentation](https://cloud.google.com/compute/docs/load-balancing/ssl-policies#profilefeaturesupport)\nfor information on what cipher suites each profile provides. If\n'CUSTOM' is used, the 'custom_features' attribute **must be set**. Default value: \"COMPATIBLE\" Possible values: [\"COMPATIBLE\", \"MODERN\", \"RESTRICTED\", \"CUSTOM\"]"
   type        = string
   default     = null
 }

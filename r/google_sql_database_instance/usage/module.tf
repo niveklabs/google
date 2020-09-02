@@ -1,11 +1,16 @@
 module "google_sql_database_instance" {
   source = "./modules/google/r/google_sql_database_instance"
 
-  database_version     = null
+  # database_version - (optional) is a type of string
+  database_version = null
+  # master_instance_name - (optional) is a type of string
   master_instance_name = null
-  name                 = null
-  project              = null
-  region               = null
+  # name - (optional) is a type of string
+  name = null
+  # project - (optional) is a type of string
+  project = null
+  # region - (optional) is a type of string
+  region = null
 
   replica_configuration = [{
     ca_certificate            = null

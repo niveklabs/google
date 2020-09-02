@@ -1,13 +1,20 @@
 module "google_monitoring_alert_policy" {
   source = "./modules/google/r/google_monitoring_alert_policy"
 
-  combiner              = null
-  display_name          = null
-  enabled               = null
-  labels                = []
+  # combiner - (required) is a type of string
+  combiner = null
+  # display_name - (required) is a type of string
+  display_name = null
+  # enabled - (optional) is a type of bool
+  enabled = null
+  # labels - (optional) is a type of list of string
+  labels = []
+  # notification_channels - (optional) is a type of list of string
   notification_channels = []
-  project               = null
-  user_labels           = {}
+  # project - (optional) is a type of string
+  project = null
+  # user_labels - (optional) is a type of map of string
+  user_labels = {}
 
   conditions = [{
     condition_absent = [{

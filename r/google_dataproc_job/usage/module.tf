@@ -1,10 +1,14 @@
 module "google_dataproc_job" {
   source = "./modules/google/r/google_dataproc_job"
 
+  # force_delete - (optional) is a type of bool
   force_delete = null
-  labels       = {}
-  project      = null
-  region       = null
+  # labels - (optional) is a type of map of string
+  labels = {}
+  # project - (optional) is a type of string
+  project = null
+  # region - (optional) is a type of string
+  region = null
 
   hadoop_config = [{
     archive_uris  = []

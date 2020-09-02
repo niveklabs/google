@@ -5,7 +5,7 @@ variable "address" {
 }
 
 variable "address_type" {
-  description = "(optional) - The type of address to reserve, either INTERNAL or EXTERNAL.\nIf unspecified, defaults to EXTERNAL."
+  description = "(optional) - The type of address to reserve. Default value: \"EXTERNAL\" Possible values: [\"INTERNAL\", \"EXTERNAL\"]"
   type        = string
   default     = null
 }
@@ -22,7 +22,7 @@ variable "name" {
 }
 
 variable "network_tier" {
-  description = "(optional) - The networking tier used for configuring this address. This field can\ntake the following values: PREMIUM or STANDARD. If this field is not\nspecified, it is assumed to be PREMIUM."
+  description = "(optional) - The networking tier used for configuring this address. If this field is not\nspecified, it is assumed to be PREMIUM. Possible values: [\"PREMIUM\", \"STANDARD\"]"
   type        = string
   default     = null
 }
@@ -34,7 +34,7 @@ variable "project" {
 }
 
 variable "purpose" {
-  description = "(optional) - The purpose of this resource, which can be one of the following values:\n\n- GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.\n\nThis should only be set when using an Internal address."
+  description = "(optional) - The purpose of this resource, which can be one of the following values:\n\n- GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.\n\nThis should only be set when using an Internal address. Possible values: [\"GCE_ENDPOINT\"]"
   type        = string
   default     = null
 }

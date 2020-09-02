@@ -1,20 +1,34 @@
 module "google_compute_instance_template" {
   source = "./modules/google/r/google_compute_instance_template"
 
-  can_ip_forward          = null
-  description             = null
-  enable_display          = null
-  instance_description    = null
-  labels                  = {}
-  machine_type            = null
-  metadata                = {}
+  # can_ip_forward - (optional) is a type of bool
+  can_ip_forward = null
+  # description - (optional) is a type of string
+  description = null
+  # enable_display - (optional) is a type of bool
+  enable_display = null
+  # instance_description - (optional) is a type of string
+  instance_description = null
+  # labels - (optional) is a type of map of string
+  labels = {}
+  # machine_type - (required) is a type of string
+  machine_type = null
+  # metadata - (optional) is a type of map of string
+  metadata = {}
+  # metadata_startup_script - (optional) is a type of string
   metadata_startup_script = null
-  min_cpu_platform        = null
-  name                    = null
-  name_prefix             = null
-  project                 = null
-  region                  = null
-  tags                    = []
+  # min_cpu_platform - (optional) is a type of string
+  min_cpu_platform = null
+  # name - (optional) is a type of string
+  name = null
+  # name_prefix - (optional) is a type of string
+  name_prefix = null
+  # project - (optional) is a type of string
+  project = null
+  # region - (optional) is a type of string
+  region = null
+  # tags - (optional) is a type of set of string
+  tags = []
 
   disk = [{
     auto_delete = null

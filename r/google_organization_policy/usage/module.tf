@@ -1,9 +1,12 @@
 module "google_organization_policy" {
   source = "./modules/google/r/google_organization_policy"
 
+  # constraint - (required) is a type of string
   constraint = null
-  org_id     = null
-  version    = null
+  # org_id - (required) is a type of string
+  org_id = null
+  # version - (optional) is a type of number
+  version = null
 
   boolean_policy = [{
     enforced = null

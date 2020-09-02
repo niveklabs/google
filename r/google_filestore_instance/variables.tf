@@ -22,7 +22,7 @@ variable "project" {
 }
 
 variable "tier" {
-  description = "(required) - The service tier of the instance."
+  description = "(required) - The service tier of the instance. Possible values: [\"TIER_UNSPECIFIED\", \"STANDARD\", \"PREMIUM\"]"
   type        = string
 }
 

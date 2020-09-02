@@ -5,7 +5,7 @@ variable "address" {
 }
 
 variable "address_type" {
-  description = "(optional) - The type of the address to reserve, default is EXTERNAL.\n\n* EXTERNAL indicates public/external single IP address.\n* INTERNAL indicates internal IP ranges belonging to some network."
+  description = "(optional) - The type of the address to reserve.\n\n* EXTERNAL indicates public/external single IP address.\n* INTERNAL indicates internal IP ranges belonging to some network. Default value: \"EXTERNAL\" Possible values: [\"EXTERNAL\", \"INTERNAL\"]"
   type        = string
   default     = null
 }
@@ -17,7 +17,7 @@ variable "description" {
 }
 
 variable "ip_version" {
-  description = "(optional) - The IP Version that will be used by this address. Valid options are\n'IPV4' or 'IPV6'. The default value is 'IPV4'."
+  description = "(optional) - The IP Version that will be used by this address. The default value is 'IPV4'. Possible values: [\"IPV4\", \"IPV6\"]"
   type        = string
   default     = null
 }
@@ -46,7 +46,7 @@ variable "project" {
 }
 
 variable "purpose" {
-  description = "(optional) - The purpose of the resource. For global internal addresses it can be\n\n* VPC_PEERING - for peer networks\n\nThis should only be set when using an Internal address."
+  description = "(optional) - The purpose of the resource. For global internal addresses it can be\n\n* VPC_PEERING - for peer networks\n\nThis should only be set when using an Internal address. Possible values: [\"VPC_PEERING\"]"
   type        = string
   default     = null
 }

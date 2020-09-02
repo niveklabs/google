@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.19.0"
+    google = ">= 3.20.0"
   }
 }
 
@@ -14,6 +14,7 @@ resource "google_bigquery_data_transfer_config" "this" {
   params                   = var.params
   project                  = var.project
   schedule                 = var.schedule
+  service_account_name     = var.service_account_name
 
   dynamic "timeouts" {
     for_each = var.timeouts

@@ -1,12 +1,18 @@
 module "google_dns_managed_zone" {
   source = "./modules/google/r/google_dns_managed_zone"
 
+  # description - (optional) is a type of string
   description = null
-  dns_name    = null
-  labels      = {}
-  name        = null
-  project     = null
-  visibility  = null
+  # dns_name - (required) is a type of string
+  dns_name = null
+  # labels - (optional) is a type of map of string
+  labels = {}
+  # name - (required) is a type of string
+  name = null
+  # project - (optional) is a type of string
+  project = null
+  # visibility - (optional) is a type of string
+  visibility = null
 
   dnssec_config = [{
     default_key_specs = [{

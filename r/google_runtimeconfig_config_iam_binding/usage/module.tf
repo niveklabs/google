@@ -1,8 +1,12 @@
 module "google_runtimeconfig_config_iam_binding" {
   source = "./modules/google/r/google_runtimeconfig_config_iam_binding"
 
-  config  = null
+  # config - (required) is a type of string
+  config = null
+  # members - (required) is a type of set of string
   members = []
+  # project - (optional) is a type of string
   project = null
-  role    = null
+  # role - (required) is a type of string
+  role = null
 }

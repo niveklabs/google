@@ -1,11 +1,17 @@
 module "google_access_context_manager_service_perimeter" {
   source = "./modules/google/r/google_access_context_manager_service_perimeter"
 
-  description               = null
-  name                      = null
-  parent                    = null
-  perimeter_type            = null
-  title                     = null
+  # description - (optional) is a type of string
+  description = null
+  # name - (required) is a type of string
+  name = null
+  # parent - (required) is a type of string
+  parent = null
+  # perimeter_type - (optional) is a type of string
+  perimeter_type = null
+  # title - (required) is a type of string
+  title = null
+  # use_explicit_dry_run_spec - (optional) is a type of bool
   use_explicit_dry_run_spec = null
 
   spec = [{

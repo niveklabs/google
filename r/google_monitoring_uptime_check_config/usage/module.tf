@@ -1,12 +1,18 @@
 module "google_monitoring_uptime_check_config" {
   source = "./modules/google/r/google_monitoring_uptime_check_config"
 
-  display_name     = null
-  is_internal      = null
-  period           = null
-  project          = null
+  # display_name - (required) is a type of string
+  display_name = null
+  # is_internal - (optional) is a type of bool
+  is_internal = null
+  # period - (optional) is a type of string
+  period = null
+  # project - (optional) is a type of string
+  project = null
+  # selected_regions - (optional) is a type of list of string
   selected_regions = []
-  timeout          = null
+  # timeout - (required) is a type of string
+  timeout = null
 
   content_matchers = [{
     content = null

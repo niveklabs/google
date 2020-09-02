@@ -1,30 +1,54 @@
 module "google_container_cluster" {
   source = "./modules/google/r/google_container_cluster"
 
-  additional_zones            = []
-  cluster_ipv4_cidr           = null
-  default_max_pods_per_node   = null
-  description                 = null
+  # additional_zones - (optional) is a type of set of string
+  additional_zones = []
+  # cluster_ipv4_cidr - (optional) is a type of string
+  cluster_ipv4_cidr = null
+  # default_max_pods_per_node - (optional) is a type of number
+  default_max_pods_per_node = null
+  # description - (optional) is a type of string
+  description = null
+  # enable_binary_authorization - (optional) is a type of bool
   enable_binary_authorization = null
+  # enable_intranode_visibility - (optional) is a type of bool
   enable_intranode_visibility = null
-  enable_kubernetes_alpha     = null
-  enable_legacy_abac          = null
-  enable_tpu                  = null
-  initial_node_count          = null
-  location                    = null
-  logging_service             = null
-  min_master_version          = null
-  monitoring_service          = null
-  name                        = null
-  network                     = null
-  node_locations              = []
-  node_version                = null
-  project                     = null
-  region                      = null
-  remove_default_node_pool    = null
-  resource_labels             = {}
-  subnetwork                  = null
-  zone                        = null
+  # enable_kubernetes_alpha - (optional) is a type of bool
+  enable_kubernetes_alpha = null
+  # enable_legacy_abac - (optional) is a type of bool
+  enable_legacy_abac = null
+  # enable_tpu - (optional) is a type of bool
+  enable_tpu = null
+  # initial_node_count - (optional) is a type of number
+  initial_node_count = null
+  # location - (optional) is a type of string
+  location = null
+  # logging_service - (optional) is a type of string
+  logging_service = null
+  # min_master_version - (optional) is a type of string
+  min_master_version = null
+  # monitoring_service - (optional) is a type of string
+  monitoring_service = null
+  # name - (required) is a type of string
+  name = null
+  # network - (optional) is a type of string
+  network = null
+  # node_locations - (optional) is a type of set of string
+  node_locations = []
+  # node_version - (optional) is a type of string
+  node_version = null
+  # project - (optional) is a type of string
+  project = null
+  # region - (optional) is a type of string
+  region = null
+  # remove_default_node_pool - (optional) is a type of bool
+  remove_default_node_pool = null
+  # resource_labels - (optional) is a type of map of string
+  resource_labels = {}
+  # subnetwork - (optional) is a type of string
+  subnetwork = null
+  # zone - (optional) is a type of string
+  zone = null
 
   addons_config = [{
     horizontal_pod_autoscaling = [{

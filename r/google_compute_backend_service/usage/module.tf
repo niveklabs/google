@@ -1,19 +1,32 @@
 module "google_compute_backend_service" {
   source = "./modules/google/r/google_compute_backend_service"
 
-  affinity_cookie_ttl_sec         = null
+  # affinity_cookie_ttl_sec - (optional) is a type of number
+  affinity_cookie_ttl_sec = null
+  # connection_draining_timeout_sec - (optional) is a type of number
   connection_draining_timeout_sec = null
-  description                     = null
-  enable_cdn                      = null
-  health_checks                   = []
-  load_balancing_scheme           = null
-  name                            = null
-  port_name                       = null
-  project                         = null
-  protocol                        = null
-  security_policy                 = null
-  session_affinity                = null
-  timeout_sec                     = null
+  # description - (optional) is a type of string
+  description = null
+  # enable_cdn - (optional) is a type of bool
+  enable_cdn = null
+  # health_checks - (required) is a type of set of string
+  health_checks = []
+  # load_balancing_scheme - (optional) is a type of string
+  load_balancing_scheme = null
+  # name - (required) is a type of string
+  name = null
+  # port_name - (optional) is a type of string
+  port_name = null
+  # project - (optional) is a type of string
+  project = null
+  # protocol - (optional) is a type of string
+  protocol = null
+  # security_policy - (optional) is a type of string
+  security_policy = null
+  # session_affinity - (optional) is a type of string
+  session_affinity = null
+  # timeout_sec - (optional) is a type of number
+  timeout_sec = null
 
   backend = [{
     balancing_mode               = null

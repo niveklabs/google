@@ -1,13 +1,20 @@
 module "google_monitoring_notification_channel" {
   source = "./modules/google/r/google_monitoring_notification_channel"
 
-  description  = null
+  # description - (optional) is a type of string
+  description = null
+  # display_name - (optional) is a type of string
   display_name = null
-  enabled      = null
-  labels       = {}
-  project      = null
-  type         = null
-  user_labels  = {}
+  # enabled - (optional) is a type of bool
+  enabled = null
+  # labels - (optional) is a type of map of string
+  labels = {}
+  # project - (optional) is a type of string
+  project = null
+  # type - (required) is a type of string
+  type = null
+  # user_labels - (optional) is a type of map of string
+  user_labels = {}
 
   sensitive_labels = [{
     auth_token  = null

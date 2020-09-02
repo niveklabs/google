@@ -1,5 +1,5 @@
 variable "database_version" {
-  description = "(required) - The MySQL version running on your source database server: MYSQL_5_6 or MYSQL_5_7."
+  description = "(required) - The MySQL version running on your source database server. Possible values: [\"MYSQL_5_6\", \"MYSQL_5_7\"]"
   type        = string
 }
 

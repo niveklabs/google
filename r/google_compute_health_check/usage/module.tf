@@ -1,12 +1,19 @@
 module "google_compute_health_check" {
   source = "./modules/google/r/google_compute_health_check"
 
-  check_interval_sec  = null
-  description         = null
-  healthy_threshold   = null
-  name                = null
-  project             = null
-  timeout_sec         = null
+  # check_interval_sec - (optional) is a type of number
+  check_interval_sec = null
+  # description - (optional) is a type of string
+  description = null
+  # healthy_threshold - (optional) is a type of number
+  healthy_threshold = null
+  # name - (required) is a type of string
+  name = null
+  # project - (optional) is a type of string
+  project = null
+  # timeout_sec - (optional) is a type of number
+  timeout_sec = null
+  # unhealthy_threshold - (optional) is a type of number
   unhealthy_threshold = null
 
   http2_health_check = [{

@@ -1,27 +1,45 @@
 module "google_compute_instance" {
   source = "./modules/google/r/google_compute_instance"
 
+  # allow_stopping_for_update - (optional) is a type of bool
   allow_stopping_for_update = null
-  can_ip_forward            = null
-  deletion_protection       = null
-  description               = null
-  desired_status            = null
-  enable_display            = null
+  # can_ip_forward - (optional) is a type of bool
+  can_ip_forward = null
+  # deletion_protection - (optional) is a type of bool
+  deletion_protection = null
+  # description - (optional) is a type of string
+  description = null
+  # desired_status - (optional) is a type of string
+  desired_status = null
+  # enable_display - (optional) is a type of bool
+  enable_display = null
+  # guest_accelerator - (optional) is a type of list of object
   guest_accelerator = [{
     count = null
     type  = null
   }]
-  hostname                = null
-  labels                  = {}
-  machine_type            = null
-  metadata                = {}
+  # hostname - (optional) is a type of string
+  hostname = null
+  # labels - (optional) is a type of map of string
+  labels = {}
+  # machine_type - (required) is a type of string
+  machine_type = null
+  # metadata - (optional) is a type of map of string
+  metadata = {}
+  # metadata_startup_script - (optional) is a type of string
   metadata_startup_script = null
-  min_cpu_platform        = null
-  name                    = null
-  project                 = null
-  resource_policies       = []
-  tags                    = []
-  zone                    = null
+  # min_cpu_platform - (optional) is a type of string
+  min_cpu_platform = null
+  # name - (required) is a type of string
+  name = null
+  # project - (optional) is a type of string
+  project = null
+  # resource_policies - (optional) is a type of list of string
+  resource_policies = []
+  # tags - (optional) is a type of set of string
+  tags = []
+  # zone - (optional) is a type of string
+  zone = null
 
   attached_disk = [{
     device_name                = null

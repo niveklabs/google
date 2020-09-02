@@ -15,7 +15,7 @@ variable "name" {
 }
 
 variable "nat_policy" {
-  description = "(optional) - NAT option controlling how IPs are NAT'ed to the instance.\nCurrently only NO_NAT (default value) is supported."
+  description = "(optional) - NAT option controlling how IPs are NAT'ed to the instance.\nCurrently only NO_NAT (default value) is supported. Default value: \"NO_NAT\" Possible values: [\"NO_NAT\"]"
   type        = string
   default     = null
 }

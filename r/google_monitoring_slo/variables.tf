@@ -1,5 +1,5 @@
 variable "calendar_period" {
-  description = "(optional) - A calendar period, semantically \"since the start of the current\n<calendarPeriod>\"."
+  description = "(optional) - A calendar period, semantically \"since the start of the current\n<calendarPeriod>\". Possible values: [\"DAY\", \"WEEK\", \"FORTNIGHT\", \"MONTH\"]"
   type        = string
   default     = null
 }

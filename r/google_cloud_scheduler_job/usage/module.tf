@@ -1,13 +1,20 @@
 module "google_cloud_scheduler_job" {
   source = "./modules/google/r/google_cloud_scheduler_job"
 
+  # attempt_deadline - (optional) is a type of string
   attempt_deadline = null
-  description      = null
-  name             = null
-  project          = null
-  region           = null
-  schedule         = null
-  time_zone        = null
+  # description - (optional) is a type of string
+  description = null
+  # name - (required) is a type of string
+  name = null
+  # project - (optional) is a type of string
+  project = null
+  # region - (optional) is a type of string
+  region = null
+  # schedule - (optional) is a type of string
+  schedule = null
+  # time_zone - (optional) is a type of string
+  time_zone = null
 
   app_engine_http_target = [{
     app_engine_routing = [{

@@ -5,7 +5,7 @@ variable "description" {
 }
 
 variable "global_policy_evaluation_mode" {
-  description = "(optional) - Controls the evaluation of a Google-maintained global admission policy\nfor common system-level images. Images not covered by the global\npolicy will be subject to the project admission policy."
+  description = "(optional) - Controls the evaluation of a Google-maintained global admission policy\nfor common system-level images. Images not covered by the global\npolicy will be subject to the project admission policy. Possible values: [\"ENABLE\", \"DISABLE\"]"
   type        = string
   default     = null
 }

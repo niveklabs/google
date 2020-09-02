@@ -82,7 +82,7 @@ variable "service" {
 }
 
 variable "serving_status" {
-  description = "(optional) - Current serving status of this version. Only the versions with a SERVING status create instances and can be billed.\nDefaults to SERVING."
+  description = "(optional) - Current serving status of this version. Only the versions with a SERVING status create instances and can be billed. Default value: \"SERVING\" Possible values: [\"SERVING\", \"STOPPED\"]"
   type        = string
   default     = null
 }

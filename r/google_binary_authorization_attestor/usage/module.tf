@@ -1,9 +1,12 @@
 module "google_binary_authorization_attestor" {
   source = "./modules/google/r/google_binary_authorization_attestor"
 
+  # description - (optional) is a type of string
   description = null
-  name        = null
-  project     = null
+  # name - (required) is a type of string
+  name = null
+  # project - (optional) is a type of string
+  project = null
 
   attestation_authority_note = [{
     delegation_service_account_email = null

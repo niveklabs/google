@@ -1,14 +1,22 @@
 module "google_cloudbuild_trigger" {
   source = "./modules/google/r/google_cloudbuild_trigger"
 
-  description    = null
-  disabled       = null
-  filename       = null
-  ignored_files  = []
+  # description - (optional) is a type of string
+  description = null
+  # disabled - (optional) is a type of bool
+  disabled = null
+  # filename - (optional) is a type of string
+  filename = null
+  # ignored_files - (optional) is a type of list of string
+  ignored_files = []
+  # included_files - (optional) is a type of list of string
   included_files = []
-  name           = null
-  project        = null
-  substitutions  = {}
+  # name - (optional) is a type of string
+  name = null
+  # project - (optional) is a type of string
+  project = null
+  # substitutions - (optional) is a type of map of string
+  substitutions = {}
 
   build = [{
     images = []

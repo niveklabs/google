@@ -1,9 +1,12 @@
 module "google_cloud_tasks_queue" {
   source = "./modules/google/r/google_cloud_tasks_queue"
 
+  # location - (required) is a type of string
   location = null
-  name     = null
-  project  = null
+  # name - (optional) is a type of string
+  name = null
+  # project - (optional) is a type of string
+  project = null
 
   app_engine_routing_override = [{
     host     = null

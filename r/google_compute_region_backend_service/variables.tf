@@ -16,7 +16,7 @@ variable "health_checks" {
 }
 
 variable "load_balancing_scheme" {
-  description = "(optional) - Indicates what kind of load balancing this regional backend service\nwill be used for. A backend service created for one type of load\nbalancing cannot be used with the other(s). Must be 'INTERNAL' or\n'INTERNAL_MANAGED'. Defaults to 'INTERNAL'."
+  description = "(optional) - Indicates what kind of load balancing this regional backend service\nwill be used for. A backend service created for one type of load\nbalancing cannot be used with the other(s). Default value: \"INTERNAL\" Possible values: [\"INTERNAL\", \"INTERNAL_MANAGED\"]"
   type        = string
   default     = null
 }
@@ -39,7 +39,7 @@ variable "project" {
 }
 
 variable "protocol" {
-  description = "(optional) - The protocol this RegionBackendService uses to communicate with backends.\nPossible values are HTTP, HTTPS, HTTP2, SSL, TCP, and UDP. The default is\nHTTP. **NOTE**: HTTP2 is only valid for beta HTTP/2 load balancer\ntypes and may result in errors if used with the GA API."
+  description = "(optional) - The protocol this RegionBackendService uses to communicate with backends.\nThe default is HTTP. **NOTE**: HTTP2 is only valid for beta HTTP/2 load balancer\ntypes and may result in errors if used with the GA API. Possible values: [\"HTTP\", \"HTTPS\", \"HTTP2\", \"SSL\", \"TCP\", \"UDP\"]"
   type        = string
   default     = null
 }
@@ -51,7 +51,7 @@ variable "region" {
 }
 
 variable "session_affinity" {
-  description = "(optional) - Type of session affinity to use. The default is NONE. Session affinity is\nnot applicable if the protocol is UDP."
+  description = "(optional) - Type of session affinity to use. The default is NONE. Session affinity is\nnot applicable if the protocol is UDP. Possible values: [\"NONE\", \"CLIENT_IP\", \"CLIENT_IP_PORT_PROTO\", \"CLIENT_IP_PROTO\", \"GENERATED_COOKIE\", \"HEADER_FIELD\", \"HTTP_COOKIE\"]"
   type        = string
   default     = null
 }

@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.19.0"
+    google = ">= 3.20.0"
   }
 }
 
@@ -9,6 +9,18 @@ resource "google_compute_url_map" "this" {
   description     = var.description
   name            = var.name
   project         = var.project
+
+  dynamic "default_url_redirect" {
+    for_each = var.default_url_redirect
+    content {
+      host_redirect          = default_url_redirect.value["host_redirect"]
+      https_redirect         = default_url_redirect.value["https_redirect"]
+      path_redirect          = default_url_redirect.value["path_redirect"]
+      prefix_redirect        = default_url_redirect.value["prefix_redirect"]
+      redirect_response_code = default_url_redirect.value["redirect_response_code"]
+      strip_query            = default_url_redirect.value["strip_query"]
+    }
+  }
 
   dynamic "header_action" {
     for_each = var.header_action
@@ -52,6 +64,18 @@ resource "google_compute_url_map" "this" {
       default_service = path_matcher.value["default_service"]
       description     = path_matcher.value["description"]
       name            = path_matcher.value["name"]
+
+      dynamic "default_url_redirect" {
+        for_each = path_matcher.value.default_url_redirect
+        content {
+          host_redirect          = default_url_redirect.value["host_redirect"]
+          https_redirect         = default_url_redirect.value["https_redirect"]
+          path_redirect          = default_url_redirect.value["path_redirect"]
+          prefix_redirect        = default_url_redirect.value["prefix_redirect"]
+          redirect_response_code = default_url_redirect.value["redirect_response_code"]
+          strip_query            = default_url_redirect.value["strip_query"]
+        }
+      }
 
       dynamic "header_action" {
         for_each = path_matcher.value.header_action

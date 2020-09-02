@@ -1,9 +1,12 @@
 module "google_compute_resource_policy" {
   source = "./modules/google/r/google_compute_resource_policy"
 
-  name    = null
+  # name - (required) is a type of string
+  name = null
+  # project - (optional) is a type of string
   project = null
-  region  = null
+  # region - (optional) is a type of string
+  region = null
 
   group_placement_policy = [{
     availability_domain_count = null

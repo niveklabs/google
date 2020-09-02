@@ -1,9 +1,12 @@
 module "google_app_engine_domain_mapping" {
   source = "./modules/google/r/google_app_engine_domain_mapping"
 
-  domain_name       = null
+  # domain_name - (required) is a type of string
+  domain_name = null
+  # override_strategy - (optional) is a type of string
   override_strategy = null
-  project           = null
+  # project - (optional) is a type of string
+  project = null
 
   ssl_settings = [{
     certificate_id                 = null

@@ -1,9 +1,12 @@
 module "google_dataproc_autoscaling_policy" {
   source = "./modules/google/r/google_dataproc_autoscaling_policy"
 
-  location  = null
+  # location - (optional) is a type of string
+  location = null
+  # policy_id - (required) is a type of string
   policy_id = null
-  project   = null
+  # project - (optional) is a type of string
+  project = null
 
   basic_algorithm = [{
     cooldown_period = null

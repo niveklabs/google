@@ -27,7 +27,7 @@ variable "project" {
 }
 
 variable "visibility" {
-  description = "(optional) - The zone's visibility: public zones are exposed to the Internet,\nwhile private zones are visible only to Virtual Private Cloud resources.\nMust be one of: 'public', 'private'."
+  description = "(optional) - The zone's visibility: public zones are exposed to the Internet,\nwhile private zones are visible only to Virtual Private Cloud resources. Default value: \"public\" Possible values: [\"private\", \"public\"]"
   type        = string
   default     = null
 }

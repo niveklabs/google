@@ -1,7 +1,10 @@
 module "google_bigtable_instance_iam_policy" {
   source = "./modules/google/r/google_bigtable_instance_iam_policy"
 
-  instance    = null
+  # instance - (required) is a type of string
+  instance = null
+  # policy_data - (required) is a type of string
   policy_data = null
-  project     = null
+  # project - (optional) is a type of string
+  project = null
 }

@@ -1,11 +1,16 @@
 module "google_identity_platform_tenant_inbound_saml_config" {
   source = "./modules/google/r/google_identity_platform_tenant_inbound_saml_config"
 
+  # display_name - (required) is a type of string
   display_name = null
-  enabled      = null
-  name         = null
-  project      = null
-  tenant       = null
+  # enabled - (optional) is a type of bool
+  enabled = null
+  # name - (required) is a type of string
+  name = null
+  # project - (optional) is a type of string
+  project = null
+  # tenant - (required) is a type of string
+  tenant = null
 
   idp_config = [{
     idp_certificates = [{

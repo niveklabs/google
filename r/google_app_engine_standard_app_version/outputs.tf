@@ -3,6 +3,11 @@ output "id" {
   value       = google_app_engine_standard_app_version.this.id
 }
 
+output "instance_class" {
+  description = "returns a string"
+  value       = google_app_engine_standard_app_version.this.instance_class
+}
+
 output "name" {
   description = "returns a string"
   value       = google_app_engine_standard_app_version.this.name

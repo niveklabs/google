@@ -11,19 +11,19 @@ variable "ip_address" {
 }
 
 variable "ip_protocol" {
-  description = "(optional) - The IP protocol to which this rule applies. Valid options are TCP,\nUDP, ESP, AH, SCTP or ICMP. When the load balancing scheme is\nINTERNAL_SELF_MANAGED, only TCP is valid."
+  description = "(optional) - The IP protocol to which this rule applies. When the load balancing scheme is\nINTERNAL_SELF_MANAGED, only TCP is valid. Possible values: [\"TCP\", \"UDP\", \"ESP\", \"AH\", \"SCTP\", \"ICMP\"]"
   type        = string
   default     = null
 }
 
 variable "ip_version" {
-  description = "(optional) - The IP Version that will be used by this global forwarding rule.\nValid options are IPV4 or IPV6."
+  description = "(optional) - The IP Version that will be used by this global forwarding rule. Possible values: [\"IPV4\", \"IPV6\"]"
   type        = string
   default     = null
 }
 
 variable "load_balancing_scheme" {
-  description = "(optional) - This signifies what the GlobalForwardingRule will be used for.\nThe value of INTERNAL_SELF_MANAGED means that this will be used for\nInternal Global HTTP(S) LB. The value of EXTERNAL means that this\nwill be used for External Global Load Balancing (HTTP(S) LB,\nExternal TCP/UDP LB, SSL Proxy)\n\nNOTE: Currently global forwarding rules cannot be used for INTERNAL\nload balancing."
+  description = "(optional) - This signifies what the GlobalForwardingRule will be used for.\nThe value of INTERNAL_SELF_MANAGED means that this will be used for\nInternal Global HTTP(S) LB. The value of EXTERNAL means that this\nwill be used for External Global Load Balancing (HTTP(S) LB,\nExternal TCP/UDP LB, SSL Proxy)\n\nNOTE: Currently global forwarding rules cannot be used for INTERNAL\nload balancing. Default value: \"EXTERNAL\" Possible values: [\"EXTERNAL\", \"INTERNAL_SELF_MANAGED\"]"
   type        = string
   default     = null
 }

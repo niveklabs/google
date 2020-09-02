@@ -11,7 +11,7 @@ variable "env_variables" {
 }
 
 variable "instance_class" {
-  description = "(optional) - Instance class that is used to run this version. Valid values are\nAutomaticScaling F1, F2, F4, F4_1G\n(Only AutomaticScaling is supported at the moment)"
+  description = "(optional) - Instance class that is used to run this version. Valid values are\nAutomaticScaling: F1, F2, F4, F4_1G\nBasicScaling or ManualScaling: B1, B2, B4, B4_1G, B8\nDefaults to F1 for AutomaticScaling and B2 for ManualScaling and BasicScaling. If no scaling is specified, AutomaticScaling is chosen."
   type        = string
   default     = null
 }
@@ -57,8 +57,41 @@ variable "version_id" {
   default     = null
 }
 
-variable "deployment" {
+variable "automatic_scaling" {
   description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      max_concurrent_requests = number
+      max_idle_instances      = number
+      max_pending_latency     = string
+      min_idle_instances      = number
+      min_pending_latency     = string
+      standard_scheduler_settings = list(object(
+        {
+          max_instances                 = number
+          min_instances                 = number
+          target_cpu_utilization        = number
+          target_throughput_utilization = number
+        }
+      ))
+    }
+  ))
+  default = []
+}
+
+variable "basic_scaling" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      idle_timeout  = string
+      max_instances = number
+    }
+  ))
+  default = []
+}
+
+variable "deployment" {
+  description = "nested mode: NestingList, min items: 1, max items: 1"
   type = set(object(
     {
       files = set(object(
@@ -76,7 +109,6 @@ variable "deployment" {
       ))
     }
   ))
-  default = []
 }
 
 variable "entrypoint" {
@@ -125,6 +157,16 @@ variable "libraries" {
     {
       name    = string
       version = string
+    }
+  ))
+  default = []
+}
+
+variable "manual_scaling" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      instances = number
     }
   ))
   default = []

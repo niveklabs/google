@@ -1,11 +1,16 @@
 module "google_compute_reservation" {
   source = "./modules/google/r/google_compute_reservation"
 
-  description                   = null
-  name                          = null
-  project                       = null
+  # description - (optional) is a type of string
+  description = null
+  # name - (required) is a type of string
+  name = null
+  # project - (optional) is a type of string
+  project = null
+  # specific_reservation_required - (optional) is a type of bool
   specific_reservation_required = null
-  zone                          = null
+  # zone - (required) is a type of string
+  zone = null
 
   specific_reservation = [{
     count        = null

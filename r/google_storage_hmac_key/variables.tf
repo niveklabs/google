@@ -10,7 +10,7 @@ variable "service_account_email" {
 }
 
 variable "state" {
-  description = "(optional) - The state of the key. Can be set to one of ACTIVE, INACTIVE."
+  description = "(optional) - The state of the key. Can be set to one of ACTIVE, INACTIVE. Default value: \"ACTIVE\" Possible values: [\"ACTIVE\", \"INACTIVE\"]"
   type        = string
   default     = null
 }

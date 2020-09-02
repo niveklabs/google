@@ -16,7 +16,7 @@ variable "project" {
 }
 
 variable "query_scope" {
-  description = "(optional) - The scope at which a query is run. One of '\"COLLECTION\"' or\n'\"COLLECTION_GROUP\"'. Defaults to '\"COLLECTION\"'."
+  description = "(optional) - The scope at which a query is run. Default value: \"COLLECTION\" Possible values: [\"COLLECTION\", \"COLLECTION_GROUP\"]"
   type        = string
   default     = null
 }

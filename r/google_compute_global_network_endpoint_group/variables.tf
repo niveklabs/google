@@ -16,7 +16,7 @@ variable "name" {
 }
 
 variable "network_endpoint_type" {
-  description = "(required) - Type of network endpoints in this network endpoint group. Supported values are:\n  * INTERNET_IP_PORT\n  * INTERNET_FQDN_PORT"
+  description = "(required) - Type of network endpoints in this network endpoint group. Possible values: [\"INTERNET_IP_PORT\", \"INTERNET_FQDN_PORT\"]"
   type        = string
 }
 

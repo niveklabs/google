@@ -1,22 +1,38 @@
 module "google_app_engine_flexible_app_version" {
   source = "./modules/google/r/google_app_engine_flexible_app_version"
 
-  beta_settings                = {}
-  default_expiration           = null
-  delete_service_on_destroy    = null
-  env_variables                = {}
-  inbound_services             = []
-  instance_class               = null
-  nobuild_files_regex          = null
-  noop_on_destroy              = null
-  project                      = null
-  runtime                      = null
-  runtime_api_version          = null
-  runtime_channel              = null
+  # beta_settings - (optional) is a type of map of string
+  beta_settings = {}
+  # default_expiration - (optional) is a type of string
+  default_expiration = null
+  # delete_service_on_destroy - (optional) is a type of bool
+  delete_service_on_destroy = null
+  # env_variables - (optional) is a type of map of string
+  env_variables = {}
+  # inbound_services - (optional) is a type of list of string
+  inbound_services = []
+  # instance_class - (optional) is a type of string
+  instance_class = null
+  # nobuild_files_regex - (optional) is a type of string
+  nobuild_files_regex = null
+  # noop_on_destroy - (optional) is a type of bool
+  noop_on_destroy = null
+  # project - (optional) is a type of string
+  project = null
+  # runtime - (required) is a type of string
+  runtime = null
+  # runtime_api_version - (optional) is a type of string
+  runtime_api_version = null
+  # runtime_channel - (optional) is a type of string
+  runtime_channel = null
+  # runtime_main_executable_path - (optional) is a type of string
   runtime_main_executable_path = null
-  service                      = null
-  serving_status               = null
-  version_id                   = null
+  # service - (optional) is a type of string
+  service = null
+  # serving_status - (optional) is a type of string
+  serving_status = null
+  # version_id - (optional) is a type of string
+  version_id = null
 
   api_config = [{
     auth_fail_action = null

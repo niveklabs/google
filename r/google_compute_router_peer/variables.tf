@@ -1,5 +1,5 @@
 variable "advertise_mode" {
-  description = "(optional) - User-specified flag to indicate which mode to use for advertisement.\nValid values of this enum field are: 'DEFAULT', 'CUSTOM'"
+  description = "(optional) - User-specified flag to indicate which mode to use for advertisement.\nValid values of this enum field are: 'DEFAULT', 'CUSTOM' Default value: \"DEFAULT\" Possible values: [\"DEFAULT\", \"CUSTOM\"]"
   type        = string
   default     = null
 }

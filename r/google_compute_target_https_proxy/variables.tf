@@ -16,7 +16,7 @@ variable "project" {
 }
 
 variable "quic_override" {
-  description = "(optional) - Specifies the QUIC override policy for this resource. This determines\nwhether the load balancer will attempt to negotiate QUIC with clients\nor not. Can specify one of NONE, ENABLE, or DISABLE. If NONE is\nspecified, uses the QUIC policy with no user overrides, which is\nequivalent to DISABLE. Not specifying this field is equivalent to\nspecifying NONE."
+  description = "(optional) - Specifies the QUIC override policy for this resource. This determines\nwhether the load balancer will attempt to negotiate QUIC with clients\nor not. Can specify one of NONE, ENABLE, or DISABLE. If NONE is\nspecified, uses the QUIC policy with no user overrides, which is\nequivalent to DISABLE. Default value: \"NONE\" Possible values: [\"NONE\", \"ENABLE\", \"DISABLE\"]"
   type        = string
   default     = null
 }

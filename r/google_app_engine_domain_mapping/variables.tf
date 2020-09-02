@@ -4,7 +4,7 @@ variable "domain_name" {
 }
 
 variable "override_strategy" {
-  description = "(optional) - Whether the domain creation should override any existing mappings for this domain.\nBy default, overrides are rejected."
+  description = "(optional) - Whether the domain creation should override any existing mappings for this domain.\nBy default, overrides are rejected. Default value: \"STRICT\" Possible values: [\"STRICT\", \"OVERRIDE\"]"
   type        = string
   default     = null
 }

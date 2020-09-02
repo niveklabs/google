@@ -1,17 +1,28 @@
 module "google_container_node_pool" {
   source = "./modules/google/r/google_container_node_pool"
 
-  cluster            = null
+  # cluster - (required) is a type of string
+  cluster = null
+  # initial_node_count - (optional) is a type of number
   initial_node_count = null
-  location           = null
-  max_pods_per_node  = null
-  name               = null
-  name_prefix        = null
-  node_count         = null
-  project            = null
-  region             = null
-  version            = null
-  zone               = null
+  # location - (optional) is a type of string
+  location = null
+  # max_pods_per_node - (optional) is a type of number
+  max_pods_per_node = null
+  # name - (optional) is a type of string
+  name = null
+  # name_prefix - (optional) is a type of string
+  name_prefix = null
+  # node_count - (optional) is a type of number
+  node_count = null
+  # project - (optional) is a type of string
+  project = null
+  # region - (optional) is a type of string
+  region = null
+  # version - (optional) is a type of string
+  version = null
+  # zone - (optional) is a type of string
+  zone = null
 
   autoscaling = [{
     max_node_count = null

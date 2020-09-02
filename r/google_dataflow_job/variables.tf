@@ -1,3 +1,9 @@
+variable "additional_experiments" {
+  description = "(optional)"
+  type        = set(string)
+  default     = null
+}
+
 variable "ip_configuration" {
   description = "(optional)"
   type        = string

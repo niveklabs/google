@@ -1,10 +1,14 @@
 module "google_dataproc_cluster" {
   source = "./modules/google/r/google_dataproc_cluster"
 
-  labels  = {}
-  name    = null
+  # labels - (optional) is a type of map of string
+  labels = {}
+  # name - (required) is a type of string
+  name = null
+  # project - (optional) is a type of string
   project = null
-  region  = null
+  # region - (optional) is a type of string
+  region = null
 
   cluster_config = [{
     autoscaling_config = [{

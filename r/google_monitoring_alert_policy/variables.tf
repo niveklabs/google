@@ -1,5 +1,5 @@
 variable "combiner" {
-  description = "(required) - How to combine the results of multiple conditions to\ndetermine if an incident should be opened."
+  description = "(required) - How to combine the results of multiple conditions to\ndetermine if an incident should be opened. Possible values: [\"AND\", \"OR\", \"AND_WITH_MATCHING_RESOURCE\"]"
   type        = string
 }
 

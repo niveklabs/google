@@ -1,9 +1,12 @@
 module "google_folder_organization_policy" {
   source = "./modules/google/r/google_folder_organization_policy"
 
+  # constraint - (required) is a type of string
   constraint = null
-  folder     = null
-  version    = null
+  # folder - (required) is a type of string
+  folder = null
+  # version - (optional) is a type of number
+  version = null
 
   boolean_policy = [{
     enforced = null

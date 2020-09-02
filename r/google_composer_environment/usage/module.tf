@@ -1,10 +1,14 @@
 module "google_composer_environment" {
   source = "./modules/google/r/google_composer_environment"
 
-  labels  = {}
-  name    = null
+  # labels - (optional) is a type of map of string
+  labels = {}
+  # name - (required) is a type of string
+  name = null
+  # project - (optional) is a type of string
   project = null
-  region  = null
+  # region - (optional) is a type of string
+  region = null
 
   config = [{
     airflow_uri    = null
