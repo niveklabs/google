@@ -33,6 +33,11 @@ output "location_id" {
   value       = google_redis_instance.this.location_id
 }
 
+output "persistence_iam_identity" {
+  description = "returns a string"
+  value       = google_redis_instance.this.persistence_iam_identity
+}
+
 output "port" {
   description = "returns a number"
   value       = google_redis_instance.this.port

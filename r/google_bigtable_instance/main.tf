@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.33.0"
+    google = ">= 3.34.0"
   }
 }
 
@@ -8,6 +8,7 @@ resource "google_bigtable_instance" "this" {
   deletion_protection = var.deletion_protection
   display_name        = var.display_name
   instance_type       = var.instance_type
+  labels              = var.labels
   name                = var.name
   project             = var.project
 

@@ -16,6 +16,12 @@ variable "instance_type" {
   default     = null
 }
 
+variable "labels" {
+  description = "(optional) - A mapping of labels to assign to the resource."
+  type        = map(string)
+  default     = null
+}
+
 variable "name" {
   description = "(required) - The name (also called Instance Id in the Cloud Console) of the Cloud Bigtable instance."
   type        = string

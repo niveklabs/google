@@ -53,6 +53,11 @@ output "memory_size_gb" {
   value       = data.google_redis_instance.this.memory_size_gb
 }
 
+output "persistence_iam_identity" {
+  description = "returns a string"
+  value       = data.google_redis_instance.this.persistence_iam_identity
+}
+
 output "port" {
   description = "returns a number"
   value       = data.google_redis_instance.this.port

@@ -48,6 +48,11 @@ output "md5hash" {
   value       = data.google_storage_bucket_object.this.md5hash
 }
 
+output "media_link" {
+  description = "returns a string"
+  value       = data.google_storage_bucket_object.this.media_link
+}
+
 output "metadata" {
   description = "returns a map of string"
   value       = data.google_storage_bucket_object.this.metadata

@@ -18,6 +18,11 @@ output "md5hash" {
   value       = google_storage_bucket_object.this.md5hash
 }
 
+output "media_link" {
+  description = "returns a string"
+  value       = google_storage_bucket_object.this.media_link
+}
+
 output "output_name" {
   description = "returns a string"
   value       = google_storage_bucket_object.this.output_name

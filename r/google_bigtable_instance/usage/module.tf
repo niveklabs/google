@@ -7,6 +7,8 @@ module "google_bigtable_instance" {
   display_name = null
   # instance_type - (optional) is a type of string
   instance_type = null
+  # labels - (optional) is a type of map of string
+  labels = {}
   # name - (required) is a type of string
   name = null
   # project - (optional) is a type of string

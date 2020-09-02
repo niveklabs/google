@@ -23,11 +23,6 @@ output "network_endpoint_type" {
   value       = data.google_compute_network_endpoint_group.this.network_endpoint_type
 }
 
-output "project" {
-  description = "returns a string"
-  value       = data.google_compute_network_endpoint_group.this.project
-}
-
 output "size" {
   description = "returns a number"
   value       = data.google_compute_network_endpoint_group.this.size

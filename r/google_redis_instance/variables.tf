@@ -57,7 +57,7 @@ variable "redis_configs" {
 }
 
 variable "redis_version" {
-  description = "(optional) - The version of Redis software. If not provided, latest supported\nversion will be used. Currently, the supported values are:\n\n- REDIS_4_0 for Redis 4.0 compatibility\n- REDIS_3_2 for Redis 3.2 compatibility"
+  description = "(optional) - The version of Redis software. If not provided, latest supported\nversion will be used. Currently, the supported values are:\n\n- REDIS_5_0 for Redis 5.0 compatibility\n- REDIS_4_0 for Redis 4.0 compatibility\n- REDIS_3_2 for Redis 3.2 compatibility"
   type        = string
   default     = null
 }
