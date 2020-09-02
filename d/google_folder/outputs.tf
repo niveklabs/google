@@ -8,6 +8,11 @@ output "display_name" {
   value       = data.google_folder.this.display_name
 }
 
+output "folder_id" {
+  description = "returns a string"
+  value       = data.google_folder.this.folder_id
+}
+
 output "id" {
   description = "returns a string"
   value       = data.google_folder.this.id

@@ -3,6 +3,11 @@ output "create_time" {
   value       = google_folder.this.create_time
 }
 
+output "folder_id" {
+  description = "returns a string"
+  value       = google_folder.this.folder_id
+}
+
 output "id" {
   description = "returns a string"
   value       = google_folder.this.id

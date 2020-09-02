@@ -1,5 +1,5 @@
 provider "google" {
-  version = "3.31.0"
+  version = "3.32.0"
 
   # access_context_manager_custom_endpoint - (optional) is a type of string
   access_context_manager_custom_endpoint = null
@@ -15,6 +15,8 @@ provider "google" {
   bigtable_custom_endpoint = null
   # binary_authorization_custom_endpoint - (optional) is a type of string
   binary_authorization_custom_endpoint = null
+  # cloud_asset_custom_endpoint - (optional) is a type of string
+  cloud_asset_custom_endpoint = null
   # cloud_billing_custom_endpoint - (optional) is a type of string
   cloud_billing_custom_endpoint = null
   # cloud_build_custom_endpoint - (optional) is a type of string

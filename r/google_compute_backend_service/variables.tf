@@ -29,8 +29,9 @@ variable "enable_cdn" {
 }
 
 variable "health_checks" {
-  description = "(required) - The set of URLs to the HttpHealthCheck or HttpsHealthCheck resource\nfor health checking this BackendService. Currently at most one health\ncheck can be specified, and a health check is required.\n\nFor internal load balancing, a URL to a HealthCheck resource must be specified instead."
+  description = "(optional) - The set of URLs to the HttpHealthCheck or HttpsHealthCheck resource\nfor health checking this BackendService. Currently at most one health\ncheck can be specified.\n\nA health check must be specified unless the backend service uses an internet NEG as a backend.\n\nFor internal load balancing, a URL to a HealthCheck resource must be specified instead."
   type        = set(string)
+  default     = null
 }
 
 variable "load_balancing_scheme" {

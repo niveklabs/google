@@ -11,7 +11,7 @@ module "google_compute_backend_service" {
   description = null
   # enable_cdn - (optional) is a type of bool
   enable_cdn = null
-  # health_checks - (required) is a type of set of string
+  # health_checks - (optional) is a type of set of string
   health_checks = []
   # load_balancing_scheme - (optional) is a type of string
   load_balancing_scheme = null
