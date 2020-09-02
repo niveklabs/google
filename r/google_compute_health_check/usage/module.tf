@@ -16,6 +16,13 @@ module "google_compute_health_check" {
   # unhealthy_threshold - (optional) is a type of number
   unhealthy_threshold = null
 
+  grpc_health_check = [{
+    grpc_service_name  = null
+    port               = null
+    port_name          = null
+    port_specification = null
+  }]
+
   http2_health_check = [{
     host               = null
     port               = null

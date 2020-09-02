@@ -39,6 +39,19 @@ variable "unhealthy_threshold" {
   default     = null
 }
 
+variable "grpc_health_check" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      grpc_service_name  = string
+      port               = number
+      port_name          = string
+      port_specification = string
+    }
+  ))
+  default = []
+}
+
 variable "http2_health_check" {
   description = "nested mode: NestingList, min items: 0, max items: 1"
   type = set(object(

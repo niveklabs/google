@@ -33,11 +33,6 @@ output "private_ip_address" {
   value       = data.google_sql_database_instance.this.private_ip_address
 }
 
-output "project" {
-  description = "returns a string"
-  value       = data.google_sql_database_instance.this.project
-}
-
 output "public_ip_address" {
   description = "returns a string"
   value       = data.google_sql_database_instance.this.public_ip_address

@@ -3,6 +3,8 @@ module "google_pubsub_subscription" {
 
   # ack_deadline_seconds - (optional) is a type of number
   ack_deadline_seconds = null
+  # enable_message_ordering - (optional) is a type of bool
+  enable_message_ordering = null
   # filter - (optional) is a type of string
   filter = null
   # labels - (optional) is a type of map of string

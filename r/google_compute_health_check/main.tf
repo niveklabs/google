@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.35.0"
+    google = ">= 3.36.0"
   }
 }
 
@@ -12,6 +12,16 @@ resource "google_compute_health_check" "this" {
   project             = var.project
   timeout_sec         = var.timeout_sec
   unhealthy_threshold = var.unhealthy_threshold
+
+  dynamic "grpc_health_check" {
+    for_each = var.grpc_health_check
+    content {
+      grpc_service_name  = grpc_health_check.value["grpc_service_name"]
+      port               = grpc_health_check.value["port"]
+      port_name          = grpc_health_check.value["port_name"]
+      port_specification = grpc_health_check.value["port_specification"]
+    }
+  }
 
   dynamic "http2_health_check" {
     for_each = var.http2_health_check

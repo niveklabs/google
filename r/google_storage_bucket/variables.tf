@@ -46,7 +46,7 @@ variable "requester_pays" {
 }
 
 variable "storage_class" {
-  description = "(optional) - The Storage Class of the new bucket. Supported values include: STANDARD, MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE."
+  description = "(optional) - The Storage Class of the new bucket. Supported values include: STANDARD, MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE."
   type        = string
   default     = null
 }
