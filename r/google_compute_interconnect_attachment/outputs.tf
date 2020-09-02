@@ -18,6 +18,11 @@ output "customer_router_ip_address" {
   value       = google_compute_interconnect_attachment.this.customer_router_ip_address
 }
 
+output "edge_availability_domain" {
+  description = "returns a string"
+  value       = google_compute_interconnect_attachment.this.edge_availability_domain
+}
+
 output "google_reference_id" {
   description = "returns a string"
   value       = google_compute_interconnect_attachment.this.google_reference_id

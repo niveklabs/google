@@ -45,4 +45,48 @@ module "google_monitoring_slo" {
     delete = null
     update = null
   }]
+
+  windows_based_sli = [{
+    good_bad_metric_filter = null
+    good_total_ratio_threshold = [{
+      basic_sli_performance = [{
+        latency = [{
+          threshold = null
+        }]
+        location = []
+        method   = []
+        version  = []
+      }]
+      performance = [{
+        distribution_cut = [{
+          distribution_filter = null
+          range = [{
+            max = null
+            min = null
+          }]
+        }]
+        good_total_ratio = [{
+          bad_service_filter   = null
+          good_service_filter  = null
+          total_service_filter = null
+        }]
+      }]
+      threshold = null
+    }]
+    metric_mean_in_range = [{
+      range = [{
+        max = null
+        min = null
+      }]
+      time_series = null
+    }]
+    metric_sum_in_range = [{
+      range = [{
+        max = null
+        min = null
+      }]
+      time_series = null
+    }]
+    window_period = null
+  }]
 }

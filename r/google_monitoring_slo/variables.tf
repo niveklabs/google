@@ -94,3 +94,75 @@ variable "timeouts" {
   default = []
 }
 
+variable "windows_based_sli" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      good_bad_metric_filter = string
+      good_total_ratio_threshold = list(object(
+        {
+          basic_sli_performance = list(object(
+            {
+              latency = list(object(
+                {
+                  threshold = string
+                }
+              ))
+              location = set(string)
+              method   = set(string)
+              version  = set(string)
+            }
+          ))
+          performance = list(object(
+            {
+              distribution_cut = list(object(
+                {
+                  distribution_filter = string
+                  range = list(object(
+                    {
+                      max = number
+                      min = number
+                    }
+                  ))
+                }
+              ))
+              good_total_ratio = list(object(
+                {
+                  bad_service_filter   = string
+                  good_service_filter  = string
+                  total_service_filter = string
+                }
+              ))
+            }
+          ))
+          threshold = number
+        }
+      ))
+      metric_mean_in_range = list(object(
+        {
+          range = list(object(
+            {
+              max = number
+              min = number
+            }
+          ))
+          time_series = string
+        }
+      ))
+      metric_sum_in_range = list(object(
+        {
+          range = list(object(
+            {
+              max = number
+              min = number
+            }
+          ))
+          time_series = string
+        }
+      ))
+      window_period = string
+    }
+  ))
+  default = []
+}
+

@@ -52,8 +52,10 @@ variable "config" {
       node_count = number
       private_environment_config = list(object(
         {
-          enable_private_endpoint = bool
-          master_ipv4_cidr_block  = string
+          cloud_sql_ipv4_cidr_block  = string
+          enable_private_endpoint    = bool
+          master_ipv4_cidr_block     = string
+          web_server_ipv4_cidr_block = string
         }
       ))
       software_config = list(object(

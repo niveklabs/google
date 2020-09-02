@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.22.0"
+    google = ">= 3.23.0"
   }
 }
 
@@ -33,8 +33,10 @@ resource "google_composer_environment" "this" {
       dynamic "private_environment_config" {
         for_each = config.value.private_environment_config
         content {
-          enable_private_endpoint = private_environment_config.value["enable_private_endpoint"]
-          master_ipv4_cidr_block  = private_environment_config.value["master_ipv4_cidr_block"]
+          cloud_sql_ipv4_cidr_block  = private_environment_config.value["cloud_sql_ipv4_cidr_block"]
+          enable_private_endpoint    = private_environment_config.value["enable_private_endpoint"]
+          master_ipv4_cidr_block     = private_environment_config.value["master_ipv4_cidr_block"]
+          web_server_ipv4_cidr_block = private_environment_config.value["web_server_ipv4_cidr_block"]
         }
       }
 

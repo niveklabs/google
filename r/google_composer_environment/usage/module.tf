@@ -33,8 +33,10 @@ module "google_composer_environment" {
     }]
     node_count = null
     private_environment_config = [{
-      enable_private_endpoint = null
-      master_ipv4_cidr_block  = null
+      cloud_sql_ipv4_cidr_block  = null
+      enable_private_endpoint    = null
+      master_ipv4_cidr_block     = null
+      web_server_ipv4_cidr_block = null
     }]
     software_config = [{
       airflow_config_overrides = {}

@@ -9,4 +9,8 @@ module "google_service_account" {
   display_name = null
   # project - (optional) is a type of string
   project = null
+
+  timeouts = [{
+    create = null
+  }]
 }

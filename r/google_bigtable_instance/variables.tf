@@ -1,28 +1,28 @@
 variable "deletion_protection" {
-  description = "(optional)"
+  description = "(optional) - Whether or not to allow Terraform to destroy the instance. Unless this field is set to false in Terraform state, a terraform destroy or terraform apply that would delete the instance will fail."
   type        = bool
   default     = null
 }
 
 variable "display_name" {
-  description = "(optional)"
+  description = "(optional) - The human-readable display name of the Bigtable instance. Defaults to the instance name."
   type        = string
   default     = null
 }
 
 variable "instance_type" {
-  description = "(optional)"
+  description = "(optional) - The instance type to create. One of \"DEVELOPMENT\" or \"PRODUCTION\". Defaults to \"PRODUCTION\"."
   type        = string
   default     = null
 }
 
 variable "name" {
-  description = "(required)"
+  description = "(required) - The name (also called Instance Id in the Cloud Console) of the Cloud Bigtable instance."
   type        = string
 }
 
 variable "project" {
-  description = "(optional)"
+  description = "(optional) - The ID of the project in which the resource belongs. If it is not provided, the provider project is used."
   type        = string
   default     = null
 }

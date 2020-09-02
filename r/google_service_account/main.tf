@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.22.0"
+    google = ">= 3.23.0"
   }
 }
 
@@ -9,5 +9,13 @@ resource "google_service_account" "this" {
   description  = var.description
   display_name = var.display_name
   project      = var.project
+
+  dynamic "timeouts" {
+    for_each = var.timeouts
+    content {
+      create = timeouts.value["create"]
+    }
+  }
+
 }
 
