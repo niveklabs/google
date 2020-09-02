@@ -56,6 +56,11 @@ module "google_cloud_run_service" {
           }]
         }]
         image = null
+        ports = [{
+          container_port = null
+          name           = null
+          protocol       = null
+        }]
         resources = [{
           limits   = {}
           requests = {}

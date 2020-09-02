@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.32.0"
+    google = ">= 3.33.0"
   }
 }
 
@@ -33,6 +33,13 @@ resource "google_compute_firewall" "this" {
     content {
       ports    = deny.value["ports"]
       protocol = deny.value["protocol"]
+    }
+  }
+
+  dynamic "log_config" {
+    for_each = var.log_config
+    content {
+      metadata = log_config.value["metadata"]
     }
   }
 

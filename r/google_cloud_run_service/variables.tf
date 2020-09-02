@@ -91,6 +91,13 @@ variable "template" {
                 }
               ))
               image = string
+              ports = list(object(
+                {
+                  container_port = number
+                  name           = string
+                  protocol       = string
+                }
+              ))
               resources = list(object(
                 {
                   limits   = map(string)

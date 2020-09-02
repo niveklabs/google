@@ -13,6 +13,11 @@ output "direction" {
   value       = google_compute_firewall.this.direction
 }
 
+output "enable_logging" {
+  description = "returns a bool"
+  value       = google_compute_firewall.this.enable_logging
+}
+
 output "id" {
   description = "returns a string"
   value       = google_compute_firewall.this.id

@@ -23,7 +23,7 @@ variable "disabled" {
 }
 
 variable "enable_logging" {
-  description = "(optional) - This field denotes whether to enable logging for a particular\nfirewall rule. If logging is enabled, logs will be exported to\nStackdriver."
+  description = "(optional) - This field denotes whether to enable logging for a particular firewall rule. If logging is enabled, logs will be exported to Stackdriver."
   type        = bool
   default     = null
 }
@@ -97,6 +97,16 @@ variable "deny" {
     {
       ports    = list(string)
       protocol = string
+    }
+  ))
+  default = []
+}
+
+variable "log_config" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      metadata = string
     }
   ))
   default = []

@@ -3,12 +3,14 @@
 [embedmd]:# (google.tf)
 ```tf
 provider "google" {
-  version = "3.32.0"
+  version = "3.33.0"
 
   # access_context_manager_custom_endpoint - (optional) is a type of string
   access_context_manager_custom_endpoint = null
   # access_token - (optional) is a type of string
   access_token = null
+  # active_directory_custom_endpoint - (optional) is a type of string
+  active_directory_custom_endpoint = null
   # app_engine_custom_endpoint - (optional) is a type of string
   app_engine_custom_endpoint = null
   # big_query_custom_endpoint - (optional) is a type of string

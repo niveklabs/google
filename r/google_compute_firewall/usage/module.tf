@@ -40,6 +40,10 @@ module "google_compute_firewall" {
     protocol = null
   }]
 
+  log_config = [{
+    metadata = null
+  }]
+
   timeouts = [{
     create = null
     delete = null

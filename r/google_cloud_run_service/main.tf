@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.32.0"
+    google = ">= 3.33.0"
   }
 }
 
@@ -91,6 +91,15 @@ resource "google_cloud_run_service" "this" {
                     }
                   }
 
+                }
+              }
+
+              dynamic "ports" {
+                for_each = containers.value.ports
+                content {
+                  container_port = ports.value["container_port"]
+                  name           = ports.value["name"]
+                  protocol       = ports.value["protocol"]
                 }
               }
 
