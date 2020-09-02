@@ -10,7 +10,19 @@ variable "export_custom_routes" {
   default     = null
 }
 
+variable "export_subnet_routes_with_public_ip" {
+  description = "(optional)"
+  type        = bool
+  default     = null
+}
+
 variable "import_custom_routes" {
+  description = "(optional)"
+  type        = bool
+  default     = null
+}
+
+variable "import_subnet_routes_with_public_ip" {
   description = "(optional)"
   type        = bool
   default     = null

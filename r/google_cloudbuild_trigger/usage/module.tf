@@ -47,11 +47,12 @@ module "google_cloudbuild_trigger" {
   }]
 
   trigger_template = [{
-    branch_name = null
-    commit_sha  = null
-    dir         = null
-    project_id  = null
-    repo_name   = null
-    tag_name    = null
+    branch_name  = null
+    commit_sha   = null
+    dir          = null
+    invert_regex = null
+    project_id   = null
+    repo_name    = null
+    tag_name     = null
   }]
 }

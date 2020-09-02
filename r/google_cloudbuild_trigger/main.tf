@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.26.0"
+    google = ">= 3.27.0"
   }
 }
 
@@ -61,12 +61,13 @@ resource "google_cloudbuild_trigger" "this" {
   dynamic "trigger_template" {
     for_each = var.trigger_template
     content {
-      branch_name = trigger_template.value["branch_name"]
-      commit_sha  = trigger_template.value["commit_sha"]
-      dir         = trigger_template.value["dir"]
-      project_id  = trigger_template.value["project_id"]
-      repo_name   = trigger_template.value["repo_name"]
-      tag_name    = trigger_template.value["tag_name"]
+      branch_name  = trigger_template.value["branch_name"]
+      commit_sha   = trigger_template.value["commit_sha"]
+      dir          = trigger_template.value["dir"]
+      invert_regex = trigger_template.value["invert_regex"]
+      project_id   = trigger_template.value["project_id"]
+      repo_name    = trigger_template.value["repo_name"]
+      tag_name     = trigger_template.value["tag_name"]
     }
   }
 

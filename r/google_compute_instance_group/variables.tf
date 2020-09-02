@@ -1,34 +1,34 @@
 variable "description" {
-  description = "(optional)"
+  description = "(optional) - An optional textual description of the instance group."
   type        = string
   default     = null
 }
 
 variable "instances" {
-  description = "(optional)"
+  description = "(optional) - List of instances in the group. They should be given as self_link URLs. When adding instances they must all be in the same network and zone as the instance group."
   type        = set(string)
   default     = null
 }
 
 variable "name" {
-  description = "(required)"
+  description = "(required) - The name of the instance group. Must be 1-63 characters long and comply with RFC1035. Supported characters include lowercase letters, numbers, and hyphens."
   type        = string
 }
 
 variable "network" {
-  description = "(optional)"
+  description = "(optional) - The URL of the network the instance group is in. If this is different from the network where the instances are in, the creation fails. Defaults to the network where the instances are in (if neither network nor instances is specified, this field will be blank)."
   type        = string
   default     = null
 }
 
 variable "project" {
-  description = "(optional)"
+  description = "(optional) - The ID of the project in which the resource belongs. If it is not provided, the provider project is used."
   type        = string
   default     = null
 }
 
 variable "zone" {
-  description = "(optional)"
+  description = "(optional) - The zone that this instance group should be created in."
   type        = string
   default     = null
 }

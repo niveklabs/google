@@ -64,6 +64,7 @@ module "google_cloud_run_service" {
       }]
       service_account_name = null
       serving_state        = null
+      timeout_seconds      = null
     }]
   }]
 

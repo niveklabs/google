@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.26.0"
+    google = ">= 3.27.0"
   }
 }
 
@@ -38,6 +38,7 @@ resource "google_cloud_run_service" "this" {
         content {
           container_concurrency = spec.value["container_concurrency"]
           service_account_name  = spec.value["service_account_name"]
+          timeout_seconds       = spec.value["timeout_seconds"]
 
           dynamic "containers" {
             for_each = spec.value.containers

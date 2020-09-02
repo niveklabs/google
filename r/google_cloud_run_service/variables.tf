@@ -102,6 +102,7 @@ variable "template" {
           ))
           service_account_name = string
           serving_state        = string
+          timeout_seconds      = number
         }
       ))
     }

@@ -11,6 +11,8 @@ module "google_sql_database_instance" {
   project = null
   # region - (optional) is a type of string
   region = null
+  # root_password - (optional) is a type of string
+  root_password = null
 
   replica_configuration = [{
     ca_certificate            = null

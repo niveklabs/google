@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.26.0"
+    google = ">= 3.27.0"
   }
 }
 
@@ -44,6 +44,23 @@ resource "google_access_context_manager_access_level" "this" {
             }
           }
 
+        }
+      }
+
+    }
+  }
+
+  dynamic "custom" {
+    for_each = var.custom
+    content {
+
+      dynamic "expr" {
+        for_each = custom.value.expr
+        content {
+          description = expr.value["description"]
+          expression  = expr.value["expression"]
+          location    = expr.value["location"]
+          title       = expr.value["title"]
         }
       }
 

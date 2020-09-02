@@ -1,5 +1,5 @@
 variable "bucket_policy_only" {
-  description = "(optional)"
+  description = "(optional) - Enables Bucket Policy Only access to a bucket."
   type        = bool
   default     = null
 }
@@ -11,42 +11,42 @@ variable "default_event_based_hold" {
 }
 
 variable "force_destroy" {
-  description = "(optional)"
+  description = "(optional) - When deleting a bucket, this boolean option will delete all contained objects. If you try to delete a bucket that contains objects, Terraform will fail that run."
   type        = bool
   default     = null
 }
 
 variable "labels" {
-  description = "(optional)"
+  description = "(optional) - A set of key/value label pairs to assign to the bucket."
   type        = map(string)
   default     = null
 }
 
 variable "location" {
-  description = "(optional)"
+  description = "(optional) - The GCS location"
   type        = string
   default     = null
 }
 
 variable "name" {
-  description = "(required)"
+  description = "(required) - The name of the bucket."
   type        = string
 }
 
 variable "project" {
-  description = "(optional)"
+  description = "(optional) - The ID of the project in which the resource belongs. If it is not provided, the provider project is used."
   type        = string
   default     = null
 }
 
 variable "requester_pays" {
-  description = "(optional)"
+  description = "(optional) - Enables Requester Pays on a storage bucket."
   type        = bool
   default     = null
 }
 
 variable "storage_class" {
-  description = "(optional)"
+  description = "(optional) - The Storage Class of the new bucket. Supported values include: STANDARD, MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE."
   type        = string
   default     = null
 }

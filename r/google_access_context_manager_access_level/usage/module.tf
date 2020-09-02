@@ -32,6 +32,15 @@ module "google_access_context_manager_access_level" {
     }]
   }]
 
+  custom = [{
+    expr = [{
+      description = null
+      expression  = null
+      location    = null
+      title       = null
+    }]
+  }]
+
   timeouts = [{
     create = null
     delete = null

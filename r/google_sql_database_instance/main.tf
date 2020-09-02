@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.26.0"
+    google = ">= 3.27.0"
   }
 }
 
@@ -10,6 +10,7 @@ resource "google_sql_database_instance" "this" {
   name                 = var.name
   project              = var.project
   region               = var.region
+  root_password        = var.root_password
 
   dynamic "replica_configuration" {
     for_each = var.replica_configuration

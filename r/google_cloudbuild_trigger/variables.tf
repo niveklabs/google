@@ -94,12 +94,13 @@ variable "trigger_template" {
   description = "nested mode: NestingList, min items: 0, max items: 1"
   type = set(object(
     {
-      branch_name = string
-      commit_sha  = string
-      dir         = string
-      project_id  = string
-      repo_name   = string
-      tag_name    = string
+      branch_name  = string
+      commit_sha   = string
+      dir          = string
+      invert_regex = bool
+      project_id   = string
+      repo_name    = string
+      tag_name     = string
     }
   ))
   default = []

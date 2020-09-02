@@ -53,6 +53,23 @@ variable "basic" {
   default = []
 }
 
+variable "custom" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      expr = list(object(
+        {
+          description = string
+          expression  = string
+          location    = string
+          title       = string
+        }
+      ))
+    }
+  ))
+  default = []
+}
+
 variable "timeouts" {
   description = "nested mode: NestingSingle, min items: 0, max items: 0"
   type = set(object(
