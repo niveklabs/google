@@ -39,6 +39,12 @@ variable "node_count" {
   default     = null
 }
 
+variable "node_locations" {
+  description = "(optional)"
+  type        = set(string)
+  default     = null
+}
+
 variable "project" {
   description = "(optional)"
   type        = string

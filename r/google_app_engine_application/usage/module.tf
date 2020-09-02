@@ -20,4 +20,9 @@ module "google_app_engine_application" {
     oauth2_client_secret        = null
     oauth2_client_secret_sha256 = null
   }]
+
+  timeouts = [{
+    create = null
+    update = null
+  }]
 }

@@ -5,4 +5,8 @@ module "google_compute_project_default_network_tier" {
   network_tier = null
   # project - (optional) is a type of string
   project = null
+
+  timeouts = [{
+    create = null
+  }]
 }

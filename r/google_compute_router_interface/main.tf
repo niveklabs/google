@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.20.0"
+    google = ">= 3.21.0"
   }
 }
 
@@ -12,5 +12,14 @@ resource "google_compute_router_interface" "this" {
   region                  = var.region
   router                  = var.router
   vpn_tunnel              = var.vpn_tunnel
+
+  dynamic "timeouts" {
+    for_each = var.timeouts
+    content {
+      create = timeouts.value["create"]
+      delete = timeouts.value["delete"]
+    }
+  }
+
 }
 

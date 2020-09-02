@@ -53,6 +53,11 @@ output "enable_legacy_abac" {
   value       = data.google_container_cluster.this.enable_legacy_abac
 }
 
+output "enable_shielded_nodes" {
+  description = "returns a bool"
+  value       = data.google_container_cluster.this.enable_shielded_nodes
+}
+
 output "enable_tpu" {
   description = "returns a bool"
   value       = data.google_container_cluster.this.enable_tpu

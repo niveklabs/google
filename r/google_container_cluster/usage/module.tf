@@ -17,6 +17,8 @@ module "google_container_cluster" {
   enable_kubernetes_alpha = null
   # enable_legacy_abac - (optional) is a type of bool
   enable_legacy_abac = null
+  # enable_shielded_nodes - (optional) is a type of bool
+  enable_shielded_nodes = null
   # enable_tpu - (optional) is a type of bool
   enable_tpu = null
   # initial_node_count - (optional) is a type of number
@@ -51,6 +53,9 @@ module "google_container_cluster" {
   zone = null
 
   addons_config = [{
+    cloudrun_config = [{
+      disabled = null
+    }]
     horizontal_pod_autoscaling = [{
       disabled = null
     }]
@@ -207,7 +212,8 @@ module "google_container_cluster" {
         node_metadata = null
       }]
     }]
-    node_count = null
+    node_count     = null
+    node_locations = []
     upgrade_settings = [{
       max_surge       = null
       max_unavailable = null
@@ -239,6 +245,7 @@ module "google_container_cluster" {
   timeouts = [{
     create = null
     delete = null
+    read   = null
     update = null
   }]
 

@@ -5,4 +5,9 @@ module "google_compute_project_metadata" {
   metadata = {}
   # project - (optional) is a type of string
   project = null
+
+  timeouts = [{
+    create = null
+    delete = null
+  }]
 }

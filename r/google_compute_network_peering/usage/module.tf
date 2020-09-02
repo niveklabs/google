@@ -13,4 +13,9 @@ module "google_compute_network_peering" {
   network = null
   # peer_network - (required) is a type of string
   peer_network = null
+
+  timeouts = [{
+    create = null
+    delete = null
+  }]
 }

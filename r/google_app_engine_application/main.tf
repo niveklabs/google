@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.20.0"
+    google = ">= 3.21.0"
   }
 }
 
@@ -23,6 +23,14 @@ resource "google_app_engine_application" "this" {
       enabled              = iap.value["enabled"]
       oauth2_client_id     = iap.value["oauth2_client_id"]
       oauth2_client_secret = iap.value["oauth2_client_secret"]
+    }
+  }
+
+  dynamic "timeouts" {
+    for_each = var.timeouts
+    content {
+      create = timeouts.value["create"]
+      update = timeouts.value["update"]
     }
   }
 

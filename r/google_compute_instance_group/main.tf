@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.20.0"
+    google = ">= 3.21.0"
   }
 }
 
@@ -17,6 +17,15 @@ resource "google_compute_instance_group" "this" {
     content {
       name = named_port.value["name"]
       port = named_port.value["port"]
+    }
+  }
+
+  dynamic "timeouts" {
+    for_each = var.timeouts
+    content {
+      create = timeouts.value["create"]
+      delete = timeouts.value["delete"]
+      update = timeouts.value["update"]
     }
   }
 

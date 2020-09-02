@@ -19,4 +19,10 @@ module "google_compute_target_pool" {
   region = null
   # session_affinity - (optional) is a type of string
   session_affinity = null
+
+  timeouts = [{
+    create = null
+    delete = null
+    update = null
+  }]
 }

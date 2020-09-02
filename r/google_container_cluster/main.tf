@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.20.0"
+    google = ">= 3.21.0"
   }
 }
 
@@ -13,6 +13,7 @@ resource "google_container_cluster" "this" {
   enable_intranode_visibility = var.enable_intranode_visibility
   enable_kubernetes_alpha     = var.enable_kubernetes_alpha
   enable_legacy_abac          = var.enable_legacy_abac
+  enable_shielded_nodes       = var.enable_shielded_nodes
   enable_tpu                  = var.enable_tpu
   initial_node_count          = var.initial_node_count
   location                    = var.location
@@ -33,6 +34,13 @@ resource "google_container_cluster" "this" {
   dynamic "addons_config" {
     for_each = var.addons_config
     content {
+
+      dynamic "cloudrun_config" {
+        for_each = addons_config.value.cloudrun_config
+        content {
+          disabled = cloudrun_config.value["disabled"]
+        }
+      }
 
       dynamic "horizontal_pod_autoscaling" {
         for_each = addons_config.value.horizontal_pod_autoscaling
@@ -222,6 +230,7 @@ resource "google_container_cluster" "this" {
       name               = node_pool.value["name"]
       name_prefix        = node_pool.value["name_prefix"]
       node_count         = node_pool.value["node_count"]
+      node_locations     = node_pool.value["node_locations"]
       version            = node_pool.value["version"]
 
       dynamic "autoscaling" {
@@ -331,6 +340,7 @@ resource "google_container_cluster" "this" {
     content {
       create = timeouts.value["create"]
       delete = timeouts.value["delete"]
+      read   = timeouts.value["read"]
       update = timeouts.value["update"]
     }
   }

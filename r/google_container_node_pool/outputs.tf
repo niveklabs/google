@@ -38,6 +38,11 @@ output "node_count" {
   value       = google_container_node_pool.this.node_count
 }
 
+output "node_locations" {
+  description = "returns a set of string"
+  value       = google_container_node_pool.this.node_locations
+}
+
 output "project" {
   description = "returns a string"
   value       = google_container_node_pool.this.project

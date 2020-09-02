@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.20.0"
+    google = ">= 3.21.0"
   }
 }
 
@@ -114,6 +114,14 @@ resource "google_compute_instance_template" "this" {
       enable_integrity_monitoring = shielded_instance_config.value["enable_integrity_monitoring"]
       enable_secure_boot          = shielded_instance_config.value["enable_secure_boot"]
       enable_vtpm                 = shielded_instance_config.value["enable_vtpm"]
+    }
+  }
+
+  dynamic "timeouts" {
+    for_each = var.timeouts
+    content {
+      create = timeouts.value["create"]
+      delete = timeouts.value["delete"]
     }
   }
 

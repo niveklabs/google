@@ -15,4 +15,9 @@ module "google_compute_router_interface" {
   router = null
   # vpn_tunnel - (optional) is a type of string
   vpn_tunnel = null
+
+  timeouts = [{
+    create = null
+    delete = null
+  }]
 }

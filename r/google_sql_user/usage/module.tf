@@ -11,4 +11,10 @@ module "google_sql_user" {
   password = null
   # project - (optional) is a type of string
   project = null
+
+  timeouts = [{
+    create = null
+    delete = null
+    update = null
+  }]
 }

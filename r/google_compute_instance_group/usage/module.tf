@@ -18,4 +18,10 @@ module "google_compute_instance_group" {
     name = null
     port = null
   }]
+
+  timeouts = [{
+    create = null
+    delete = null
+    update = null
+  }]
 }

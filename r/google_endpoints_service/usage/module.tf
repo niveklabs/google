@@ -11,4 +11,10 @@ module "google_endpoints_service" {
   protoc_output_base64 = null
   # service_name - (required) is a type of string
   service_name = null
+
+  timeouts = [{
+    create = null
+    delete = null
+    update = null
+  }]
 }

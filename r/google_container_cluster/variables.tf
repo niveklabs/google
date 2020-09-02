@@ -46,6 +46,12 @@ variable "enable_legacy_abac" {
   default     = null
 }
 
+variable "enable_shielded_nodes" {
+  description = "(optional)"
+  type        = bool
+  default     = null
+}
+
 variable "enable_tpu" {
   description = "(optional)"
   type        = bool
@@ -145,6 +151,11 @@ variable "addons_config" {
   description = "nested mode: NestingList, min items: 0, max items: 1"
   type = set(object(
     {
+      cloudrun_config = list(object(
+        {
+          disabled = bool
+        }
+      ))
       horizontal_pod_autoscaling = list(object(
         {
           disabled = bool
@@ -401,7 +412,8 @@ variable "node_pool" {
           ))
         }
       ))
-      node_count = number
+      node_count     = number
+      node_locations = set(string)
       upgrade_settings = list(object(
         {
           max_surge       = number
@@ -461,6 +473,7 @@ variable "timeouts" {
     {
       create = string
       delete = string
+      read   = string
       update = string
     }
   ))

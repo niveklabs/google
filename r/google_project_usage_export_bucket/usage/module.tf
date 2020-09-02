@@ -7,4 +7,9 @@ module "google_project_usage_export_bucket" {
   prefix = null
   # project - (optional) is a type of string
   project = null
+
+  timeouts = [{
+    create = null
+    delete = null
+  }]
 }

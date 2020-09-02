@@ -1,16 +1,18 @@
 terraform {
   required_providers {
-    google = ">= 3.20.0"
+    google = ">= 3.21.0"
   }
 }
 
 resource "google_compute_backend_service" "this" {
   affinity_cookie_ttl_sec         = var.affinity_cookie_ttl_sec
   connection_draining_timeout_sec = var.connection_draining_timeout_sec
+  custom_request_headers          = var.custom_request_headers
   description                     = var.description
   enable_cdn                      = var.enable_cdn
   health_checks                   = var.health_checks
   load_balancing_scheme           = var.load_balancing_scheme
+  locality_lb_policy              = var.locality_lb_policy
   name                            = var.name
   port_name                       = var.port_name
   project                         = var.project
@@ -55,11 +57,88 @@ resource "google_compute_backend_service" "this" {
     }
   }
 
+  dynamic "circuit_breakers" {
+    for_each = var.circuit_breakers
+    content {
+      max_connections             = circuit_breakers.value["max_connections"]
+      max_pending_requests        = circuit_breakers.value["max_pending_requests"]
+      max_requests                = circuit_breakers.value["max_requests"]
+      max_requests_per_connection = circuit_breakers.value["max_requests_per_connection"]
+      max_retries                 = circuit_breakers.value["max_retries"]
+    }
+  }
+
+  dynamic "consistent_hash" {
+    for_each = var.consistent_hash
+    content {
+      http_header_name  = consistent_hash.value["http_header_name"]
+      minimum_ring_size = consistent_hash.value["minimum_ring_size"]
+
+      dynamic "http_cookie" {
+        for_each = consistent_hash.value.http_cookie
+        content {
+          name = http_cookie.value["name"]
+          path = http_cookie.value["path"]
+
+          dynamic "ttl" {
+            for_each = http_cookie.value.ttl
+            content {
+              nanos   = ttl.value["nanos"]
+              seconds = ttl.value["seconds"]
+            }
+          }
+
+        }
+      }
+
+    }
+  }
+
   dynamic "iap" {
     for_each = var.iap
     content {
       oauth2_client_id     = iap.value["oauth2_client_id"]
       oauth2_client_secret = iap.value["oauth2_client_secret"]
+    }
+  }
+
+  dynamic "log_config" {
+    for_each = var.log_config
+    content {
+      enable      = log_config.value["enable"]
+      sample_rate = log_config.value["sample_rate"]
+    }
+  }
+
+  dynamic "outlier_detection" {
+    for_each = var.outlier_detection
+    content {
+      consecutive_errors                    = outlier_detection.value["consecutive_errors"]
+      consecutive_gateway_failure           = outlier_detection.value["consecutive_gateway_failure"]
+      enforcing_consecutive_errors          = outlier_detection.value["enforcing_consecutive_errors"]
+      enforcing_consecutive_gateway_failure = outlier_detection.value["enforcing_consecutive_gateway_failure"]
+      enforcing_success_rate                = outlier_detection.value["enforcing_success_rate"]
+      max_ejection_percent                  = outlier_detection.value["max_ejection_percent"]
+      success_rate_minimum_hosts            = outlier_detection.value["success_rate_minimum_hosts"]
+      success_rate_request_volume           = outlier_detection.value["success_rate_request_volume"]
+      success_rate_stdev_factor             = outlier_detection.value["success_rate_stdev_factor"]
+
+      dynamic "base_ejection_time" {
+        for_each = outlier_detection.value.base_ejection_time
+        content {
+          nanos   = base_ejection_time.value["nanos"]
+          seconds = base_ejection_time.value["seconds"]
+        }
+      }
+
+      dynamic "interval" {
+        for_each = outlier_detection.value.interval
+        content {
+          nanos   = interval.value["nanos"]
+          seconds = interval.value["seconds"]
+        }
+      }
+
     }
   }
 

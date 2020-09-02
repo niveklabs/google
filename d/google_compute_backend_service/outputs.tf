@@ -13,14 +13,29 @@ output "cdn_policy" {
   value       = data.google_compute_backend_service.this.cdn_policy
 }
 
+output "circuit_breakers" {
+  description = "returns a list of object"
+  value       = data.google_compute_backend_service.this.circuit_breakers
+}
+
 output "connection_draining_timeout_sec" {
   description = "returns a number"
   value       = data.google_compute_backend_service.this.connection_draining_timeout_sec
 }
 
+output "consistent_hash" {
+  description = "returns a list of object"
+  value       = data.google_compute_backend_service.this.consistent_hash
+}
+
 output "creation_timestamp" {
   description = "returns a string"
   value       = data.google_compute_backend_service.this.creation_timestamp
+}
+
+output "custom_request_headers" {
+  description = "returns a set of string"
+  value       = data.google_compute_backend_service.this.custom_request_headers
 }
 
 output "description" {
@@ -56,6 +71,21 @@ output "id" {
 output "load_balancing_scheme" {
   description = "returns a string"
   value       = data.google_compute_backend_service.this.load_balancing_scheme
+}
+
+output "locality_lb_policy" {
+  description = "returns a string"
+  value       = data.google_compute_backend_service.this.locality_lb_policy
+}
+
+output "log_config" {
+  description = "returns a list of object"
+  value       = data.google_compute_backend_service.this.log_config
+}
+
+output "outlier_detection" {
+  description = "returns a list of object"
+  value       = data.google_compute_backend_service.this.outlier_detection
 }
 
 output "port_name" {

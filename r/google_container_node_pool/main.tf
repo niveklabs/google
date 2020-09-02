@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.20.0"
+    google = ">= 3.21.0"
   }
 }
 
@@ -12,6 +12,7 @@ resource "google_container_node_pool" "this" {
   name               = var.name
   name_prefix        = var.name_prefix
   node_count         = var.node_count
+  node_locations     = var.node_locations
   project            = var.project
   region             = var.region
   version            = var.version

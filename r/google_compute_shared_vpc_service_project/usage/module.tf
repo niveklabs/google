@@ -5,4 +5,9 @@ module "google_compute_shared_vpc_service_project" {
   host_project = null
   # service_project - (required) is a type of string
   service_project = null
+
+  timeouts = [{
+    create = null
+    delete = null
+  }]
 }

@@ -91,4 +91,9 @@ module "google_compute_instance_template" {
     enable_secure_boot          = null
     enable_vtpm                 = null
   }]
+
+  timeouts = [{
+    create = null
+    delete = null
+  }]
 }

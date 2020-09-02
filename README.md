@@ -3,7 +3,7 @@
 [embedmd]:# (google.tf)
 ```tf
 provider "google" {
-  version = "3.20.0"
+  version = "3.21.0"
 
   # access_context_manager_custom_endpoint - (optional) is a type of string
   access_context_manager_custom_endpoint = null

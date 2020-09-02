@@ -7,4 +7,9 @@ module "google_sql_ssl_cert" {
   instance = null
   # project - (optional) is a type of string
   project = null
+
+  timeouts = [{
+    create = null
+    delete = null
+  }]
 }

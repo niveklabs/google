@@ -15,6 +15,8 @@ module "google_container_node_pool" {
   name_prefix = null
   # node_count - (optional) is a type of number
   node_count = null
+  # node_locations - (optional) is a type of set of string
+  node_locations = []
   # project - (optional) is a type of string
   project = null
   # region - (optional) is a type of string
