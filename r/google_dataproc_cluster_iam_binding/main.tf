@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.29.0"
+    google = ">= 3.30.0"
   }
 }
 
@@ -10,5 +10,15 @@ resource "google_dataproc_cluster_iam_binding" "this" {
   project = var.project
   region  = var.region
   role    = var.role
+
+  dynamic "condition" {
+    for_each = var.condition
+    content {
+      description = condition.value["description"]
+      expression  = condition.value["expression"]
+      title       = condition.value["title"]
+    }
+  }
+
 }
 

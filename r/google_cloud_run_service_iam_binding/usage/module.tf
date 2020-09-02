@@ -11,4 +11,10 @@ module "google_cloud_run_service_iam_binding" {
   role = null
   # service - (required) is a type of string
   service = null
+
+  condition = [{
+    description = null
+    expression  = null
+    title       = null
+  }]
 }

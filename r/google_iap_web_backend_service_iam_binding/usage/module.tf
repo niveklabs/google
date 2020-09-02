@@ -9,4 +9,10 @@ module "google_iap_web_backend_service_iam_binding" {
   role = null
   # web_backend_service - (required) is a type of string
   web_backend_service = null
+
+  condition = [{
+    description = null
+    expression  = null
+    title       = null
+  }]
 }

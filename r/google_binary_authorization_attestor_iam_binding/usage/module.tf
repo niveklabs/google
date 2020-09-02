@@ -9,4 +9,10 @@ module "google_binary_authorization_attestor_iam_binding" {
   project = null
   # role - (required) is a type of string
   role = null
+
+  condition = [{
+    description = null
+    expression  = null
+    title       = null
+  }]
 }

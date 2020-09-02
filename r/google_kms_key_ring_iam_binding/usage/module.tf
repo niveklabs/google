@@ -7,4 +7,10 @@ module "google_kms_key_ring_iam_binding" {
   members = []
   # role - (required) is a type of string
   role = null
+
+  condition = [{
+    description = null
+    expression  = null
+    title       = null
+  }]
 }

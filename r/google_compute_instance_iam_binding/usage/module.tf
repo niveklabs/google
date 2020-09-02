@@ -11,4 +11,10 @@ module "google_compute_instance_iam_binding" {
   role = null
   # zone - (optional) is a type of string
   zone = null
+
+  condition = [{
+    description = null
+    expression  = null
+    title       = null
+  }]
 }

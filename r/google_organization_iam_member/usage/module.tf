@@ -7,4 +7,10 @@ module "google_organization_iam_member" {
   org_id = null
   # role - (required) is a type of string
   role = null
+
+  condition = [{
+    description = null
+    expression  = null
+    title       = null
+  }]
 }

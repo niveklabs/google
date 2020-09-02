@@ -7,4 +7,10 @@ module "google_storage_bucket_iam_member" {
   member = null
   # role - (required) is a type of string
   role = null
+
+  condition = [{
+    description = null
+    expression  = null
+    title       = null
+  }]
 }

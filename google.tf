@@ -1,5 +1,5 @@
 provider "google" {
-  version = "3.29.0"
+  version = "3.30.0"
 
   # access_context_manager_custom_endpoint - (optional) is a type of string
   access_context_manager_custom_endpoint = null
@@ -85,6 +85,8 @@ provider "google" {
   monitoring_custom_endpoint = null
   # network_management_custom_endpoint - (optional) is a type of string
   network_management_custom_endpoint = null
+  # os_config_custom_endpoint - (optional) is a type of string
+  os_config_custom_endpoint = null
   # os_login_custom_endpoint - (optional) is a type of string
   os_login_custom_endpoint = null
   # project - (optional) is a type of string

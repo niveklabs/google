@@ -11,4 +11,10 @@ module "google_iap_app_engine_service_iam_member" {
   role = null
   # service - (required) is a type of string
   service = null
+
+  condition = [{
+    description = null
+    expression  = null
+    title       = null
+  }]
 }

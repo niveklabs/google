@@ -11,6 +11,11 @@ module "google_iam_policy" {
   }]
 
   binding = [{
+    condition = [{
+      description = null
+      expression  = null
+      title       = null
+    }]
     members = []
     role    = null
   }]

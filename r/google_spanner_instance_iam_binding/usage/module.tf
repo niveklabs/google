@@ -9,4 +9,10 @@ module "google_spanner_instance_iam_binding" {
   project = null
   # role - (required) is a type of string
   role = null
+
+  condition = [{
+    description = null
+    expression  = null
+    title       = null
+  }]
 }

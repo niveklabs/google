@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    google = ">= 3.29.0"
+    google = ">= 3.30.0"
   }
 }
 
@@ -27,6 +27,16 @@ data "google_iam_policy" "this" {
     content {
       members = binding.value["members"]
       role    = binding.value["role"]
+
+      dynamic "condition" {
+        for_each = binding.value.condition
+        content {
+          description = condition.value["description"]
+          expression  = condition.value["expression"]
+          title       = condition.value["title"]
+        }
+      }
+
     }
   }
 

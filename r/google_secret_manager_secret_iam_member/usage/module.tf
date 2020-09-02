@@ -9,4 +9,10 @@ module "google_secret_manager_secret_iam_member" {
   role = null
   # secret_id - (required) is a type of string
   secret_id = null
+
+  condition = [{
+    description = null
+    expression  = null
+    title       = null
+  }]
 }

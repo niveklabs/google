@@ -18,6 +18,13 @@ variable "binding" {
   description = "nested mode: NestingSet, min items: 0, max items: 0"
   type = set(object(
     {
+      condition = list(object(
+        {
+          description = string
+          expression  = string
+          title       = string
+        }
+      ))
       members = set(string)
       role    = string
     }

@@ -7,4 +7,10 @@ module "google_endpoints_service_iam_binding" {
   role = null
   # service_name - (required) is a type of string
   service_name = null
+
+  condition = [{
+    description = null
+    expression  = null
+    title       = null
+  }]
 }

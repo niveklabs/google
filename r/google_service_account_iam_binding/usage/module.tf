@@ -7,4 +7,10 @@ module "google_service_account_iam_binding" {
   role = null
   # service_account_id - (required) is a type of string
   service_account_id = null
+
+  condition = [{
+    description = null
+    expression  = null
+    title       = null
+  }]
 }

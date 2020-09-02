@@ -9,4 +9,10 @@ module "google_pubsub_topic_iam_binding" {
   role = null
   # topic - (required) is a type of string
   topic = null
+
+  condition = [{
+    description = null
+    expression  = null
+    title       = null
+  }]
 }

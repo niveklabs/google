@@ -11,4 +11,10 @@ module "google_compute_subnetwork_iam_member" {
   role = null
   # subnetwork - (required) is a type of string
   subnetwork = null
+
+  condition = [{
+    description = null
+    expression  = null
+    title       = null
+  }]
 }

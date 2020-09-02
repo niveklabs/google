@@ -9,4 +9,10 @@ module "google_runtimeconfig_config_iam_member" {
   project = null
   # role - (required) is a type of string
   role = null
+
+  condition = [{
+    description = null
+    expression  = null
+    title       = null
+  }]
 }

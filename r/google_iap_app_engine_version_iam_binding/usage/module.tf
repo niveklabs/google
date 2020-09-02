@@ -13,4 +13,10 @@ module "google_iap_app_engine_version_iam_binding" {
   service = null
   # version_id - (required) is a type of string
   version_id = null
+
+  condition = [{
+    description = null
+    expression  = null
+    title       = null
+  }]
 }
